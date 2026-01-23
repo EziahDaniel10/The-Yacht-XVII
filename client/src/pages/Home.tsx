@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ArrowRight, Anchor, Sunset, Wine, Star } from "lucide-react";
+import heroYacht from "@/assets/images/hero-yacht.jpg";
 
 export default function Home() {
   return (
@@ -12,9 +13,8 @@ export default function Home() {
         {/* Abstract Luxury Yacht Background */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/40 z-10" />
-          {/* Unsplash: Luxury Yacht on calm water */}
           <img 
-            src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?q=80&w=2070&auto=format&fit=crop" 
+            src={heroYacht} 
             alt="Luxury Yacht XVII" 
             className="w-full h-full object-cover"
           />
