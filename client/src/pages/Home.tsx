@@ -1,0 +1,177 @@
+import { motion } from "framer-motion";
+import { Link } from "wouter";
+import { Button } from "@/components/ui/button";
+import { SectionHeading } from "@/components/SectionHeading";
+import { ArrowRight, Anchor, Sunset, Wine, Star } from "lucide-react";
+
+export default function Home() {
+  return (
+    <div className="bg-background">
+      {/* Hero Section */}
+      <section className="relative h-screen min-h-[800px] flex items-center justify-center overflow-hidden">
+        {/* Abstract Luxury Yacht Background */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-black/30 z-10" />
+          {/* Unsplash: Luxury Yacht on calm water */}
+          <img 
+            src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?q=80&w=2070&auto=format&fit=crop" 
+            alt="Luxury Yacht XVII" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        <div className="relative z-20 container-wide text-center text-white pt-20">
+          <motion.span 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="block text-sm md:text-base font-bold uppercase tracking-[0.3em] mb-6 text-primary-foreground/90"
+          >
+            Curated Yacht Experiences
+          </motion.span>
+          
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-5xl md:text-7xl lg:text-8xl font-serif mb-8 leading-tight"
+          >
+            Experience the Art <br/> of Luxury at Sea
+          </motion.h1>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <Link href="/booking">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-none px-10 py-8 text-lg font-serif italic tracking-wide">
+                Reserve Your Charter
+              </Button>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Intro Section */}
+      <section className="py-24 md:py-32 bg-white">
+        <div className="container-wide grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div>
+            <SectionHeading 
+              subtitle="Welcome Aboard" 
+              title="A Sanctuary of Elegance on the Open Ocean" 
+            />
+            <p className="text-muted-foreground text-lg leading-relaxed font-light mb-8">
+              Yacht XVII is not just a vessel; it is a destination. Meticulously designed for the discerning traveler, we offer an unparalleled blend of comfort, style, and adventure. Whether you seek a serene sunset escape or a week-long voyage, our crew is dedicated to crafting unforgettable moments.
+            </p>
+            <Link href="/about">
+              <Button variant="link" className="p-0 text-primary text-lg font-serif italic hover:text-primary/80">
+                Discover Our Story <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
+          <div className="relative h-[600px] w-full bg-secondary overflow-hidden">
+            {/* Unsplash: Champagne on boat deck */}
+            <img 
+              src="https://images.unsplash.com/photo-1544143360-6458d511394c?q=80&w=1900&auto=format&fit=crop" 
+              alt="Luxury Lifestyle" 
+              className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Services/Highlights */}
+      <section className="py-24 bg-[#0A192F] text-white">
+        <div className="container-wide">
+          <SectionHeading 
+            subtitle="Our Services" 
+            title="Tailored Experiences" 
+            light 
+            centered 
+          />
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+            {[
+              {
+                icon: <Anchor className="h-8 w-8 text-primary" />,
+                title: "Day Charters",
+                desc: "Explore the coastline in style with our flexible half and full-day itineraries."
+              },
+              {
+                icon: <Sunset className="h-8 w-8 text-primary" />,
+                title: "Sunset Cruises",
+                desc: "Witness the golden hour from the best vantage point possible—the deck of XVII."
+              },
+              {
+                icon: <Wine className="h-8 w-8 text-primary" />,
+                title: "Private Events",
+                desc: "Host intimate gatherings, celebrations, or corporate meetings in absolute privacy."
+              }
+            ].map((item, i) => (
+              <div key={i} className="group p-8 border border-white/10 hover:border-primary/50 transition-colors bg-white/5 hover:bg-white/10">
+                <div className="mb-6">{item.icon}</div>
+                <h3 className="text-2xl font-serif mb-4">{item.title}</h3>
+                <p className="text-white/60 font-light leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Feature Highlight */}
+      <section className="py-24 md:py-32 bg-secondary/30">
+        <div className="container-wide">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            <div className="md:col-span-7 relative h-[500px] md:h-[700px] bg-white shadow-2xl">
+              {/* Unsplash: Yacht interior */}
+              <img 
+                src="https://images.unsplash.com/photo-1605281317010-fe5ffe79ba02?q=80&w=2070&auto=format&fit=crop" 
+                alt="Interior" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="md:col-span-5 md:-ml-12 z-10 bg-white p-12 shadow-xl border-l-4 border-primary">
+              <SectionHeading subtitle="The Vessel" title="Uncompromising Comfort" className="mb-8" />
+              <p className="text-muted-foreground mb-8 font-light">
+                Featuring masterfully crafted interiors, state-of-the-art entertainment systems, and spacious sun decks, Yacht XVII redefines modern luxury. Every detail has been considered to ensure your absolute comfort.
+              </p>
+              <ul className="space-y-4 mb-8">
+                {[
+                  "Accommodates up to 12 guests",
+                  "Professional crew of 4",
+                  "Gourmet dining facilities",
+                  "Water sports equipment included"
+                ].map((feat, i) => (
+                  <li key={i} className="flex items-center text-sm uppercase tracking-wider font-medium text-foreground/80">
+                    <Star className="h-4 w-4 text-primary mr-3" /> {feat}
+                  </li>
+                ))}
+              </ul>
+              <Link href="/yacht">
+                <Button variant="outline" className="rounded-none border-primary text-primary hover:bg-primary hover:text-white transition-colors uppercase tracking-widest text-xs py-6 px-8">
+                  View Specifications
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-32 bg-white text-center">
+        <div className="container-wide max-w-4xl mx-auto">
+          <SectionHeading centered title="Ready for Your Voyage?" />
+          <p className="text-xl text-muted-foreground font-light mb-12">
+            Availability is limited. Contact our concierge to secure your preferred dates for the coming season.
+          </p>
+          <Link href="/booking">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-none px-12 py-8 text-xl font-serif italic shadow-xl shadow-primary/20">
+              Start Your Journey
+            </Button>
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
+}
