@@ -1,0 +1,153 @@
+Create a multi-page luxury yacht charter website for a company called Yacht XVII using pure HTML, CSS, and vanilla JavaScript (no frameworks).
+
+The website must feel exclusive, elegant, modern, and easy to navigate, inspired by premium yacht charter brands but completely original in layout, wording, and structure. Do not copy or closely resemble any existing website.
+
+TECHNICAL REQUIREMENTS
+
+Use HTML, CSS, and JavaScript only
+
+Organize files so they can be downloaded and uploaded directly to Namecheap hosting:
+
+/index.html
+/about.html
+/yacht.html
+/charters.html
+/booking.html
+/contact.html
+/css/style.css
+/js/script.js
+
+
+Fully responsive (desktop, tablet, mobile)
+
+Shared navigation and footer across all pages
+
+Clean, semantic, well-commented code
+
+Smooth transitions and subtle luxury animations
+
+BRANDING & DESIGN
+
+Brand name: Yacht XVII
+
+Color palette: Gold and White
+
+Style: luxury, minimal, ocean-inspired, high-end
+
+Elegant typography (serif headings, modern sans-serif body text)
+
+Spacious layout with strong visual hierarchy
+
+PAGE-BY-PAGE CONTENT (WRITE ORIGINAL LUXURY COPY)
+HOME – index.html
+
+Hero section with luxury yacht imagery
+
+Headline: Experience the Art of Luxury at Sea
+
+Subheadline highlighting private, curated yacht experiences
+
+Primary CTA: Reserve Your Charter
+
+Highlights of services and yacht features
+
+ABOUT – about.html
+
+Story of Yacht XVII
+
+Focus on exclusivity, professionalism, tailored experiences, and service excellence
+
+Elegant, aspirational tone
+
+THE YACHT – yacht.html
+
+Detailed presentation of Yacht XVII
+
+Yacht features, amenities, and capacity
+
+Image gallery (placeholder images)
+
+Luxury design emphasis
+
+CHARTER EXPERIENCES – charters.html
+
+Create refined descriptions for:
+
+Half-Day Charter
+
+Full-Day Charter
+
+Sunset Cruise
+
+Private Events
+Each experience should feel bespoke and premium.
+
+Include CTA buttons linking to Booking Page.
+
+BOOKING – booking.html
+
+UX-focused booking flow
+
+Simple booking form with fields:
+
+Full Name
+
+Email
+
+Phone Number
+
+Preferred Date
+
+Number of Guests
+
+Charter Type (dropdown)
+
+Special Requests
+
+JavaScript validation
+
+Confirmation message on submit:
+“Thank you for your request. Our team will contact you shortly to confirm availability.”
+
+CONTACT – contact.html
+
+Contact form
+
+Placeholder business email and phone number
+
+Optional map placeholder
+
+Clean, inviting layout
+
+NAVIGATION & UX
+
+Sticky header navigation:
+Home | About | The Yacht | Charters | Booking | Contact
+
+Clear CTAs on all pages
+
+Smooth scrolling and hover animations
+
+Seamless, intuitive booking journey
+
+SEO OPTIMIZATION
+
+Semantic HTML structure
+
+Unique SEO-optimized <title> and <meta description> for each page
+
+Proper H1, H2, H3 hierarchy
+
+Optimized image alt text (luxury yacht charter keywords)
+
+OUTPUT REQUIREMENTS
+
+Deliver fully working HTML, CSS, and JS files
+
+Use placeholder images and data
+
+Website must run locally without a server
+
+Code must be easy to migrate and maintain
+
+The final result should feel effortless, refined, and exclusive, designed to attract high-end yacht charter clients and convert bookings.
