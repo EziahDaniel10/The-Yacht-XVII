@@ -8,10 +8,10 @@ export default function Home() {
   return (
     <div className="bg-background">
       {/* Hero Section */}
-      <section className="relative h-screen min-h-[800px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen min-h-[600px] md:min-h-[800px] flex items-center justify-center overflow-hidden">
         {/* Abstract Luxury Yacht Background */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-black/30 z-10" />
+          <div className="absolute inset-0 bg-black/40 z-10" />
           {/* Unsplash: Luxury Yacht on calm water */}
           <img 
             src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?q=80&w=2070&auto=format&fit=crop" 
@@ -20,12 +20,12 @@ export default function Home() {
           />
         </div>
 
-        <div className="relative z-20 container-wide text-center text-white pt-20">
+        <div className="relative z-20 container-wide text-center text-white pt-10 px-4">
           <motion.span 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="block text-sm md:text-base font-bold uppercase tracking-[0.3em] mb-6 text-primary-foreground/90"
+            className="block text-xs md:text-base font-bold uppercase tracking-[0.3em] mb-4 md:mb-6 text-primary-foreground/90"
           >
             Curated Yacht Experiences
           </motion.span>
@@ -34,9 +34,9 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-serif mb-8 leading-tight"
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif mb-6 md:mb-8 leading-tight"
           >
-            Experience the Art <br/> of Luxury at Sea
+            Experience the Art <br className="hidden sm:block"/> of Luxury at Sea
           </motion.h1>
 
           <motion.div
@@ -45,7 +45,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <Link href="/booking">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-none px-10 py-8 text-lg font-serif italic tracking-wide">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-none px-8 md:px-10 py-6 md:py-8 text-base md:text-lg font-serif italic tracking-wide">
                 Reserve Your Charter
               </Button>
             </Link>
@@ -54,14 +54,14 @@ export default function Home() {
       </section>
 
       {/* Intro Section */}
-      <section className="py-24 md:py-32 bg-white">
-        <div className="container-wide grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <div>
+      <section className="py-20 md:py-32 bg-white">
+        <div className="container-wide grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+          <div className="order-2 md:order-1">
             <SectionHeading 
               subtitle="Welcome Aboard" 
               title="A Sanctuary of Elegance on the Open Ocean" 
             />
-            <p className="text-muted-foreground text-lg leading-relaxed font-light mb-8">
+            <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-light mb-8">
               Yacht XVII is not just a vessel; it is a destination. Meticulously designed for the discerning traveler, we offer an unparalleled blend of comfort, style, and adventure. Whether you seek a serene sunset escape or a week-long voyage, our crew is dedicated to crafting unforgettable moments.
             </p>
             <Link href="/about">
@@ -70,7 +70,7 @@ export default function Home() {
               </Button>
             </Link>
           </div>
-          <div className="relative h-[600px] w-full bg-secondary overflow-hidden">
+          <div className="order-1 md:order-2 relative h-[400px] md:h-[600px] w-full bg-secondary overflow-hidden">
             {/* Unsplash: Champagne on boat deck */}
             <img 
               src="https://images.unsplash.com/photo-1544143360-6458d511394c?q=80&w=1900&auto=format&fit=crop" 
@@ -123,7 +123,7 @@ export default function Home() {
       <section className="py-24 md:py-32 bg-secondary/30">
         <div className="container-wide">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-            <div className="md:col-span-7 relative h-[500px] md:h-[700px] bg-white shadow-2xl">
+            <div className="md:col-span-7 relative h-[300px] md:h-[700px] bg-white shadow-2xl">
               {/* Unsplash: Yacht interior */}
               <img 
                 src="https://images.unsplash.com/photo-1605281317010-fe5ffe79ba02?q=80&w=2070&auto=format&fit=crop" 
@@ -131,25 +131,25 @@ export default function Home() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="md:col-span-5 md:-ml-12 z-10 bg-white p-12 shadow-xl border-l-4 border-primary">
-              <SectionHeading subtitle="The Vessel" title="Uncompromising Comfort" className="mb-8" />
-              <p className="text-muted-foreground mb-8 font-light">
+            <div className="md:col-span-5 md:-ml-12 z-10 bg-white p-8 md:p-12 shadow-xl border-l-4 border-primary">
+              <SectionHeading subtitle="The Vessel" title="Uncompromising Comfort" className="mb-6 md:mb-8" />
+              <p className="text-muted-foreground mb-6 md:mb-8 font-light text-sm md:text-base">
                 Featuring masterfully crafted interiors, state-of-the-art entertainment systems, and spacious sun decks, Yacht XVII redefines modern luxury. Every detail has been considered to ensure your absolute comfort.
               </p>
-              <ul className="space-y-4 mb-8">
+              <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-4 mb-8">
                 {[
                   "Accommodates up to 12 guests",
                   "Professional crew of 4",
                   "Gourmet dining facilities",
                   "Water sports equipment included"
                 ].map((feat, i) => (
-                  <li key={i} className="flex items-center text-sm uppercase tracking-wider font-medium text-foreground/80">
-                    <Star className="h-4 w-4 text-primary mr-3" /> {feat}
+                  <li key={i} className="flex items-center text-[10px] md:text-sm uppercase tracking-wider font-medium text-foreground/80">
+                    <Star className="h-4 w-4 text-primary mr-3 shrink-0" /> {feat}
                   </li>
                 ))}
               </ul>
               <Link href="/yacht">
-                <Button variant="outline" className="rounded-none border-primary text-primary hover:bg-primary hover:text-white transition-colors uppercase tracking-widest text-xs py-6 px-8">
+                <Button variant="outline" className="w-full md:w-auto rounded-none border-primary text-primary hover:bg-primary hover:text-white transition-colors uppercase tracking-widest text-[10px] md:text-xs py-6 px-8">
                   View Specifications
                 </Button>
               </Link>

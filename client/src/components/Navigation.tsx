@@ -82,33 +82,43 @@ export function Navigation() {
         {/* Mobile Nav */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon" className={isTransparent ? "text-white" : "text-foreground"}>
+            <Button variant="ghost" size="icon" className={cn("hover:bg-transparent active:bg-transparent", isTransparent ? "text-white" : "text-foreground")}>
               <Menu className="h-6 w-6" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-[300px] bg-background border-l border-border p-0">
-            <div className="flex flex-col h-full bg-secondary/30">
-              <div className="p-8 border-b border-border/50">
-                <span className="text-xl font-serif font-bold text-primary tracking-widest">XVII</span>
+          <SheetContent side="right" className="w-full sm:w-[400px] bg-background border-l border-border p-0">
+            <div className="flex flex-col h-full">
+              <div className="p-6 border-b border-border/50 flex items-center justify-between">
+                <span className="text-xl font-serif font-bold text-primary tracking-widest">YACHT XVII</span>
+                <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
+                  <X className="h-6 w-6" />
+                </Button>
               </div>
-              <nav className="flex flex-col p-8 gap-6">
+              <nav className="flex flex-col p-8 gap-8 items-center text-center">
                 {links.map((link) => (
                   <Link 
                     key={link.href} 
                     href={link.href} 
-                    className="text-lg font-serif text-foreground/80 hover:text-primary transition-colors"
+                    className={cn(
+                      "text-2xl font-serif transition-colors",
+                      location === link.href ? "text-primary" : "text-foreground/80"
+                    )}
                     onClick={() => setIsOpen(false)}
                   >
                     {link.label}
                   </Link>
                 ))}
-                <div className="h-px bg-border/50 my-2" />
-                <Link href="/booking" onClick={() => setIsOpen(false)}>
-                  <Button className="w-full bg-primary text-white rounded-none py-6 text-lg font-serif italic">
+                <div className="w-full h-px bg-border/50 my-4" />
+                <Link href="/booking" className="w-full" onClick={() => setIsOpen(false)}>
+                  <Button className="w-full bg-primary text-white rounded-none py-8 text-xl font-serif italic">
                     Reserve Now
                   </Button>
                 </Link>
               </nav>
+              <div className="mt-auto p-8 text-center text-muted-foreground text-sm font-light">
+                <p>concierge@yachtxvii.com</p>
+                <p className="mt-2">+1 (555) 000-0000</p>
+              </div>
             </div>
           </SheetContent>
         </Sheet>
