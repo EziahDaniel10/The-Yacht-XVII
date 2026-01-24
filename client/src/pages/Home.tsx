@@ -75,7 +75,7 @@ export default function Home() {
             <img 
               src={welcomeYacht} 
               alt="Luxury Lifestyle" 
-              className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+              className="w-full h-full object-contain bg-[#0A192F] transition-transform duration-700 hover:scale-105"
             />
           </div>
         </div>
