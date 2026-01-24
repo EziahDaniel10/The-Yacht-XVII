@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ArrowRight, Anchor, Sunset, Wine, Star } from "lucide-react";
 import heroYacht from "@/assets/images/hero-yacht.jpg";
+import welcomeYacht from "@/assets/images/welcome-yacht.jpg";
 
 export default function Home() {
   return (
@@ -71,9 +72,8 @@ export default function Home() {
             </Link>
           </div>
           <div className="order-1 md:order-2 relative h-[400px] md:h-[600px] w-full bg-secondary overflow-hidden">
-            {/* Unsplash: Champagne on boat deck */}
             <img 
-              src="https://images.unsplash.com/photo-1544143360-6458d511394c?q=80&w=1900&auto=format&fit=crop" 
+              src={welcomeYacht} 
               alt="Luxury Lifestyle" 
               className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
             />
