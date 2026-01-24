@@ -5,6 +5,8 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { ArrowRight, Anchor, Sunset, Wine, Star } from "lucide-react";
 import heroYacht from "@/assets/images/hero-yacht.jpg";
 import welcomeYacht from "@/assets/images/welcome-yacht.jpg";
+import vesselInterior from "@/assets/images/vessel-interior.jpg";
+import voyageReady from "@/assets/images/voyage-ready.jpg";
 
 export default function Home() {
   return (
@@ -17,7 +19,7 @@ export default function Home() {
           <img 
             src={heroYacht} 
             alt="Luxury Yacht XVII" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover fixed top-0 left-0 -z-10"
           />
         </div>
 
@@ -124,9 +126,8 @@ export default function Home() {
         <div className="container-wide">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             <div className="md:col-span-7 relative h-[300px] md:h-[700px] bg-white shadow-2xl">
-              {/* Unsplash: Yacht interior */}
               <img 
-                src="https://images.unsplash.com/photo-1605281317010-fe5ffe79ba02?q=80&w=2070&auto=format&fit=crop" 
+                src={vesselInterior} 
                 alt="Interior" 
                 className="w-full h-full object-cover"
               />
@@ -159,8 +160,15 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="py-32 bg-white text-center">
-        <div className="container-wide max-w-4xl mx-auto">
+      <section className="py-32 bg-white text-center relative overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-10">
+          <img 
+            src={voyageReady} 
+            alt="Ready for Voyage" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="relative z-10 container-wide max-w-4xl mx-auto">
           <SectionHeading centered title="Ready for Your Voyage?" />
           <p className="text-xl text-muted-foreground font-light mb-12">
             Availability is limited. Contact our concierge to secure your preferred dates for the coming season.
