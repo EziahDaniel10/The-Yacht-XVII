@@ -19,7 +19,7 @@ export default function Home() {
           <img 
             src={heroYacht} 
             alt="Luxury Yacht XVII" 
-            className="w-full h-full object-cover fixed top-0 left-0 -z-10"
+            className="w-full h-full object-cover"
           />
         </div>
 
