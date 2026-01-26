@@ -92,7 +92,7 @@ export default function Home() {
               title="A Sanctuary of Elegance on the Open Ocean" 
             />
             <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-light mb-8">
-              Yacht XVII is not just a vessel; it is a destination. Meticulously designed for the discerning traveler, we offer an unparalleled blend of comfort, style, and adventure. Whether you seek a serene sunset escape or a week-long voyage, our crew is dedicated to crafting unforgettable moments.
+              Yacht XVII is not just a vessel; it is a destination. Meticulously designed for the discerning traveler, we offer an unparalleled blend of comfort, style, and adventure. Whether you seek a serene sunset escape or a city night light watch in Washington DC, our crew is dedicated to crafting unforgettable moments.
             </p>
             <Link href="/about">
               <Button variant="link" className="p-0 text-primary text-lg font-serif italic hover:text-primary/80">
