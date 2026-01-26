@@ -46,7 +46,13 @@ const packages = [
     title: "Date Night, Sunset & Champagne",
     price: "$1,250 - $1,650",
     description: "Watch the sun dip below the horizon from the most exclusive venue in the city. Romantic, serene, and unforgettable.",
-    features: ["3 Hours Evening Cruise", "Premium Champagne", "Canapés", "Atmospheric Lighting"],
+    features: [
+      "3 Hours Evening Cruise", 
+      "Premium Champagne", 
+      "Canapés", 
+      "Atmospheric Lighting",
+      "Cleaning Fee: $150 | Gratuity: 20%"
+    ],
     image: sunsetImg,
     note: "Weekday: $1,250 | Weekend: $1,650"
   },
@@ -59,8 +65,8 @@ const packages = [
       "Premium Bottle Service",
       "Hookah Service Available",
       "Pre-order Food Menu",
-      "Atmospheric Lighting & Sound",
-      "Dedicated Crew"
+      "Cleaning Fee: $150 | Gratuity: 20%",
+      "Atmospheric Lighting & Sound"
     ],
     image: afterPartyImg,
     note: "Flat Rate: $2,250"
