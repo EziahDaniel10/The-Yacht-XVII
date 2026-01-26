@@ -5,6 +5,7 @@ import { Link } from "wouter";
 import { Check } from "lucide-react";
 
 import halfDayImg from "@/assets/images/half-day-escape.jpg";
+import fullDayImg from "@/assets/images/full-day-voyage.jpg";
 
 const packages = [
   {
@@ -25,14 +26,23 @@ const packages = [
   },
   {
     title: "Full-Day Voyage",
-    price: "From €4,000",
-    description: "Immerse yourself in a complete day at sea. Explore hidden coves, enjoy a gourmet lunch on deck, and swim in crystal clear waters.",
-    features: ["8 Hours Cruising", "Gourmet Lunch", "Full Bar Service", "Water Toys & Tender"],
-    image: "https://images.unsplash.com/photo-1544143360-6458d511394c?q=80&w=1900&auto=format&fit=crop"
+    price: "$3,500 - $4,000",
+    description: "Immerse yourself in a complete day on the Potomac. Eight hours of pure luxury, adventure, and bespoke celebration.",
+    features: [
+      "8 Hours of Fun",
+      "Upgrades: Water Sports, Jet Car, Jet Skies",
+      "Swimming, Grilling & Pre-order Menu",
+      "Gourmet Lunch & Full Bar Service",
+      "Water Toys & Tender Included",
+      "Perfect for Birthday Parties & Hookah",
+      "Cleaning Fee: $150 | Gratuity: 20%"
+    ],
+    image: fullDayImg,
+    note: "Weekday: $3,500 | Weekend: $4,000"
   },
   {
     title: "Sunset & Champagne",
-    price: "From €1,800",
+    price: "From $1,800",
     description: "Watch the sun dip below the horizon from the most exclusive venue in the city. Romantic, serene, and unforgettable.",
     features: ["3 Hours Evening Cruise", "Premium Champagne", "Canapés", "Atmospheric Lighting"],
     image: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?q=80&w=2038&auto=format&fit=crop"
