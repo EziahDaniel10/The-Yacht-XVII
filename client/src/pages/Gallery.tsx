@@ -4,27 +4,48 @@ import { useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+import img1 from "@assets/image_1769437410924.png";
+import img2 from "@assets/image_1769437570817.png";
+import img3 from "@assets/image_1769451804559.png";
+import img4 from "@assets/image_1769451951304.png";
+import img5 from "@assets/image_1769452506659.png";
+import img6 from "@assets/image_1769452514652.png";
+import img7 from "@assets/image_1769452523508.png";
+import img8 from "@assets/image_1769452530056.png";
+import img9 from "@assets/WhatsApp_Image_2026-01-23_at_2.04.40_PM_1769446843150.jpeg";
+import img10 from "@assets/WhatsApp_Image_2026-01-23_at_7.05.34_PM_1769191699463.jpeg";
+import img11 from "@assets/WhatsApp_Image_2026-01-24_at_10.20.23_PM_1769446566616.jpeg";
+import img12 from "@assets/WhatsApp_Image_2026-01-24_at_10.24.54_PM_1769445655383.jpeg";
+import img13 from "@assets/WhatsApp_Image_2026-01-24_at_10.49.01_PM_1769443649883.jpeg";
+import img14 from "@assets/WhatsApp_Image_2026-01-24_at_10.50.09_PM_1769443660290.jpeg";
+import img15 from "@assets/WhatsApp_Image_2026-01-24_at_1.09.54_PM_1769256671119.jpeg";
+import img16 from "@assets/WhatsApp_Image_2026-01-24_at_11.11.41_AM_1769256463733.jpeg";
+import img17 from "@assets/WhatsApp_Image_2026-01-24_at_9.55.08_PM_1769437131112.jpeg";
+import img18 from "@assets/WhatsApp_Image_2026-01-24_at_9.57.22_PM_1769437368694.jpeg";
+import img19 from "@assets/WhatsApp_Image_2026-01-24_at_9.57.22_PM_1769443765494.jpeg";
+import img20 from "@assets/WhatsApp_Image_2026-01-26_at_5.22.48_PM_1769444599713.jpeg";
+
 const galleryImages = [
-  { id: 1, src: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&q=80", category: "Exterior", title: "Sleek Profile" },
-  { id: 2, src: "https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&q=80", category: "Interior", title: "Luxury Salon" },
-  { id: 3, src: "https://images.unsplash.com/photo-1621275471769-e6aa344546d5?auto=format&fit=crop&q=80", category: "Lifestyle", title: "Sunset Toast" },
-  { id: 4, src: "https://images.unsplash.com/photo-1605281317010-fe5ffe798166?auto=format&fit=crop&q=80", category: "Exterior", title: "Aerial View" },
-  { id: 5, src: "https://images.unsplash.com/photo-1544413647-795e1c1078ee?auto=format&fit=crop&q=80", category: "Interior", title: "Master Suite" },
-  { id: 6, src: "https://images.unsplash.com/photo-1562280963-8a5475549aa6?auto=format&fit=crop&q=80", category: "Lifestyle", title: "Dining on Deck" },
-  { id: 7, src: "https://images.unsplash.com/photo-1563299434-3670997f7480?auto=format&fit=crop&q=80", category: "Exterior", title: "Potomac Waters" },
-  { id: 8, src: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&q=80", category: "Interior", title: "Helm Station" },
-  { id: 9, src: "https://images.unsplash.com/photo-1517315003714-a071486bd9ea?auto=format&fit=crop&q=80", category: "Lifestyle", title: "Captain Mike" },
-  { id: 10, src: "https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&q=80", category: "Exterior", title: "Golden Hour" },
-  { id: 11, src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80", category: "Interior", title: "Kitchen Galley" },
-  { id: 12, src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80", category: "Lifestyle", title: "Celebration" },
-  { id: 13, src: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80", category: "Exterior", title: "The Wharf View" },
-  { id: 14, src: "https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&q=80", category: "Interior", title: "Guest Stateroom" },
-  { id: 15, src: "https://images.unsplash.com/photo-1517315003714-a071486bd9ea?auto=format&fit=crop&q=80", category: "Lifestyle", title: "Barber Lounge" },
-  { id: 16, src: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&q=80", category: "Exterior", title: "Night Lights" },
-  { id: 17, src: "https://images.unsplash.com/photo-1563299434-3670997f7480?auto=format&fit=crop&q=80", category: "Interior", title: "Lounge Area" },
-  { id: 18, src: "https://images.unsplash.com/photo-1605281317010-fe5ffe798166?auto=format&fit=crop&q=80", category: "Lifestyle", title: "Summer Vibe" },
-  { id: 19, src: "https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&q=80", category: "Exterior", title: "Potomac Bridge" },
-  { id: 20, src: "https://images.unsplash.com/photo-1562280963-8a5475549aa6?auto=format&fit=crop&q=80", category: "Interior", title: "Dining Detail" },
+  { id: 1, src: img1, category: "Exterior", title: "Luxury on the Potomac" },
+  { id: 2, src: img2, category: "Interior", title: "Premium Comfort" },
+  { id: 3, src: img3, category: "Lifestyle", title: "Unforgettable Moments" },
+  { id: 4, src: img4, category: "Exterior", title: "Sleek Design" },
+  { id: 5, src: img5, category: "Interior", title: "Elegant Spaces" },
+  { id: 6, src: img6, category: "Lifestyle", title: "Potomac Voyage" },
+  { id: 7, src: img7, category: "Exterior", title: "Golden Hour" },
+  { id: 8, src: img8, category: "Interior", title: "Refined Luxury" },
+  { id: 9, src: img9, category: "Lifestyle", title: "Elite Service" },
+  { id: 10, src: img10, category: "Exterior", title: "The Wharf Presence" },
+  { id: 11, src: img11, category: "Interior", title: "Master Suite" },
+  { id: 12, src: img12, category: "Lifestyle", title: "Sunset Celebration" },
+  { id: 13, src: img13, category: "Exterior", title: "Iconic Views" },
+  { id: 14, src: img14, category: "Interior", title: "Gourmet Galley" },
+  { id: 15, src: img15, category: "Lifestyle", title: "Exclusive Charter" },
+  { id: 16, src: img16, category: "Exterior", title: "Washington DC Backdrop" },
+  { id: 17, src: img17, category: "Interior", title: "Social Lounge" },
+  { id: 18, src: img18, category: "Lifestyle", title: "Summer Vibes" },
+  { id: 19, src: img19, category: "Exterior", title: "Potomac Serenity" },
+  { id: 20, src: img20, category: "Interior", title: "Exquisite Details" },
 ];
 
 export default function Gallery() {
@@ -51,7 +72,7 @@ export default function Gallery() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.05 }}
+              transition={{ delay: (index % 6) * 0.1 }}
               className="group relative aspect-[4/5] cursor-pointer overflow-hidden rounded-none"
               onClick={() => openImage(index)}
               data-testid={`gallery-item-${image.id}`}
