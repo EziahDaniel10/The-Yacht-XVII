@@ -57,6 +57,12 @@ export function Navigation() {
             <Link
               key={link.href}
               href={link.href}
+              onClick={(e) => {
+                if (link.href === "/#reviews" && location === "/") {
+                  e.preventDefault();
+                  document.getElementById("reviews")?.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
               className={cn(
                 "text-sm font-medium tracking-wide uppercase transition-colors hover:text-primary",
                 isTransparent 
@@ -102,11 +108,17 @@ export function Navigation() {
                   <Link 
                     key={link.href} 
                     href={link.href} 
+                    onClick={(e) => {
+                      setIsOpen(false);
+                      if (link.href === "/#reviews" && location === "/") {
+                        e.preventDefault();
+                        document.getElementById("reviews")?.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
                     className={cn(
                       "text-2xl font-serif transition-colors",
                       location === link.href ? "text-primary" : "text-foreground/80"
                     )}
-                    onClick={() => setIsOpen(false)}
                   >
                     {link.label}
                   </Link>

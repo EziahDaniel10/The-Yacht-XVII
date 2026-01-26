@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { ArrowRight, Anchor, Sunset, Wine, Star } from "lucide-react";
 import hero1 from "@/assets/images/hero-1.jpg";
 import heroBrand from "@/assets/images/hero-brand.jpg";
-import vesselInterior from "@/assets/images/vessel-interior.jpg";
+import vesselInterior from "@assets/WhatsApp_Image_2026-01-26_at_8.28.07_PM_1769457368746.jpeg";
 import voyageReady from "@/assets/images/voyage-ready.jpg";
 import review1 from "@/assets/images/review-1.png";
 import review2 from "@/assets/images/review-2.png";

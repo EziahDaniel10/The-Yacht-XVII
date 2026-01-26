@@ -24,6 +24,7 @@ import gallery17 from "@assets/WhatsApp_Image_2026-01-26_at_7.18.10_PM_176945399
 import gallery18 from "@assets/WhatsApp_Image_2026-01-26_at_7.18.11_PM_(1)_1769453991965.jpeg";
 import gallery19 from "@assets/WhatsApp_Image_2026-01-26_at_7.18.11_PM_(2)_1769453991966.jpeg";
 import gallery20 from "@assets/WhatsApp_Image_2026-01-26_at_7.18.11_PM_(3)_1769453991967.jpeg";
+import gallery21 from "@assets/WhatsApp_Image_2026-01-26_at_8.28.00_PM_1769457409810.jpeg";
 
 const galleryImages = [
   { id: 1, src: gallery1, category: "Lifestyle", title: "Luxury Lounge" },
@@ -46,6 +47,7 @@ const galleryImages = [
   { id: 18, src: gallery18, category: "Lifestyle", title: "Cheers to Luxury" },
   { id: 19, src: gallery19, category: "Lifestyle", title: "Relaxing Deck" },
   { id: 20, src: gallery20, category: "Lifestyle", title: "Social Gathering" },
+  { id: 21, src: gallery21, category: "Interior", title: "Sun-Drenched Salon" },
 ];
 
 export default function Gallery() {
