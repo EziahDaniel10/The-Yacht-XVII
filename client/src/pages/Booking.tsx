@@ -85,7 +85,7 @@ export default function Booking() {
                     <FormItem>
                       <FormLabel className="uppercase text-xs tracking-widest text-muted-foreground">Phone Number</FormLabel>
                       <FormControl>
-                        <Input placeholder="+1 (555) 000-0000" className="border-0 border-b border-border rounded-none px-0 focus-visible:ring-0 focus-visible:border-primary bg-transparent" {...field} />
+                        <Input placeholder="202-451-8809" className="border-0 border-b border-border rounded-none px-0 focus-visible:ring-0 focus-visible:border-primary bg-transparent" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>

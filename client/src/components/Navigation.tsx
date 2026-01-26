@@ -117,7 +117,7 @@ export function Navigation() {
               </nav>
               <div className="mt-auto p-8 text-center text-muted-foreground text-sm font-light">
                 <p>concierge@yachtxvii.com</p>
-                <p className="mt-2">+1 (555) 000-0000</p>
+                <p className="mt-2">202-451-8809</p>
               </div>
             </div>
           </SheetContent>

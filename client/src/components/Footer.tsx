@@ -29,8 +29,8 @@ export function Footer() {
           <h4 className="font-serif text-lg mb-6 text-primary">Contact</h4>
           <ul className="space-y-4 text-white/60">
             <li><a href="mailto:concierge@yachtxvii.com" className="hover:text-white transition-colors text-sm break-all">concierge@yachtxvii.com</a></li>
-            <li><a href="tel:+15550000000" className="hover:text-white transition-colors">+1 (555) 000-0000</a></li>
-            <li>Port Hercules, Monaco</li>
+            <li><a href="tel:+12024518809" className="hover:text-white transition-colors">202-451-8809</a></li>
+            <li>The Wharf Washington DC</li>
           </ul>
         </div>
 

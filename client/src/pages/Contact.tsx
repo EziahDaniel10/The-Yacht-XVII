@@ -48,14 +48,14 @@ export default function Contact() {
                 <MapPin className="w-6 h-6 text-primary mr-6 mt-1" />
                 <div>
                   <h4 className="font-serif text-xl mb-2">Location</h4>
-                  <p className="text-muted-foreground font-light">Quai des États-Unis<br/>98000 Monaco</p>
+                  <p className="text-muted-foreground font-light">The Wharf<br/>Washington DC</p>
                 </div>
               </div>
               <div className="flex items-start">
                 <Phone className="w-6 h-6 text-primary mr-6 mt-1" />
                 <div>
                   <h4 className="font-serif text-xl mb-2">Phone</h4>
-                  <p className="text-muted-foreground font-light">+1 (555) 000-0000</p>
+                  <p className="text-muted-foreground font-light">202-451-8809</p>
                   <p className="text-xs text-muted-foreground mt-1">Available 24/7 for members</p>
                 </div>
               </div>
