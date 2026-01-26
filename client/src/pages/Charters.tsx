@@ -4,13 +4,24 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Check } from "lucide-react";
 
+import halfDayImg from "@/assets/images/half-day-escape.jpg";
+
 const packages = [
   {
     title: "Half-Day Escape",
-    price: "From €2,500",
-    description: "A perfect 4-hour introduction to the luxury yachting lifestyle. Ideal for a morning swim or afternoon cocktail cruise.",
-    features: ["4 Hours Cruising", "Welcome Champagne", "Snorkeling Gear", "Fuel Included (Local)"],
-    image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=2070&auto=format&fit=crop"
+    price: "$1,750 - $2,000",
+    description: "A refined 4-hour introduction to the luxury yachting lifestyle. Experience the Potomac with unparalleled elegance and dedicated service.",
+    features: [
+      "4 Hours Cruising", 
+      "Fuel Included", 
+      "Ice & Water Included", 
+      "Food & Beverages Allowed",
+      "Upgrades: Hookah, Pre-order Menu",
+      "Cleaning Fee: $150",
+      "Gratuity: 20% of package"
+    ],
+    image: halfDayImg,
+    note: "Weekday: $1,750 | Weekend: $2,000"
   },
   {
     title: "Full-Day Voyage",
@@ -54,8 +65,9 @@ export default function Charters() {
             <div className={`order-2 lg:order-${index % 2 === 1 ? '1' : '2'}`}>
               <div className="relative h-[400px] lg:h-[500px] shadow-2xl">
                 <img src={pkg.image} alt={pkg.title} className="w-full h-full object-cover" />
-                <div className="absolute top-0 right-0 bg-primary text-white py-4 px-8 font-serif text-xl italic">
-                  {pkg.price}
+                <div className="absolute top-0 right-0 bg-primary text-white py-4 px-8 font-serif text-xl italic flex flex-col items-end">
+                  <span>{pkg.price}</span>
+                  {pkg.note && <span className="text-[10px] uppercase tracking-widest font-sans not-italic mt-1">{pkg.note}</span>}
                 </div>
               </div>
             </div>
