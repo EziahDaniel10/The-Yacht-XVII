@@ -3,6 +3,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import interiorImg from "@/assets/images/yacht-interior-2.jpg";
+import cockpitImg from "@/assets/images/yacht-cockpit.jpg";
 
 const specs = [
   { label: "Length", value: "50 ft" },
@@ -14,10 +15,10 @@ const specs = [
 ];
 
 const gallery = [
+  cockpitImg,
   interiorImg,
   "https://images.unsplash.com/photo-1621275471769-e6aa344546d5?q=80&w=2073&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1566375638419-dd89cf109716?q=80&w=2073&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2070&auto=format&fit=crop",
 ];
 
 export default function Yacht() {
