@@ -66,8 +66,7 @@ export default function About() {
             className="absolute -bottom-8 -left-8 w-64 h-64 bg-[#0A192F] p-8 flex items-center justify-center text-center"
           >
             <div>
-              <span className="block text-4xl font-serif text-primary font-bold mb-2">20</span>
-              <span className="text-white/80 uppercase tracking-widest text-xs">Years of Excellence</span>
+              <span className="block text-3xl font-serif text-primary font-bold mb-2">Captain Mike</span>
             </div>
           </motion.div>
         </motion.div>
