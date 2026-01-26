@@ -4,48 +4,48 @@ import { useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-import img1 from "@assets/image_1769437410924.png";
-import img2 from "@assets/image_1769437570817.png";
-import img3 from "@assets/image_1769451804559.png";
-import img4 from "@assets/image_1769451951304.png";
-import img5 from "@assets/image_1769452506659.png";
-import img6 from "@assets/image_1769452514652.png";
-import img7 from "@assets/image_1769452523508.png";
-import img8 from "@assets/image_1769452530056.png";
-import img9 from "@assets/WhatsApp_Image_2026-01-23_at_2.04.40_PM_1769446843150.jpeg";
-import img10 from "@assets/WhatsApp_Image_2026-01-23_at_7.05.34_PM_1769191699463.jpeg";
-import img11 from "@assets/WhatsApp_Image_2026-01-24_at_10.20.23_PM_1769446566616.jpeg";
-import img12 from "@assets/WhatsApp_Image_2026-01-24_at_10.24.54_PM_1769445655383.jpeg";
-import img13 from "@assets/WhatsApp_Image_2026-01-24_at_10.49.01_PM_1769443649883.jpeg";
-import img14 from "@assets/WhatsApp_Image_2026-01-24_at_10.50.09_PM_1769443660290.jpeg";
-import img15 from "@assets/WhatsApp_Image_2026-01-24_at_1.09.54_PM_1769256671119.jpeg";
-import img16 from "@assets/WhatsApp_Image_2026-01-24_at_11.11.41_AM_1769256463733.jpeg";
-import img17 from "@assets/WhatsApp_Image_2026-01-24_at_9.55.08_PM_1769437131112.jpeg";
-import img18 from "@assets/WhatsApp_Image_2026-01-24_at_9.57.22_PM_1769437368694.jpeg";
-import img19 from "@assets/WhatsApp_Image_2026-01-24_at_9.57.22_PM_1769443765494.jpeg";
-import img20 from "@assets/WhatsApp_Image_2026-01-26_at_5.22.48_PM_1769444599713.jpeg";
+import gallery1 from "@assets/WhatsApp_Image_2026-01-26_at_7.18.11_PM_1769453991950.jpeg";
+import gallery2 from "@assets/WhatsApp_Image_2026-01-26_at_7.18.12_PM_1769453991951.jpeg";
+import gallery3 from "@assets/WhatsApp_Image_2026-01-26_at_7.18.13_PM_(1)_1769453991952.jpeg";
+import gallery4 from "@assets/WhatsApp_Image_2026-01-26_at_7.18.13_PM_(2)_1769453991953.jpeg";
+import gallery5 from "@assets/WhatsApp_Image_2026-01-26_at_7.18.13_PM_(3)_1769453991954.jpeg";
+import gallery6 from "@assets/WhatsApp_Image_2026-01-26_at_7.18.13_PM_1769453991954.jpeg";
+import gallery7 from "@assets/WhatsApp_Image_2026-01-26_at_7.18.14_PM_(1)_1769453991955.jpeg";
+import gallery8 from "@assets/WhatsApp_Image_2026-01-26_at_7.18.14_PM_(2)_1769453991956.jpeg";
+import gallery9 from "@assets/WhatsApp_Image_2026-01-26_at_7.18.14_PM_1769453991956.jpeg";
+import gallery10 from "@assets/WhatsApp_Image_2026-01-26_at_7.17.55_PM_(2)_1769453991957.jpeg";
+import gallery11 from "@assets/WhatsApp_Image_2026-01-26_at_7.17.55_PM_1769453991958.jpeg";
+import gallery12 from "@assets/WhatsApp_Image_2026-01-26_at_7.17.56_PM_(1)_1769453991958.jpeg";
+import gallery13 from "@assets/WhatsApp_Image_2026-01-26_at_7.17.57_PM_1769453991960.jpeg";
+import gallery14 from "@assets/WhatsApp_Image_2026-01-26_at_7.17.58_PM_1769453991961.jpeg";
+import gallery15 from "@assets/WhatsApp_Image_2026-01-26_at_7.18.09_PM_1769453991963.jpeg";
+import gallery16 from "@assets/WhatsApp_Image_2026-01-26_at_7.18.10_PM_(1)_1769453991964.jpeg";
+import gallery17 from "@assets/WhatsApp_Image_2026-01-26_at_7.18.10_PM_1769453991965.jpeg";
+import gallery18 from "@assets/WhatsApp_Image_2026-01-26_at_7.18.11_PM_(1)_1769453991965.jpeg";
+import gallery19 from "@assets/WhatsApp_Image_2026-01-26_at_7.18.11_PM_(2)_1769453991966.jpeg";
+import gallery20 from "@assets/WhatsApp_Image_2026-01-26_at_7.18.11_PM_(3)_1769453991967.jpeg";
 
 const galleryImages = [
-  { id: 1, src: img1, category: "Exterior", title: "Luxury on the Potomac" },
-  { id: 2, src: img2, category: "Interior", title: "Premium Comfort" },
-  { id: 3, src: img3, category: "Lifestyle", title: "Unforgettable Moments" },
-  { id: 4, src: img4, category: "Exterior", title: "Sleek Design" },
-  { id: 5, src: img5, category: "Interior", title: "Elegant Spaces" },
-  { id: 6, src: img6, category: "Lifestyle", title: "Potomac Voyage" },
-  { id: 7, src: img7, category: "Exterior", title: "Golden Hour" },
-  { id: 8, src: img8, category: "Interior", title: "Refined Luxury" },
-  { id: 9, src: img9, category: "Lifestyle", title: "Elite Service" },
-  { id: 10, src: img10, category: "Exterior", title: "The Wharf Presence" },
-  { id: 11, src: img11, category: "Interior", title: "Master Suite" },
-  { id: 12, src: img12, category: "Lifestyle", title: "Sunset Celebration" },
-  { id: 13, src: img13, category: "Exterior", title: "Iconic Views" },
-  { id: 14, src: img14, category: "Interior", title: "Gourmet Galley" },
-  { id: 15, src: img15, category: "Lifestyle", title: "Exclusive Charter" },
-  { id: 16, src: img16, category: "Exterior", title: "Washington DC Backdrop" },
-  { id: 17, src: img17, category: "Interior", title: "Social Lounge" },
-  { id: 18, src: img18, category: "Lifestyle", title: "Summer Vibes" },
-  { id: 19, src: img19, category: "Exterior", title: "Potomac Serenity" },
-  { id: 20, src: img20, category: "Interior", title: "Exquisite Details" },
+  { id: 1, src: gallery1, category: "Lifestyle", title: "Luxury Lounge" },
+  { id: 2, src: gallery2, category: "Lifestyle", title: "Potomac Views" },
+  { id: 3, src: gallery3, category: "Interior", title: "Elite Interior" },
+  { id: 4, src: gallery4, category: "Lifestyle", title: "Golden Hour" },
+  { id: 5, src: gallery5, category: "Interior", title: "Premium Comfort" },
+  { id: 6, src: gallery6, category: "Lifestyle", title: "On-Deck Fun" },
+  { id: 7, src: gallery7, category: "Lifestyle", title: "Group Celebration" },
+  { id: 8, src: gallery8, category: "Interior", title: "Luxury Details" },
+  { id: 9, src: gallery9, category: "Lifestyle", title: "Sunset Vibe" },
+  { id: 10, src: gallery10, category: "Lifestyle", title: "Evening Lights" },
+  { id: 11, src: gallery11, category: "Exterior", title: "The Yacht XVII" },
+  { id: 12, src: gallery12, category: "Exterior", title: "Capital Wheel View" },
+  { id: 13, src: gallery13, category: "Lifestyle", title: "Friends Aboard" },
+  { id: 14, src: gallery14, category: "Exterior", title: "Wharf Presence" },
+  { id: 15, src: gallery15, category: "Lifestyle", title: "City Lights" },
+  { id: 16, src: gallery16, category: "Exterior", title: "Night Skyline" },
+  { id: 17, src: gallery17, category: "Lifestyle", title: "Guest Experience" },
+  { id: 18, src: gallery18, category: "Lifestyle", title: "Cheers to Luxury" },
+  { id: 19, src: gallery19, category: "Lifestyle", title: "Relaxing Deck" },
+  { id: 20, src: gallery20, category: "Lifestyle", title: "Social Gathering" },
 ];
 
 export default function Gallery() {
@@ -54,14 +54,14 @@ export default function Gallery() {
   const openImage = (index: number) => setSelectedImage(index);
   const closeImage = () => setSelectedImage(null);
   const nextImage = () => setSelectedImage((prev) => (prev !== null ? (prev + 1) % galleryImages.length : null));
-  const prevImage = () => setSelectedImage((prev) => (prev !== null ? (prev - 1 + galleryImages.length) % galleryImages.length : null));
+  const prevImage = () => setSelectedImage((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
 
   return (
     <div className="pt-24 pb-20">
       <div className="container-wide">
         <SectionHeading
           title="The Gallery"
-          subtitle="Explore the exquisite details of Yacht XVII and the unforgettable experiences on the Potomac."
+          subtitle="Authentic moments and exquisite details from our latest charters on the Potomac."
           centered
         />
 
@@ -112,13 +112,16 @@ export default function Gallery() {
             variant="ghost"
             size="icon"
             className="absolute left-6 text-white hover:bg-white/10"
-            onClick={prevImage}
+            onClick={(e) => {
+              e.stopPropagation();
+              prevImage();
+            }}
             data-testid="button-prev-image"
           >
             <ChevronLeft className="h-10 w-10" />
           </Button>
 
-          <div className="relative max-h-[85vh] max-w-[90vw]">
+          <div className="relative max-h-[85vh] max-w-[90vw]" onClick={(e) => e.stopPropagation()}>
             <img
               src={galleryImages[selectedImage].src}
               alt={galleryImages[selectedImage].title}
@@ -138,7 +141,10 @@ export default function Gallery() {
             variant="ghost"
             size="icon"
             className="absolute right-6 text-white hover:bg-white/10"
-            onClick={nextImage}
+            onClick={(e) => {
+              e.stopPropagation();
+              nextImage();
+            }}
             data-testid="button-next-image"
           >
             <ChevronRight className="h-10 w-10" />
