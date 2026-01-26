@@ -8,6 +8,10 @@ import hero1 from "@/assets/images/hero-1.jpg";
 import heroBrand from "@/assets/images/hero-brand.jpg";
 import vesselInterior from "@/assets/images/vessel-interior.jpg";
 import voyageReady from "@/assets/images/voyage-ready.jpg";
+import review1 from "@/assets/images/review-1.png";
+import review2 from "@/assets/images/review-2.png";
+import review3 from "@/assets/images/review-3.png";
+import review4 from "@/assets/images/review-4.png";
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -246,6 +250,31 @@ export default function Home() {
             </Button>
           </Link>
         </motion.div>
+      </section>
+
+      {/* Reviews Section */}
+      <section id="reviews" className="py-24 bg-secondary/20">
+        <div className="container-wide">
+          <SectionHeading centered subtitle="Testimonials" title="Guest Experiences" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+            {[review1, review2, review3, review4].map((src, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: i * 0.1 }}
+                className="bg-white p-4 shadow-md border border-border"
+              >
+                <img 
+                  src={src} 
+                  alt={`Guest Review ${i + 1}`} 
+                  className="w-full h-auto object-contain"
+                />
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </section>
     </div>
   );
