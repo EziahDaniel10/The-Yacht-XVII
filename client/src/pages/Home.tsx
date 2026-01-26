@@ -59,7 +59,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif mb-6 md:mb-8 leading-tight"
           >
-            Experience the Art <br className="hidden sm:block"/> of Luxury at Sea
+            Experience the Art <br className="hidden sm:block"/> of Luxury on the Potomac
           </motion.h1>
 
           <motion.div
