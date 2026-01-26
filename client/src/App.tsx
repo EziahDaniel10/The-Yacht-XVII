@@ -17,6 +17,8 @@ import NotFound from "@/pages/not-found";
 import { useEffect } from "react";
 import { useLocation } from "wouter";
 
+import FAQ from "@/pages/FAQ";
+
 // Scroll to top component for Wouter
 function ScrollToTopWrapper() {
   const [pathname] = useLocation();
@@ -39,6 +41,7 @@ function Router() {
           <Route path="/charters" component={Charters} />
           <Route path="/booking" component={Booking} />
           <Route path="/contact" component={Contact} />
+          <Route path="/faq" component={FAQ} />
           <Route component={NotFound} />
         </Switch>
       </main>

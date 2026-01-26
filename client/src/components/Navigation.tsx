@@ -10,6 +10,7 @@ const links = [
   { href: "/about", label: "Our Story" },
   { href: "/yacht", label: "The Yacht" },
   { href: "/charters", label: "Experiences" },
+  { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
 ];
 
