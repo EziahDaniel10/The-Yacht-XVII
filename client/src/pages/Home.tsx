@@ -13,6 +13,13 @@ import review2 from "@/assets/images/review-2.png";
 import review3 from "@/assets/images/review-3.png";
 import review4 from "@/assets/images/review-4.png";
 
+import gallery1 from "@assets/WhatsApp_Image_2026-01-26_at_7.18.11_PM_1769453991950.jpeg";
+import gallery2 from "@assets/WhatsApp_Image_2026-01-26_at_7.18.12_PM_1769453991951.jpeg";
+import gallery3 from "@assets/WhatsApp_Image_2026-01-26_at_7.18.13_PM_(1)_1769453991952.jpeg";
+import gallery4 from "@assets/WhatsApp_Image_2026-01-26_at_7.18.13_PM_(2)_1769453991953.jpeg";
+import gallery5 from "@assets/WhatsApp_Image_2026-01-26_at_7.18.13_PM_(3)_1769453991954.jpeg";
+import gallery6 from "@assets/WhatsApp_Image_2026-01-26_at_7.18.13_PM_1769453991954.jpeg";
+
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [hero1, heroBrand, hero1];
@@ -250,6 +257,38 @@ export default function Home() {
             </Button>
           </Link>
         </motion.div>
+      </section>
+
+      {/* Gallery Preview Section */}
+      <section className="py-24 bg-white">
+        <div className="container-wide">
+          <SectionHeading centered subtitle="Visual Journey" title="A Glimpse of Yacht XVII" />
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mt-16">
+            {[gallery1, gallery2, gallery3, gallery4, gallery5, gallery6].map((src, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="aspect-[4/5] overflow-hidden"
+              >
+                <img 
+                  src={src} 
+                  alt={`Gallery Preview ${i + 1}`} 
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                />
+              </motion.div>
+            ))}
+          </div>
+          <div className="text-center mt-16">
+            <Link href="/gallery">
+              <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white rounded-none px-10 py-6 text-lg font-serif italic tracking-wide">
+                View More <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
+        </div>
       </section>
 
       {/* Reviews Section */}
