@@ -4,6 +4,10 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 const faqs = [
   {
+    question: "What are the rules and guest conduct policies?",
+    answer: "Safety and legal compliance are our top priorities. No weapons or illegal drugs (including marijuana) are allowed onboard. Guests must follow captain and crew instructions at all times. Smoking is only permitted in designated areas.arguing or disruptive behavior is not allowed — 'good vibes only'. Please respect yacht restroom etiquette and docking regulations."
+  },
+  {
     question: "Is there a bathroom onboard?",
     answer: "Yes. The Yacht XVII is equipped with a fully functional restroom for guest convenience."
   },

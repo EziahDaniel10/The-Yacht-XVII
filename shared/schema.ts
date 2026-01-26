@@ -11,6 +11,8 @@ export const bookings = pgTable("bookings", {
   guests: integer("guests").notNull(),
   charterType: text("charter_type").notNull(),
   specialRequests: text("special_requests"),
+  agreedToRules: text("agreed_to_rules").notNull().default('false'),
+  agreedToSafety: text("agreed_to_safety").notNull().default('false'),
   createdAt: timestamp("created_at").defaultNow(),
 });
 

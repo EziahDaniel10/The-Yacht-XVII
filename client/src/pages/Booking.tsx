@@ -15,6 +15,8 @@ import { format } from "date-fns";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 
+import { Checkbox } from "@/components/ui/checkbox";
+
 export default function Booking() {
   const { mutate, isPending } = useCreateBooking();
   
@@ -27,6 +29,8 @@ export default function Booking() {
       guests: 2,
       charterType: "Full-Day",
       specialRequests: "",
+      agreedToRules: "false",
+      agreedToSafety: "false",
     },
   });
 
@@ -191,6 +195,54 @@ export default function Booking() {
                   </FormItem>
                 )}
               />
+
+              <div className="space-y-6 pt-4 text-left">
+                <FormField
+                  control={form.control}
+                  name="agreedToRules"
+                  render={({ field }) => (
+                    <FormItem className="flex flex-row items-start space-x-3 space-y-0 p-4 bg-secondary/20 border border-primary/10">
+                      <FormControl>
+                        <Checkbox
+                          checked={field.value === "true"}
+                          onCheckedChange={(checked) => field.onChange(checked ? "true" : "false")}
+                        />
+                      </FormControl>
+                      <div className="space-y-1 leading-none">
+                        <FormLabel className="text-sm font-medium text-foreground cursor-pointer">
+                          I acknowledge and agree to The Yacht XVII Charter Rules, Waiver, and Policies.
+                        </FormLabel>
+                        <p className="text-xs text-muted-foreground font-light leading-relaxed">
+                          I understand that this charter operates under federal maritime law and that failure to comply with vessel rules, captain and crew instructions, or safety policies may result in immediate termination of the charter without refund.
+                        </p>
+                      </div>
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="agreedToSafety"
+                  render={({ field }) => (
+                    <FormItem className="flex flex-row items-start space-x-3 space-y-0 p-4 bg-secondary/20 border border-primary/10">
+                      <FormControl>
+                        <Checkbox
+                          checked={field.value === "true"}
+                          onCheckedChange={(checked) => field.onChange(checked ? "true" : "false")}
+                        />
+                      </FormControl>
+                      <div className="space-y-1 leading-none">
+                        <FormLabel className="text-sm font-medium text-foreground cursor-pointer">
+                          Safety & Conduct Acknowledgement
+                        </FormLabel>
+                        <p className="text-xs text-muted-foreground font-light leading-relaxed">
+                          I understand that marijuana, illegal drugs, weapons, and disruptive behavior are strictly prohibited onboard and that violations may result in charter termination and notification of authorities.
+                        </p>
+                      </div>
+                    </FormItem>
+                  )}
+                />
+              </div>
 
               <div className="pt-4 text-center">
                 <Button 
