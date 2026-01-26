@@ -24,7 +24,7 @@ export default function Yacht() {
   return (
     <div className="pt-24 min-h-screen bg-background">
       {/* Header */}
-      <div className="container-wide py-12 text-center">
+      <div className="container-wide py-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -35,7 +35,7 @@ export default function Yacht() {
       </div>
 
       {/* Gallery Carousel */}
-      <div className="container-wide mb-24">
+      <div className="container-wide mb-16">
         <Carousel className="w-full">
           <CarouselContent>
             {gallery.map((src, index) => (
