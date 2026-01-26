@@ -41,11 +41,12 @@ const packages = [
     note: "Weekday: $3,500 | Weekend: $4,000"
   },
   {
-    title: "Sunset & Champagne",
-    price: "From $1,800",
+    title: "Date Night, Sunset & Champagne",
+    price: "$1,250 - $1,650",
     description: "Watch the sun dip below the horizon from the most exclusive venue in the city. Romantic, serene, and unforgettable.",
     features: ["3 Hours Evening Cruise", "Premium Champagne", "Canapés", "Atmospheric Lighting"],
-    image: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?q=80&w=2038&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?q=80&w=2038&auto=format&fit=crop",
+    note: "Weekday: $1,250 | Weekend: $1,650"
   }
 ];
 
