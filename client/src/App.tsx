@@ -4,9 +4,6 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import ScrollToTop from "@/components/ScrollToTop"; // We'll assume this helper exists or create inline if strictly needed, but standard routing scrolls to top usually. Wouter doesn't auto-scroll.
-
-// Page Imports
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Yacht from "@/pages/Yacht";

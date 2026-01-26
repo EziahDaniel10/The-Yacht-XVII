@@ -99,7 +99,7 @@ export default function Home() {
               Yacht XVII is not just a vessel; it is a destination. Meticulously designed for the discerning traveler, we offer an unparalleled blend of comfort, style, and adventure. Whether you seek a serene sunset escape or a city night light watch in Washington DC, our crew is dedicated to crafting unforgettable moments.
             </p>
             <Link href="/about">
-              <Button variant="link" className="p-0 text-primary text-lg font-serif italic hover:text-primary/80">
+              <Button variant="ghost" className="p-0 text-primary text-lg font-serif italic hover:text-primary/80 no-underline hover:no-underline">
                 Discover Our Story <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
