@@ -54,7 +54,7 @@ export default function Gallery() {
   const openImage = (index: number) => setSelectedImage(index);
   const closeImage = () => setSelectedImage(null);
   const nextImage = () => setSelectedImage((prev) => (prev !== null ? (prev + 1) % galleryImages.length : null));
-  const prevImage = () => setSelectedImage((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+  const prevImage = () => setSelectedImage((prev) => (prev !== null ? (prev - 1 + galleryImages.length) % galleryImages.length : null));
 
   return (
     <div className="pt-24 pb-20">

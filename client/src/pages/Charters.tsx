@@ -8,8 +8,40 @@ import halfDayImg from "@/assets/images/half-day-escape.jpg";
 import fullDayImg from "@/assets/images/full-day-voyage.jpg";
 import sunsetImg from "@/assets/images/sunset-champagne.jpg";
 import afterPartyImg from "@/assets/images/after-party.jpg";
+import yachtPartyImg from "@assets/WhatsApp_Image_2026-01-26_at_7.18.11_PM_(1)_1769455016115.jpeg";
+import justCruisingImg from "@assets/WhatsApp_Image_2026-01-26_at_7.18.11_PM_1769455016113.jpeg";
 
 const packages = [
+  {
+    title: "Just Cruising",
+    price: "$900 - $1,150",
+    description: "A perfect 2-hour escape for those who want to experience the Potomac without the commitment of a full day. Ideal for quick sightseeing or a refreshing break.",
+    features: [
+      "2 Hour Cruise",
+      "Fuel Included",
+      "Water & Ice Included",
+      "Food and Beverages Allowed",
+      "Cleaning Fee: $150",
+      "Gratuity: 20% of package"
+    ],
+    image: justCruisingImg,
+    note: "Weekday: $900 | Weekend: $1,150"
+  },
+  {
+    title: "The Yacht Party",
+    price: "$1,250 - $1,650",
+    description: "The ultimate 3-hour social experience. Whether it's a birthday, celebration, or just a group of friends, this package sets the perfect stage for a vibrant party.",
+    features: [
+      "3 Hours Cruising",
+      "Fuel Included",
+      "Ice & Water Included",
+      "Perfect for Group Celebrations",
+      "Cleaning Fee: $150",
+      "Gratuity: 20% of package"
+    ],
+    image: yachtPartyImg,
+    note: "Weekday: $1,250 | Weekend: $1,650"
+  },
   {
     title: "Half-Day Escape",
     price: "$1,750 - $2,000",
