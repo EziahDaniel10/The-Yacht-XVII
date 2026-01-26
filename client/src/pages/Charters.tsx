@@ -7,6 +7,7 @@ import { Check } from "lucide-react";
 import halfDayImg from "@/assets/images/half-day-escape.jpg";
 import fullDayImg from "@/assets/images/full-day-voyage.jpg";
 import sunsetImg from "@/assets/images/sunset-champagne.jpg";
+import afterPartyImg from "@/assets/images/after-party.jpg";
 
 const packages = [
   {
@@ -48,6 +49,21 @@ const packages = [
     features: ["3 Hours Evening Cruise", "Premium Champagne", "Canapés", "Atmospheric Lighting"],
     image: sunsetImg,
     note: "Weekday: $1,250 | Weekend: $1,650"
+  },
+  {
+    title: "After Party",
+    price: "$2,250",
+    description: "The ultimate late-night experience on the water. Start your celebration when the city sleeps with bespoke service and vibrant energy.",
+    features: [
+      "3 Hours (Starts after Midnight)",
+      "Premium Bottle Service",
+      "Hookah Service Available",
+      "Pre-order Food Menu",
+      "Atmospheric Lighting & Sound",
+      "Dedicated Crew"
+    ],
+    image: afterPartyImg,
+    note: "Flat Rate: $2,250"
   }
 ];
 
