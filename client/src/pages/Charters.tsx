@@ -6,6 +6,7 @@ import { Check } from "lucide-react";
 
 import halfDayImg from "@/assets/images/half-day-escape.jpg";
 import fullDayImg from "@/assets/images/full-day-voyage.jpg";
+import sunsetImg from "@/assets/images/sunset-champagne.jpg";
 
 const packages = [
   {
@@ -45,7 +46,7 @@ const packages = [
     price: "$1,250 - $1,650",
     description: "Watch the sun dip below the horizon from the most exclusive venue in the city. Romantic, serene, and unforgettable.",
     features: ["3 Hours Evening Cruise", "Premium Champagne", "Canapés", "Atmospheric Lighting"],
-    image: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?q=80&w=2038&auto=format&fit=crop",
+    image: sunsetImg,
     note: "Weekday: $1,250 | Weekend: $1,650"
   }
 ];
