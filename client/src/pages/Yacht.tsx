@@ -22,12 +22,13 @@ const gallery = [
 
 export default function Yacht() {
   return (
-    <div className="pt-24 min-h-screen bg-background">
+    <div className="pt-24 min-h-screen bg-background overflow-hidden">
       {/* Header */}
       <div className="container-wide py-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
           <SectionHeading centered subtitle="The Vessel" title="Technical Brilliance" />
@@ -35,7 +36,13 @@ export default function Yacht() {
       </div>
 
       {/* Gallery Carousel */}
-      <div className="container-wide mb-16">
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+        className="container-wide mb-16"
+      >
         <Carousel className="w-full">
           <CarouselContent>
             {gallery.map((src, index) => (
@@ -53,12 +60,17 @@ export default function Yacht() {
             <CarouselNext className="-right-12 border-primary text-primary hover:bg-primary hover:text-white" />
           </div>
         </Carousel>
-      </div>
+      </motion.div>
 
       {/* Specs Section */}
       <div className="bg-[#0A192F] py-32 text-white">
-        <div className="container-wide grid grid-cols-1 md:grid-cols-2 gap-20">
-          <div>
+        <div className="container-wide grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
             <SectionHeading subtitle="Specifications" title="Designed for Performance" light />
             <p className="text-white/60 font-light text-lg mb-8 leading-relaxed">
               Yacht XVII combines sleek Italian design with robust engineering. Capable of reaching remote coves quickly while maintaining stability, she is the perfect vessel for exploring the coastline.
@@ -66,8 +78,14 @@ export default function Yacht() {
             <p className="text-white/60 font-light text-lg leading-relaxed">
               The interior is finished in bleached oak and Italian marble, creating a bright, airy atmosphere that connects you with the surrounding sea.
             </p>
-          </div>
-          <div className="bg-white/5 p-8 border border-white/10">
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="bg-white/5 p-8 border border-white/10"
+          >
              <Table>
                <TableBody>
                  {specs.map((spec) => (
@@ -78,7 +96,7 @@ export default function Yacht() {
                  ))}
                </TableBody>
              </Table>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

@@ -1,32 +1,51 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ArrowRight, Anchor, Sunset, Wine, Star } from "lucide-react";
-import heroYacht from "@/assets/images/hero-yacht.jpg";
-import welcomeYacht from "@/assets/images/welcome-yacht.jpg";
+import hero1 from "@/assets/images/hero-1.jpg";
+import heroBrand from "@/assets/images/hero-brand.jpg";
 import vesselInterior from "@/assets/images/vessel-interior.jpg";
 import voyageReady from "@/assets/images/voyage-ready.jpg";
 
 export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = [hero1, heroBrand, hero1];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [slides.length]);
+
   return (
     <div className="bg-background">
       {/* Hero Section */}
       <section className="relative h-screen min-h-[600px] md:min-h-[800px] flex items-center justify-center overflow-hidden">
-        {/* Abstract Luxury Yacht Background */}
+        {/* Slideshow Background */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/40 z-10" />
-          <img 
-            src={heroYacht} 
-            alt="Luxury Yacht XVII" 
-            className="w-full h-full object-cover"
-          />
+          <AnimatePresence mode="wait">
+            <motion.img 
+              key={currentSlide}
+              src={slides[currentSlide]} 
+              alt={`Luxury Yacht XVII - Slide ${currentSlide + 1}`} 
+              initial={{ opacity: 0, scale: 1.1 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.5 }}
+              className="w-full h-full object-cover"
+            />
+          </AnimatePresence>
         </div>
 
         <div className="relative z-20 container-wide text-center text-white pt-10 px-4">
           <motion.span 
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="block text-xs md:text-base font-bold uppercase tracking-[0.3em] mb-4 md:mb-6 text-primary-foreground/90"
           >
@@ -35,7 +54,8 @@ export default function Home() {
           
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif mb-6 md:mb-8 leading-tight"
           >
@@ -44,7 +64,8 @@ export default function Home() {
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <Link href="/booking">
@@ -59,7 +80,13 @@ export default function Home() {
       {/* Intro Section */}
       <section className="py-20 md:py-32 bg-white">
         <div className="container-wide grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
-          <div className="order-2 md:order-1">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="order-2 md:order-1"
+          >
             <SectionHeading 
               subtitle="Welcome Aboard" 
               title="A Sanctuary of Elegance on the Open Ocean" 
@@ -72,26 +99,39 @@ export default function Home() {
                 Discover Our Story <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
-          </div>
-          <div className="order-1 md:order-2 relative h-[400px] md:h-[600px] w-full bg-secondary overflow-hidden">
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="order-1 md:order-2 relative h-[400px] md:h-[600px] w-full bg-secondary overflow-hidden"
+          >
             <img 
-              src={welcomeYacht} 
+              src={heroBrand} 
               alt="Luxury Lifestyle" 
               className="w-full h-full object-contain bg-[#0A192F] transition-transform duration-700 hover:scale-105"
             />
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Services/Highlights */}
-      <section className="py-24 bg-[#0A192F] text-white">
+      <section className="py-24 bg-[#0A192F] text-white overflow-hidden">
         <div className="container-wide">
-          <SectionHeading 
-            subtitle="Our Services" 
-            title="Tailored Experiences" 
-            light 
-            centered 
-          />
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <SectionHeading 
+              subtitle="Our Services" 
+              title="Tailored Experiences" 
+              light 
+              centered 
+            />
+          </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
             {[
@@ -111,28 +151,47 @@ export default function Home() {
                 desc: "Host intimate gatherings, celebrations, or corporate meetings in absolute privacy."
               }
             ].map((item, i) => (
-              <div key={i} className="group p-8 border border-white/10 hover:border-primary/50 transition-colors bg-white/5 hover:bg-white/10">
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: i * 0.2 }}
+                className="group p-8 border border-white/10 hover:border-primary/50 transition-colors bg-white/5 hover:bg-white/10"
+              >
                 <div className="mb-6">{item.icon}</div>
                 <h3 className="text-2xl font-serif mb-4">{item.title}</h3>
                 <p className="text-white/60 font-light leading-relaxed">{item.desc}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Feature Highlight */}
-      <section className="py-24 md:py-32 bg-secondary/30">
+      <section className="py-24 md:py-32 bg-secondary/30 overflow-hidden">
         <div className="container-wide">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-            <div className="md:col-span-7 relative h-[300px] md:h-[700px] bg-white shadow-2xl">
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="md:col-span-7 relative h-[300px] md:h-[700px] bg-white shadow-2xl"
+            >
               <img 
                 src={vesselInterior} 
                 alt="Interior" 
                 className="w-full h-full object-cover"
               />
-            </div>
-            <div className="md:col-span-5 md:-ml-12 z-10 bg-white p-8 md:p-12 shadow-xl border-l-4 border-primary">
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="md:col-span-5 md:-ml-12 z-10 bg-white p-8 md:p-12 shadow-xl border-l-4 border-primary"
+            >
               <SectionHeading subtitle="The Vessel" title="Uncompromising Comfort" className="mb-6 md:mb-8" />
               <p className="text-muted-foreground mb-6 md:mb-8 font-light text-sm md:text-base">
                 Featuring masterfully crafted interiors, state-of-the-art entertainment systems, and spacious sun decks, Yacht XVII redefines modern luxury. Every detail has been considered to ensure your absolute comfort.
@@ -156,7 +215,7 @@ export default function Home() {
                   View Specifications
                 </Button>
               </Link>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -170,7 +229,13 @@ export default function Home() {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="relative z-10 container-wide max-w-4xl mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="relative z-10 container-wide max-w-4xl mx-auto"
+        >
           <SectionHeading centered title="Ready for Your Voyage?" />
           <p className="text-xl text-muted-foreground font-light mb-12">
             Availability is limited. Contact our concierge to secure your preferred dates for the coming season.
@@ -180,7 +245,7 @@ export default function Home() {
               Start Your Journey
             </Button>
           </Link>
-        </div>
+        </motion.div>
       </section>
     </div>
   );

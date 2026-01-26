@@ -4,12 +4,13 @@ import founderImg from "@/assets/images/founder.jpg";
 
 export default function About() {
   return (
-    <div className="pt-24 min-h-screen bg-background">
+    <div className="pt-24 min-h-screen bg-background overflow-hidden">
       {/* Header */}
       <div className="container-wide py-20 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
           <SectionHeading centered subtitle="Our Story" title="Vision, Intention, & Excellence" />
@@ -19,8 +20,9 @@ export default function About() {
       {/* Content */}
       <div className="container-wide grid grid-cols-1 md:grid-cols-2 gap-16 pb-32">
         <motion.div 
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="prose prose-lg prose-headings:font-serif text-muted-foreground font-light"
         >
@@ -45,8 +47,9 @@ export default function About() {
         </motion.div>
         
         <motion.div 
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="relative h-[600px]"
         >
@@ -55,32 +58,58 @@ export default function About() {
             alt="Michael, founder of Yacht XVII" 
             className="w-full h-full object-cover shadow-2xl"
           />
-          <div className="absolute -bottom-8 -left-8 w-64 h-64 bg-[#0A192F] p-8 flex items-center justify-center text-center">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            className="absolute -bottom-8 -left-8 w-64 h-64 bg-[#0A192F] p-8 flex items-center justify-center text-center"
+          >
             <div>
               <span className="block text-4xl font-serif text-primary font-bold mb-2">20</span>
               <span className="text-white/80 uppercase tracking-widest text-xs">Years of Excellence</span>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
 
       {/* Values */}
       <div className="bg-secondary/30 py-32">
         <div className="container-wide text-center max-w-4xl mx-auto">
-          <SectionHeading centered subtitle="Our Philosophy" title="Guided by Passion" />
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <SectionHeading centered subtitle="Our Philosophy" title="Guided by Passion" />
+          </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16">
-            <div>
-              <h3 className="text-2xl font-serif mb-4 text-foreground">Privacy</h3>
-              <p className="text-muted-foreground font-light">Your time onboard is sacred. We guarantee absolute discretion and privacy for you and your guests.</p>
-            </div>
-            <div>
-              <h3 className="text-2xl font-serif mb-4 text-foreground">Safety</h3>
-              <p className="text-muted-foreground font-light">With a veteran captain and rigorous maintenance protocols, your safety is our non-negotiable priority.</p>
-            </div>
-            <div>
-              <h3 className="text-2xl font-serif mb-4 text-foreground">Service</h3>
-              <p className="text-muted-foreground font-light">A 1:3 crew-to-guest ratio ensures that your glass is never empty and your requests are instantly met.</p>
-            </div>
+            {[
+              {
+                title: "Privacy",
+                desc: "Your time onboard is sacred. We guarantee absolute discretion and privacy for you and your guests."
+              },
+              {
+                title: "Safety",
+                desc: "With a veteran captain and rigorous maintenance protocols, your safety is our non-negotiable priority."
+              },
+              {
+                title: "Service",
+                desc: "A 1:3 crew-to-guest ratio ensures that your glass is never empty and your requests are instantly met."
+              }
+            ].map((value, i) => (
+              <motion.div 
+                key={value.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: i * 0.2 }}
+              >
+                <h3 className="text-2xl font-serif mb-4 text-foreground">{value.title}</h3>
+                <p className="text-muted-foreground font-light">{value.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
