@@ -2,21 +2,21 @@ import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import interiorImg from "@/assets/images/yacht-interior-2.jpg";
 
 const specs = [
-  { label: "Length", value: "32 Meters (105 ft)" },
-  { label: "Builder", value: "Sanlorenzo" },
-  { label: "Year", value: "2021" },
-  { label: "Guests", value: "12 Day / 8 Overnight" },
-  { label: "Cabins", value: "4 (1 Master, 1 VIP, 2 Twin)" },
-  { label: "Crew", value: "4" },
-  { label: "Cruising Speed", value: "22 Knots" },
+  { label: "Length", value: "50 ft" },
+  { label: "Builder", value: "Sea Ray" },
+  { label: "Year", value: "2005" },
+  { label: "Guests", value: "12" },
+  { label: "Cabins", value: "3" },
+  { label: "Crew", value: "3" },
 ];
 
 const gallery = [
+  interiorImg,
   "https://images.unsplash.com/photo-1621275471769-e6aa344546d5?q=80&w=2073&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1566375638419-dd89cf109716?q=80&w=2073&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1605281317010-fe5ffe79ba02?q=80&w=2070&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2070&auto=format&fit=crop",
 ];
 
@@ -24,7 +24,7 @@ export default function Yacht() {
   return (
     <div className="pt-24 min-h-screen bg-background">
       {/* Header */}
-      <div className="container-wide py-20 text-center">
+      <div className="container-wide py-12 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -35,7 +35,7 @@ export default function Yacht() {
       </div>
 
       {/* Gallery Carousel */}
-      <div className="container-wide mb-32">
+      <div className="container-wide mb-24">
         <Carousel className="w-full">
           <CarouselContent>
             {gallery.map((src, index) => (

@@ -139,8 +139,10 @@ export default function Home() {
               </p>
               <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-4 mb-8">
                 {[
+                  "50ft Sea Ray (2005)",
                   "Accommodates up to 12 guests",
-                  "Professional crew of 4",
+                  "Professional crew of 3",
+                  "3 Luxurious cabins",
                   "Gourmet dining facilities",
                   "Water sports equipment included"
                 ].map((feat, i) => (
