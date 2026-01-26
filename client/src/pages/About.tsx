@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/SectionHeading";
+import founderImg from "@/assets/images/founder.jpg";
 
 export default function About() {
   return (
@@ -11,7 +12,7 @@ export default function About() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <SectionHeading centered subtitle="Our Story" title="A Legacy of Excellence" />
+          <SectionHeading centered subtitle="Our Story" title="Vision, Intention, & Excellence" />
         </motion.div>
       </div>
 
@@ -24,13 +25,22 @@ export default function About() {
           className="prose prose-lg prose-headings:font-serif text-muted-foreground font-light"
         >
           <p className="text-xl text-foreground font-normal">
-            Yacht XVII was born from a simple yet ambitious vision: to create the most refined charter experience on the Mediterranean.
+            Yacht XVII was born from vision, intention, and a lifelong appreciation for excellence.
           </p>
           <p>
-            Commissioned in 2020 by a private collector with a passion for maritime design, the vessel represents the convergence of Italian craftsmanship and modern nautical engineering. Every curve of the hull and stitch of the upholstery was overseen with obsessive attention to detail.
+            For over 20 years, Michael has built his life as a successful businessman, guided by discipline, creativity, and an unwavering belief in quality. Known to many as Q—a professional model and celebrity barber—his journey has always balanced public recognition with a deeply private spirit. When the time came to purchase his stunning 50-foot Sea Ray, his goal was simple: enjoy yachting at the highest level while remaining grounded, humble, and true to himself.
           </p>
           <p>
-            Today, Yacht XVII is managed by a dedicated team of maritime professionals who share a singular goal: to anticipate your needs before you even speak them. We believe that true luxury lies not just in the object, but in the experience—the seamless service, the curated itinerary, and the freedom to explore the world on your own terms.
+            Naming the vessel was no ordinary task. Drawing from his creative roots, Michael branded the yacht with meaning. Yacht XVII represents the 17th letter of the alphabet—Q, a subtle nod to his nickname. The Roman numeral XVII also carries a deeper visual story: the V, formed upward and downward, symbolizes strength, balance, and pride in his home state of Virginia. Every detail reflects intention without excess—luxury without loudness.
+          </p>
+          <p>
+            Yacht XVII is more than a yacht; it is an experience. As guests step aboard, they are welcomed into a world of refined craftsmanship and curated elegance. From marble finishes and rich mahogany woods to hand-selected Hermès décor, each element has been thoughtfully chosen to evoke comfort, class, and timeless luxury.
+          </p>
+          <p>
+            Above all, Yacht XVII exists to be shared. Michael’s passion for yachting comes alive through the joy of hosting others—creating moments, memories, and a space where elegance meets ease along the waters of Washington, DC.
+          </p>
+          <p className="font-serif italic text-foreground">
+            Welcome aboard Yacht XVII—where vision sails, and luxury feels personal.
           </p>
         </motion.div>
         
@@ -40,16 +50,15 @@ export default function About() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="relative h-[600px]"
         >
-           {/* Unsplash: Captain/Crew or refined yacht detail */}
            <img 
-            src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80&w=2070&auto=format&fit=crop" 
-            alt="Captain at helm" 
+            src={founderImg} 
+            alt="Michael, founder of Yacht XVII" 
             className="w-full h-full object-cover shadow-2xl"
           />
           <div className="absolute -bottom-8 -left-8 w-64 h-64 bg-[#0A192F] p-8 flex items-center justify-center text-center">
             <div>
-              <span className="block text-4xl font-serif text-primary font-bold mb-2">15+</span>
-              <span className="text-white/80 uppercase tracking-widest text-xs">Years of Maritime Excellence</span>
+              <span className="block text-4xl font-serif text-primary font-bold mb-2">20</span>
+              <span className="text-white/80 uppercase tracking-widest text-xs">Years of Excellence</span>
             </div>
           </div>
         </motion.div>
