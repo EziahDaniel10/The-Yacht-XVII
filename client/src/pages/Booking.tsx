@@ -126,6 +126,7 @@ export default function Booking() {
   };
 
   const getBeveragesPrice = () => {
+    if (mealType !== "brunch") return 0;
     return selectedBeverages.reduce((total, bevId) => {
       const bev = beverages.find(b => b.id === bevId);
       return total + (bev ? bev.price : 0);
@@ -434,16 +435,18 @@ export default function Booking() {
                       <Button
                         type="button"
                         variant={mealType === "brunch" ? "default" : "outline"}
-                        onClick={() => { setMealType("brunch"); setSelectedPackage(null); }}
+                        onClick={() => { setMealType("brunch"); setSelectedPackage(null); setSeafoodUpgrade(false); }}
                         className="rounded-none px-8 py-6"
+                        data-testid="button-brunch-menu"
                       >
                         Brunch Menu
                       </Button>
                       <Button
                         type="button"
                         variant={mealType === "dinner" ? "default" : "outline"}
-                        onClick={() => { setMealType("dinner"); setSelectedPackage(null); }}
+                        onClick={() => { setMealType("dinner"); setSelectedPackage(null); setSeafoodUpgrade(false); setSelectedBeverages([]); }}
                         className="rounded-none px-8 py-6"
+                        data-testid="button-dinner-menu"
                       >
                         Lunch / Dinner Menu
                       </Button>
@@ -452,6 +455,7 @@ export default function Booking() {
                         variant={mealType === null ? "secondary" : "ghost"}
                         onClick={() => { setMealType(null); setSelectedPackage(null); setSeafoodUpgrade(false); setSelectedBeverages([]); }}
                         className="rounded-none px-8 py-6"
+                        data-testid="button-skip-catering"
                       >
                         Skip Catering
                       </Button>
@@ -548,33 +552,41 @@ export default function Booking() {
                                 </CardHeader>
                                 <CardContent>
                                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                                    {beverages.map((bev) => (
-                                      <div 
-                                        key={bev.id}
-                                        className={cn(
-                                          "p-4 border rounded-none cursor-pointer transition-all",
-                                          selectedBeverages.includes(bev.id) 
-                                            ? "border-primary bg-primary/5" 
-                                            : "border-border hover:border-primary/50"
-                                        )}
-                                        onClick={() => {
-                                          setSelectedBeverages(prev => 
-                                            prev.includes(bev.id) 
-                                              ? prev.filter(id => id !== bev.id)
-                                              : [...prev, bev.id]
-                                          );
-                                        }}
-                                        data-testid={`beverage-${bev.id}`}
-                                      >
-                                        <div className="flex items-center gap-2 mb-2">
-                                          <Checkbox checked={selectedBeverages.includes(bev.id)} />
-                                          <span className="font-medium text-sm">{bev.name}</span>
+                                    {beverages.map((bev) => {
+                                      const isSelected = selectedBeverages.includes(bev.id);
+                                      return (
+                                        <div 
+                                          key={bev.id}
+                                          className={cn(
+                                            "p-4 border rounded-none cursor-pointer transition-all",
+                                            isSelected 
+                                              ? "border-primary bg-primary/5" 
+                                              : "border-border hover:border-primary/50"
+                                          )}
+                                          onClick={() => {
+                                            if (isSelected) {
+                                              setSelectedBeverages(selectedBeverages.filter(id => id !== bev.id));
+                                            } else {
+                                              setSelectedBeverages([...selectedBeverages, bev.id]);
+                                            }
+                                          }}
+                                          data-testid={`beverage-${bev.id}`}
+                                        >
+                                          <div className="flex items-center gap-2 mb-2">
+                                            <div className={cn(
+                                              "w-4 h-4 border rounded-sm flex items-center justify-center",
+                                              isSelected ? "bg-primary border-primary" : "border-muted-foreground"
+                                            )}>
+                                              {isSelected && <Check className="w-3 h-3 text-white" />}
+                                            </div>
+                                            <span className="font-medium text-sm">{bev.name}</span>
+                                          </div>
+                                          <p className="text-primary font-serif">
+                                            ${bev.price}<span className="text-xs text-muted-foreground font-sans">/{bev.unit}</span>
+                                          </p>
                                         </div>
-                                        <p className="text-primary font-serif">
-                                          ${bev.price}<span className="text-xs text-muted-foreground font-sans">/{bev.unit}</span>
-                                        </p>
-                                      </div>
-                                    ))}
+                                      );
+                                    })}
                                   </div>
                                 </CardContent>
                               </Card>
@@ -701,8 +713,9 @@ export default function Booking() {
                   <Button
                     type="button"
                     variant="outline"
-                    onClick={prevStep}
+                    onClick={(e) => { e.preventDefault(); prevStep(); }}
                     className="rounded-none px-8 py-6"
+                    data-testid="button-back"
                   >
                     <ChevronLeft className="w-4 h-4 mr-2" />
                     Back
@@ -714,8 +727,9 @@ export default function Booking() {
                 {currentStep < 3 ? (
                   <Button
                     type="button"
-                    onClick={nextStep}
+                    onClick={(e) => { e.preventDefault(); nextStep(); }}
                     className="bg-primary hover:bg-primary/90 text-white rounded-none px-8 py-6"
+                    data-testid="button-continue"
                   >
                     Continue
                     <ChevronRight className="w-4 h-4 ml-2" />
@@ -725,6 +739,7 @@ export default function Booking() {
                     type="submit" 
                     disabled={isPending}
                     className="bg-primary hover:bg-primary/90 text-white rounded-none px-12 py-6 text-lg font-serif italic shadow-xl shadow-primary/20"
+                    data-testid="button-submit-booking"
                   >
                     {isPending ? (
                       <>
