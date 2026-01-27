@@ -1,0 +1,104 @@
+Build an extension to the existing Yacht XVII reservation flow that adds a Chef B Meals pre-order menu with separate payment requests but a single checkout experience.
+
+CONTEXT
+
+The yacht reservation form already exists (fields include: name, email, phone, date, number of guests, experience type, special requests, waivers).
+
+Chef B Meals is a partner vendor providing onboard catering for yacht bookings.
+
+Clients booking a yacht should be able to optionally pre-order meals during the same booking flow.
+
+UX / FLOW REQUIREMENTS
+
+After the yacht reservation form, add a step titled:
+“Enhance Your Experience – Pre-Order Meals by Chef B Meals”
+
+Allow users to:
+
+Select Meal Type:
+
+Brunch
+
+Lunch / Dinner
+
+Select Package Tier (per person pricing)
+
+Quantity should auto-calculate using Number of Guests
+
+Menu data must be structured from these menus:
+
+Chef B Meals Yacht Brunch Menu
+
+Chef B Meals Yacht Lunch & Dinner Menu
+
+Display:
+
+Package inclusions
+
+Per-person pricing
+
+Optional seafood upgrades
+
+Wine & cocktail add-ons (for brunch)
+
+Meals are optional — user can skip this step.
+
+PAYMENT LOGIC (VERY IMPORTANT)
+
+Use ONE checkout screen
+
+Show a clear cost breakdown:
+
+Yacht Charter (paid to Yacht XVII)
+
+Meal Pre-Order (paid to Chef B Meals)
+
+Process payments as:
+
+Two separate payment intents
+
+One to Yacht XVII’s account
+
+One to Chef B Meals’ account
+
+But triggered from one “Pay Now” action
+
+Label charges clearly for transparency.
+
+TECHNICAL REQUIREMENTS
+
+Responsive, luxury UI matching Yacht XVII’s brand (minimal, premium, nautical)
+
+Meal selection updates totals in real time
+
+Store booking + meal order together using a shared reservation_id
+
+Send:
+
+Confirmation email to client
+
+Booking details to Yacht XVII
+
+Catering order details to Chef B Meals
+
+UI DETAILS
+
+Use cards for meal packages
+
+Include food images per package
+
+Elegant toggles and quantity steppers
+
+Copy tone: luxury, effortless, concierge-style
+
+OUTPUT
+
+Multi-step booking flow
+
+Modular components (Reservation → Menu → Checkout)
+
+Clean, readable code with comments
+
+Ready for production deployment on Replit
+
+Do not redesign the existing yacht reservation form — extend it.
