@@ -13,6 +13,11 @@ export const bookings = pgTable("bookings", {
   specialRequests: text("special_requests"),
   agreedToRules: text("agreed_to_rules").notNull().default('false'),
   agreedToSafety: text("agreed_to_safety").notNull().default('false'),
+  mealType: text("meal_type"),
+  mealPackage: text("meal_package"),
+  seafoodUpgrade: text("seafood_upgrade").default('false'),
+  beverageSelections: text("beverage_selections"),
+  mealTotal: integer("meal_total").default(0),
   createdAt: timestamp("created_at").defaultNow(),
 });
 
