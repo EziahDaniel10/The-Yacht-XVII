@@ -116,7 +116,7 @@ export default function Charters() {
           transition={{ duration: 0.8 }}
         >
           <SectionHeading centered subtitle="Experiences" title="Curated Itineraries" />
-          <p className="text-muted-foreground text-lg font-light mt-4 max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg font-light mt-2 max-w-2xl mx-auto">
             Enhance any Experience with Chef B Meals (This is an upgrade option only)
           </p>
         </motion.div>
