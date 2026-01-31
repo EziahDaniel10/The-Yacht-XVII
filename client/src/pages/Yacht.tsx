@@ -17,8 +17,6 @@ const specs = [
 const gallery = [
   cockpitImg,
   interiorImg,
-  "https://images.unsplash.com/photo-1621275471769-e6aa344546d5?q=80&w=2073&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1566375638419-dd89cf109716?q=80&w=2073&auto=format&fit=crop",
 ];
 
 export default function Yacht() {
