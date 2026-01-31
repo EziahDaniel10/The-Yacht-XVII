@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check, UtensilsCrossed, Wine, Anchor } from "lucide-react";
+import { UtensilsCrossed, Wine, Anchor } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Link } from "wouter";
@@ -13,75 +12,155 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import heroImg from "@assets/WhatsApp_Image_2026-01-31_at_5.38.05_PM_1769877506024.jpeg";
 
-const brunchPackages = [
-  {
-    id: "classic-brunch",
-    name: "Classic Yacht Brunch",
-    price: 60,
-    description: "A refined introduction to yacht dining",
-    inclusions: ["1 Protein", "2 Sides", "1 Starter", "1 Sweet"],
+const brunchMenu = {
+  starters: {
+    title: "Small Bites & Starters",
+    image: "https://images.unsplash.com/photo-1541014741259-de529411b96a?w=600&q=80",
+    items: [
+      "Mini Crab Salad Brioche Sliders – Jumbo lump crab, lemon aioli, chives",
+      "Smoked Salmon Crostini – Herb cream cheese, cucumber, capers",
+      "Truffle Deviled Eggs – Truffle oil, chives",
+      "Spinach & Artichoke Stuffed Mushrooms – Herbed panko, shaved Parmesan",
+    ],
   },
-  {
-    id: "signature-brunch",
-    name: "Signature Yacht Brunch",
-    price: 80,
-    description: "Elevated flavors for the discerning palate",
-    inclusions: ["2 Proteins", "2 Sides", "2 Starters", "2 Sweets"],
+  proteins: {
+    title: "Brunch Proteins",
+    image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=600&q=80",
+    items: [
+      "Lemon Herb-Grilled Chicken – Citrus-marinated, tender and juicy",
+      "Blackened Salmon – Mild spice, Creole remoulade",
+      "Brown Sugar Glazed Bacon – Thick-cut, lightly crisped",
+      "Chicken Sausage Links – Herb-forward, lightly grilled",
+    ],
   },
-  {
-    id: "ultra-luxe-brunch",
-    name: "Ultra-Luxe Yacht Brunch",
-    price: 100,
-    description: "The ultimate brunch experience",
-    inclusions: ["3 Proteins", "3 Sides", "3 Starters", "2 Sweets"],
+  sides: {
+    title: "Brunch Sides",
+    image: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80",
+    items: [
+      "Cheesy Southern Grits – Stone-ground, creamy finish",
+      "Roasted Breakfast Potatoes – Herb oil, sea salt",
+      "Fresh Fruit Salad – Seasonal fruit, mint syrup",
+      "Greek Chopped Salad – Cucumber, tomato, olives, feta",
+    ],
   },
-];
-
-const dinnerPackages = [
-  {
-    id: "small-bites",
-    name: "Small Bites Cocktail Service",
-    price: 45,
-    description: "Perfect for cocktail cruises and sunset sails",
-    inclusions: ["Choose any 3 Small Bites"],
+  sweets: {
+    title: "Sweet Finishes",
+    image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=80",
+    items: [
+      "Chocolate-Dipped Strawberries",
+      "Vanilla Bean Cheesecake Cups – Assorted toppings",
+      "Fresh-Baked Chocolate Chip Cookies",
+    ],
   },
-  {
-    id: "coastal-buffet",
-    name: "The Coastal Buffet",
-    price: 65,
-    description: "Coastal flavors with elegant presentation",
-    inclusions: ["1 Protein", "2 Sides", "1 Small Bite", "1 Dessert"],
+  seafoodUpgrade: {
+    title: "Seafood Brunch Upgrade",
+    price: "+$22 per person",
+    image: "https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=600&q=80",
+    items: [
+      "Old Bay Poached Shrimp – Lemon cocktail sauce",
+      "Smoked Salmon Display – Herb cream cheese, capers, cucumber",
+      "Crab & Corn Salad Cups – Light citrus dressing",
+    ],
   },
-  {
-    id: "signature-buffet",
-    name: "The Signature Yacht Buffet",
-    price: 85,
-    description: "Chef-curated selections for memorable dining",
-    inclusions: ["2 Proteins", "2 Sides", "2 Small Bites", "2 Desserts"],
-  },
-  {
-    id: "ultra-luxe-dinner",
-    name: "The Ultra-Luxe Yacht Experience",
-    price: 110,
-    description: "The pinnacle of onboard dining",
-    inclusions: ["3 Proteins", "3 Sides", "3 Small Bites", "2 Desserts"],
-  },
-];
-
-const beverages = [
-  { id: "prosecco", name: "Prosecco", price: 55, unit: "bottle" },
-  { id: "champagne", name: "Champagne", price: 85, unit: "bottle" },
-  { id: "sauvignon-blanc", name: "Sauvignon Blanc", price: 60, unit: "bottle" },
-  { id: "chardonnay", name: "Chardonnay", price: 65, unit: "bottle" },
-  { id: "rum-punch", name: "Chef B Rum Punch", price: 65, unit: "pitcher" },
-  { id: "mimosa", name: "Classic Mimosa", price: 60, unit: "pitcher" },
-];
-
-const seafoodUpgrades = {
-  brunch: { name: "Premium Seafood Upgrade", price: 22, description: "Add lobster tail, jumbo shrimp, and crab cakes" },
-  dinner: { name: "Seafood Luxe Upgrade", price: 28, description: "Add surf & turf options with premium shellfish" },
+  packages: [
+    { name: "Classic Yacht Brunch", price: "$60/person", details: "1 Protein, 2 Sides, 1 Starter, 1 Sweet" },
+    { name: "Signature Yacht Brunch", price: "$80/person", details: "2 Proteins, 2 Sides, 2 Starters, 2 Sweets" },
+    { name: "Ultra-Luxe Yacht Brunch", price: "$100/person", details: "3 Proteins, 3 Sides, 3 Starters, 2 Sweets" },
+  ],
+  beverages: [
+    { name: "Prosecco", price: "$55/bottle" },
+    { name: "Champagne", price: "$85/bottle" },
+    { name: "Sauvignon Blanc", price: "$60/bottle" },
+    { name: "Chardonnay", price: "$65/bottle" },
+    { name: "Chef B Rum Punch", price: "$65/pitcher" },
+    { name: "Classic Mimosa", price: "$60/pitcher" },
+  ],
 };
+
+const dinnerMenu = {
+  smallBites: {
+    title: "Small Bites",
+    image: "https://images.unsplash.com/photo-1541014741259-de529411b96a?w=600&q=80",
+    items: [
+      "Mini Crab Salad Brioche Sliders – Lemon aioli, chives",
+      "Steakhouse Beef Crostini – Boursin, pickled onion, balsamic glaze",
+      "Waldorf Chicken Salad Sliders – Apple, grape, cashew, dill",
+      "Spanish Beef Empanadas – Cilantro cream, salsa verde",
+      "Truffle Deviled Eggs – Truffle oil, chives",
+      "Brie & Fig Crostini – Honey drizzle, toasted seeds",
+    ],
+  },
+  proteins: {
+    title: "Chef-Curated Proteins",
+    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80",
+    items: [
+      "Jerk Chicken Wings – Roasted pineapple salsa",
+      "Lemon Herb-Grilled Chicken – Tzatziki",
+      "Coconut Curry Shrimp – Dairy-free coconut curry",
+      "Chimichurri Wagyu Meatballs – Herb-forward finish",
+      "Blackened Salmon – Creole remoulade",
+    ],
+  },
+  sides: {
+    title: "Seasonal Sides",
+    image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80",
+    items: [
+      "Roasted Sweet Potato & Farro Salad – Cranberry, pecan, maple vinaigrette",
+      "Grilled Seasonal Vegetables – Lemon, olive oil, chili",
+      "Creamy Truffle Mac & Cheese – Three-cheese blend",
+      "Watermelon, Cucumber & Feta Salad – Mint, citrus, balsamic",
+      "Coconut Jasmine Rice",
+      "Southern Potato Salad",
+    ],
+  },
+  seafoodUpgrade: {
+    title: "Seafood Upgrade",
+    price: "+$28 per person",
+    image: "https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=600&q=80",
+    items: [
+      "Old Bay Poached Shrimp – Lemon cocktail sauce",
+      "Smoked Salmon Display – Herb cream cheese, capers, cucumber",
+      "Crab & Corn Salad Cups – Light citrus dressing",
+    ],
+  },
+  packages: [
+    { name: "Small Bites Cocktail Service", price: "$45/person", details: "Choose any 3 Small Bites" },
+    { name: "The Coastal Buffet", price: "$65/person", details: "1 Protein, 2 Sides, 1 Small Bite, 1 Dessert" },
+    { name: "The Signature Yacht Buffet", price: "$85/person", details: "2 Proteins, 2 Sides, 2 Small Bites, 2 Desserts" },
+    { name: "The Ultra-Luxe Yacht Experience", price: "$110/person", details: "3 Proteins, 3 Sides, 3 Small Bites, 2 Desserts" },
+  ],
+};
+
+function MenuCategory({ title, image, items, price }: { title: string; image: string; items: string[]; price?: string }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="bg-white border border-border overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+    >
+      <div className="h-48 overflow-hidden">
+        <img src={image} alt={title} className="w-full h-full object-cover" />
+      </div>
+      <div className="p-6">
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="text-xl font-serif text-foreground">{title}</h3>
+          {price && <span className="text-primary font-semibold text-sm">{price}</span>}
+        </div>
+        <div className="space-y-2">
+          {items.map((item, index) => (
+            <p key={index} className="text-sm text-muted-foreground leading-relaxed">
+              {item}
+            </p>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  );
+}
 
 export default function Menu() {
   const [menuType, setMenuType] = useState<"brunch" | "dinner">("brunch");
@@ -91,26 +170,67 @@ export default function Menu() {
     setShowReservationPrompt(true);
   };
 
+  const currentMenu = menuType === "brunch" ? brunchMenu : dinnerMenu;
+
   return (
-    <div className="pt-24 pb-20">
-      <div className="container-wide">
+    <div className="bg-background">
+      <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-black/50 z-10" />
+          <img 
+            src={heroImg} 
+            alt="Chef B Meals" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="relative z-20 text-center text-white px-4">
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="block text-sm font-bold uppercase tracking-[0.3em] mb-4 text-white/90"
+          >
+            Curated Yacht Cuisine
+          </motion.span>
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-4xl md:text-6xl font-serif mb-4"
+          >
+            Chef B Meals
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="text-lg md:text-xl font-light text-white/80 max-w-2xl mx-auto"
+          >
+            Elevated Comfort • Coastal Influence • Effortless Yacht Service
+          </motion.p>
+        </div>
+      </section>
+
+      <div className="container-wide py-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          className="bg-secondary/30 p-6 mb-12 border-l-4 border-primary"
         >
-          <SectionHeading
-            title="Chef B Meals"
-            subtitle="Curated cuisine for your charter experience — fresh, flavorful, and delivered onboard"
-            centered
-          />
+          <h3 className="font-serif text-lg text-primary mb-2">Captain's Recommendation</h3>
+          <p className="text-muted-foreground">
+            {menuType === "brunch" 
+              ? "For the smoothest onboard service, we recommend selecting one brunch package and adding the Seafood Brunch Upgrade. All items are designed to hold well with minimal galley use."
+              : "For cocktail cruises and sunset sails, we recommend the Small Bites option. For longer charters, guests typically prefer the Coastal or Signature Buffet selections."}
+          </p>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex justify-center gap-4 mt-12 mb-16"
+          className="flex justify-center gap-4 mb-16"
         >
           <Button
             variant={menuType === "brunch" ? "default" : "outline"}
@@ -138,84 +258,73 @@ export default function Menu() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
-            {(menuType === "brunch" ? brunchPackages : dinnerPackages).map((pkg, index) => (
-              <motion.div
-                key={pkg.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Card 
-                  className="h-full border-border hover:shadow-lg transition-all"
-                  data-testid={`menu-package-${pkg.id}`}
-                >
-                  <CardHeader>
-                    <CardTitle className="text-lg font-serif">{pkg.name}</CardTitle>
-                    <CardDescription className="mt-1">{pkg.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="text-3xl font-serif text-primary mb-4">
-                      ${pkg.price}<span className="text-sm text-muted-foreground font-sans">/person</span>
-                    </div>
-                    <ul className="space-y-2">
-                      {pkg.inclusions.map((item, i) => (
-                        <li key={i} className="flex items-center text-sm text-muted-foreground">
-                          <Check className="w-4 h-4 text-primary mr-2 shrink-0" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="bg-secondary/30 p-8 border border-primary/10"
-            >
-              <h3 className="text-xl font-serif text-primary mb-4 flex items-center gap-2">
-                <UtensilsCrossed className="w-5 h-5" />
-                Seafood Upgrade
-              </h3>
-              <p className="text-muted-foreground mb-4">
-                {menuType === "brunch" ? seafoodUpgrades.brunch.description : seafoodUpgrades.dinner.description}
-              </p>
-              <div className="text-2xl font-serif text-primary">
-                +${menuType === "brunch" ? seafoodUpgrades.brunch.price : seafoodUpgrades.dinner.price}
-                <span className="text-sm text-muted-foreground font-sans">/person</span>
-              </div>
-            </motion.div>
-
-            {menuType === "brunch" && (
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="bg-secondary/30 p-8 border border-primary/10"
-              >
-                <h3 className="text-xl font-serif text-primary mb-4 flex items-center gap-2">
-                  <Wine className="w-5 h-5" />
-                  Wine & Brunch Cocktails
-                </h3>
-                <div className="grid grid-cols-2 gap-4">
-                  {beverages.map((bev) => (
-                    <div key={bev.id} className="flex justify-between items-center text-sm">
-                      <span className="text-muted-foreground">{bev.name}</span>
-                      <span className="text-primary font-medium">${bev.price}/{bev.unit}</span>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {menuType === "brunch" ? (
+              <>
+                <MenuCategory {...brunchMenu.starters} />
+                <MenuCategory {...brunchMenu.proteins} />
+                <MenuCategory {...brunchMenu.sides} />
+                <MenuCategory {...brunchMenu.sweets} />
+                <MenuCategory {...brunchMenu.seafoodUpgrade} />
+              </>
+            ) : (
+              <>
+                <MenuCategory {...dinnerMenu.smallBites} />
+                <MenuCategory {...dinnerMenu.proteins} />
+                <MenuCategory {...dinnerMenu.sides} />
+                <MenuCategory {...dinnerMenu.seafoodUpgrade} />
+              </>
             )}
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-[#0A192F] text-white py-16 px-8 md:px-16 mb-16"
+          >
+            <h2 className="text-2xl md:text-3xl font-serif text-center mb-2">
+              {menuType === "brunch" ? "Brunch Package Pricing" : "Yacht Buffet Packages & Pricing"}
+            </h2>
+            <p className="text-white/60 text-center mb-12">Select your package and customize your selections</p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {currentMenu.packages.map((pkg, index) => (
+                <div 
+                  key={index} 
+                  className="bg-white/5 border border-white/10 p-6 text-center hover:bg-white/10 transition-colors"
+                >
+                  <h3 className="font-serif text-lg text-primary mb-2">{pkg.name}</h3>
+                  <div className="text-2xl font-serif mb-3">{pkg.price}</div>
+                  <p className="text-white/60 text-sm">{pkg.details}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {menuType === "brunch" && (
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-secondary/30 p-8 mb-16 border border-primary/10"
+            >
+              <h3 className="text-xl font-serif text-primary mb-6 flex items-center gap-2">
+                <Wine className="w-5 h-5" />
+                Wine & Brunch Cocktails (Bottle & Pitcher Service)
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                {brunchMenu.beverages.map((bev, index) => (
+                  <div key={index} className="text-center p-4 bg-white border border-border">
+                    <span className="block text-foreground font-medium mb-1">{bev.name}</span>
+                    <span className="text-primary font-serif">{bev.price}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          )}
         </motion.div>
 
         <motion.div
