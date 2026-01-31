@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/SectionHeading";
 import { useState } from "react";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 import gallery1 from "@assets/WhatsApp_Image_2026-01-26_at_7.18.11_PM_1769453991950.jpeg";
@@ -25,6 +25,18 @@ import gallery18 from "@assets/WhatsApp_Image_2026-01-26_at_7.18.11_PM_(1)_17694
 import gallery19 from "@assets/WhatsApp_Image_2026-01-26_at_7.18.11_PM_(2)_1769453991966.jpeg";
 import gallery20 from "@assets/WhatsApp_Image_2026-01-26_at_7.18.11_PM_(3)_1769453991967.jpeg";
 import gallery21 from "@assets/WhatsApp_Image_2026-01-26_at_8.28.00_PM_1769457409810.jpeg";
+import gallery22 from "@assets/WhatsApp_Image_2026-01-31_at_3.40.41_PM_(2)_1769874033957.jpeg";
+import gallery23 from "@assets/WhatsApp_Image_2026-01-31_at_3.40.41_PM_1769874033962.jpeg";
+import gallery24 from "@assets/WhatsApp_Image_2026-01-31_at_3.40.39_PM_1769874033966.jpeg";
+import gallery25 from "@assets/WhatsApp_Image_2026-01-31_at_3.40.40_PM_(1)_1769874033967.jpeg";
+import gallery26 from "@assets/WhatsApp_Image_2026-01-31_at_3.40.40_PM_(2)_1769874033967.jpeg";
+import gallery27 from "@assets/WhatsApp_Image_2026-01-31_at_3.40.40_PM_1769874033969.jpeg";
+import gallery28 from "@assets/WhatsApp_Image_2026-01-31_at_3.40.41_PM_(1)_1769874033970.jpeg";
+
+const galleryVideos = [
+  { id: "v1", src: "/assets/WhatsApp_Video_2026-01-31_at_3.40.40_PM_(1)_1769874033964.mp4", title: "Sunset Cruise", category: "Video" },
+  { id: "v2", src: "/assets/WhatsApp_Video_2026-01-31_at_3.40.40_PM_1769874033965.mp4", title: "Charter Moments", category: "Video" },
+];
 
 const galleryImages = [
   { id: 1, src: gallery1, category: "Lifestyle", title: "Luxury Lounge" },
@@ -48,6 +60,13 @@ const galleryImages = [
   { id: 19, src: gallery19, category: "Lifestyle", title: "Relaxing Deck" },
   { id: 20, src: gallery20, category: "Lifestyle", title: "Social Gathering" },
   { id: 21, src: gallery21, category: "Interior", title: "Sun-Drenched Salon" },
+  { id: 22, src: gallery22, category: "Lifestyle", title: "Elegant Guest" },
+  { id: 23, src: gallery23, category: "Lifestyle", title: "Deck Party" },
+  { id: 24, src: gallery24, category: "Lifestyle", title: "Sunset Toast" },
+  { id: 25, src: gallery25, category: "Lifestyle", title: "Golden Moments" },
+  { id: 26, src: gallery26, category: "Lifestyle", title: "Tropical Cocktails" },
+  { id: 27, src: gallery27, category: "Lifestyle", title: "Night Vibes" },
+  { id: 28, src: gallery28, category: "Lifestyle", title: "Birthday Celebration" },
 ];
 
 export default function Gallery() {
@@ -66,6 +85,39 @@ export default function Gallery() {
           subtitle="Authentic moments and exquisite details from our latest charters on the Potomac."
           centered
         />
+
+        {galleryVideos.length > 0 && (
+          <div className="mt-12 mb-8">
+            <h3 className="text-xl font-serif text-primary mb-6 text-center">Featured Videos</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {galleryVideos.map((video, index) => (
+                <motion.div
+                  key={video.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="group relative aspect-video overflow-hidden rounded-none"
+                  data-testid={`gallery-video-${video.id}`}
+                >
+                  <video
+                    src={video.src}
+                    className="h-full w-full object-cover"
+                    controls
+                    preload="metadata"
+                    playsInline
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                  <div className="absolute top-4 left-4 bg-primary/90 text-white px-3 py-1 text-xs uppercase tracking-widest flex items-center gap-1">
+                    <Play className="w-3 h-3" />
+                    {video.category}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
           {galleryImages.map((image, index) => (
