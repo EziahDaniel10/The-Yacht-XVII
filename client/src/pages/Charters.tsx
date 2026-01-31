@@ -10,6 +10,12 @@ import sunsetImg from "@/assets/images/sunset-champagne.jpg";
 import afterPartyImg from "@/assets/images/after-party.jpg";
 import yachtPartyImg from "@assets/WhatsApp_Image_2026-01-26_at_7.18.11_PM_(1)_1769455016115.jpeg";
 import justCruisingImg from "@assets/WhatsApp_Image_2026-01-26_at_7.18.11_PM_1769455016113.jpeg";
+import hookahImg from "@assets/WhatsApp_Image_2026-01-31_at_5.49.47_PM_1769878313478.jpeg";
+
+const hookahFlavors = [
+  "Tropical", "Blueberry Mint", "Mint", "Gum Mint", "Orange Mint", 
+  "Pineapple", "Lady Killer", "Jamaican Vibes", "Love 66", "Apple", "Guava"
+];
 
 const packages = [
   {
@@ -165,6 +171,63 @@ export default function Charters() {
             </div>
           </motion.div>
         ))}
+
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="pt-16"
+        >
+          <div className="text-center mb-16">
+            <span className="text-sm font-bold uppercase tracking-[0.3em] text-primary mb-4 block">Add-On</span>
+            <h2 className="text-4xl font-serif">Hookah Service</h2>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="relative h-[400px] lg:h-[500px] shadow-2xl">
+              <img src={hookahImg} alt="Hookah Service" className="w-full h-full object-cover" />
+            </div>
+            
+            <div>
+              <h3 className="text-3xl font-serif mb-6">Premium Hookah Experience</h3>
+              <p className="text-muted-foreground text-lg font-light mb-8 leading-relaxed">
+                Elevate your charter with our premium hookah service. Choose from over 20 exotic flavors while enjoying the open water and stunning views.
+              </p>
+              
+              <div className="grid grid-cols-2 gap-6 mb-8">
+                <div className="bg-primary/5 p-6 border border-primary/10">
+                  <div className="text-3xl font-serif text-primary mb-1">$100</div>
+                  <div className="text-sm text-muted-foreground uppercase tracking-wide">Per Hookah</div>
+                </div>
+                <div className="bg-primary/5 p-6 border border-primary/10">
+                  <div className="text-3xl font-serif text-primary mb-1">$30</div>
+                  <div className="text-sm text-muted-foreground uppercase tracking-wide">Per Refill</div>
+                </div>
+              </div>
+
+              <div className="mb-10">
+                <h4 className="text-lg font-serif mb-4">Over 20+ Flavors Available</h4>
+                <div className="flex flex-wrap gap-2">
+                  {hookahFlavors.map((flavor, i) => (
+                    <span key={i} className="bg-secondary/50 text-foreground/80 px-3 py-1 text-sm">
+                      {flavor}
+                    </span>
+                  ))}
+                  <span className="bg-primary/10 text-primary px-3 py-1 text-sm font-medium">
+                    & More
+                  </span>
+                </div>
+              </div>
+
+              <Link href="/booking">
+                <Button className="bg-primary hover:bg-primary/90 text-white rounded-none px-10 py-6 text-lg font-serif italic">
+                  Add to Your Charter
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </div>
   );
