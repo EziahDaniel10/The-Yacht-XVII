@@ -20,6 +20,31 @@ import gallery4 from "@assets/WhatsApp_Image_2026-01-26_at_7.18.13_PM_(2)_176945
 import gallery5 from "@assets/WhatsApp_Image_2026-01-26_at_7.18.13_PM_(3)_1769453991954.jpeg";
 import gallery6 from "@assets/WhatsApp_Image_2026-01-26_at_7.18.13_PM_1769453991954.jpeg";
 
+import videoYachtParty from "@assets/WhatsApp_Video_2026-01-31_at_6.10.43_PM_(1)_1769879811664.mp4";
+import videoDateNight from "@assets/WhatsApp_Video_2026-01-31_at_6.10.43_PM_1769879831722.mp4";
+import videoAfterParty from "@assets/WhatsApp_Video_2026-01-31_at_6.10.42_PM_1769879838925.mp4";
+
+const experienceVideos = [
+  {
+    video: videoYachtParty,
+    title: "The Yacht Party",
+    description: "The ultimate 3-hour social experience for celebrations",
+    cta: "Book Your Party",
+  },
+  {
+    video: videoDateNight,
+    title: "Date Night, Sunset & Champagne",
+    description: "Romantic 3-hour evening cruise with premium champagne",
+    cta: "Plan Your Date Night",
+  },
+  {
+    video: videoAfterParty,
+    title: "After Party",
+    description: "The ultimate late-night experience starting after midnight",
+    cta: "Reserve After Party",
+  },
+];
+
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [hero1, heroBrand, hero1];
@@ -173,6 +198,58 @@ export default function Home() {
                 <div className="mb-6">{item.icon}</div>
                 <h3 className="text-2xl font-serif mb-4">{item.title}</h3>
                 <p className="text-white/60 font-light leading-relaxed">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Videos Section */}
+      <section className="py-24 bg-white">
+        <div className="container-wide">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <SectionHeading 
+              subtitle="Featured Experiences" 
+              title="Discover Your Perfect Charter" 
+              centered 
+            />
+          </motion.div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+            {experienceVideos.map((item, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: i * 0.2 }}
+                className="group"
+              >
+                <div className="relative aspect-[9/16] overflow-hidden shadow-xl mb-6">
+                  <video 
+                    src={item.video}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                    <h3 className="text-xl font-serif mb-2">{item.title}</h3>
+                    <p className="text-white/70 text-sm mb-4">{item.description}</p>
+                    <Link href="/charters">
+                      <Button className="bg-primary hover:bg-primary/90 text-white rounded-none px-6 py-4 text-sm font-serif italic w-full">
+                        {item.cta}
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>

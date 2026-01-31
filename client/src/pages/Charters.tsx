@@ -17,7 +17,16 @@ const hookahFlavors = [
   "Pineapple", "Lady Killer", "Jamaican Vibes", "Love 66", "Apple", "Guava"
 ];
 
-const packages = [
+type Feature = string | { text: string; bold: boolean };
+
+const packages: {
+  title: string;
+  price: string;
+  description: string;
+  features: Feature[];
+  image: string;
+  note: string;
+}[] = [
   {
     title: "Just Cruising",
     price: "$900 - $1,150",
@@ -155,15 +164,15 @@ export default function Charters() {
               </p>
               <ul className="space-y-4 mb-10">
                 {pkg.features.map((feat, i) => {
-                  const isObject = typeof feat === 'object';
-                  const text = isObject ? feat.text : feat;
-                  const isBold = isObject && feat.bold;
+                  const isObject = typeof feat === 'object' && feat !== null;
+                  const text = isObject ? (feat as { text: string; bold: boolean }).text : (feat as string);
+                  const isBold = isObject && (feat as { text: string; bold: boolean }).bold;
                   return (
                     <li key={i} className="flex items-center text-sm font-medium tracking-wide text-foreground/80">
                       <span className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mr-4 text-primary">
                         <Check className="w-3 h-3" />
                       </span>
-                      {isBold ? <strong className="font-bold">{text}</strong> : text}
+                      <span className={isBold ? "font-bold" : ""}>{text}</span>
                     </li>
                   );
                 })}
