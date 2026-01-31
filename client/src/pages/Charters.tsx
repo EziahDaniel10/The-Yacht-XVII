@@ -87,7 +87,7 @@ const packages = [
     description: "Watch the sun dip below the horizon from the most exclusive venue in the city. Romantic, serene, and unforgettable.",
     features: [
       "3 Hours Evening Cruise", 
-      "Max of 6 Guests Only",
+      { text: "Max of 6 Guests Only", bold: true },
       "Premium Champagne", 
       "Canapés", 
       "Atmospheric Lighting",
@@ -154,14 +154,19 @@ export default function Charters() {
                 {pkg.description}
               </p>
               <ul className="space-y-4 mb-10">
-                {pkg.features.map((feat, i) => (
-                  <li key={i} className="flex items-center text-sm font-medium tracking-wide text-foreground/80">
-                    <span className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mr-4 text-primary">
-                      <Check className="w-3 h-3" />
-                    </span>
-                    {feat}
-                  </li>
-                ))}
+                {pkg.features.map((feat, i) => {
+                  const isObject = typeof feat === 'object';
+                  const text = isObject ? feat.text : feat;
+                  const isBold = isObject && feat.bold;
+                  return (
+                    <li key={i} className="flex items-center text-sm font-medium tracking-wide text-foreground/80">
+                      <span className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mr-4 text-primary">
+                        <Check className="w-3 h-3" />
+                      </span>
+                      {isBold ? <strong className="font-bold">{text}</strong> : text}
+                    </li>
+                  );
+                })}
               </ul>
               <Link href="/booking">
                 <Button className="bg-primary hover:bg-primary/90 text-white rounded-none px-10 py-6 text-lg font-serif italic">
