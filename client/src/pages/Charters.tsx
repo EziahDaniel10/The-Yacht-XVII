@@ -35,6 +35,7 @@ const packages = [
       "3 Hours Cruising",
       "Fuel Included",
       "Ice & Water Included",
+      "Food & Beverages Allowed",
       "Perfect for Group Celebrations",
       "Cleaning Fee: $150",
       "Gratuity: 20% of package"
@@ -51,7 +52,7 @@ const packages = [
       "Fuel Included", 
       "Ice & Water Included", 
       "Food & Beverages Allowed",
-      "Upgrades: Hookah, Pre-order Menu",
+      "Upgrades: Hookah Available",
       "Cleaning Fee: $150",
       "Gratuity: 20% of package"
     ],
@@ -65,7 +66,7 @@ const packages = [
     features: [
       "8 Hours of Fun",
       "Upgrades: Water Sports, Jet Car, Jet Skies",
-      "Swimming, Grilling & Pre-order Menu",
+      "Swimming & Grilling",
       "Gourmet Lunch & Full Bar Service",
       "Water Toys & Tender Included",
       "Perfect for Birthday Parties & Hookah",
@@ -80,6 +81,7 @@ const packages = [
     description: "Watch the sun dip below the horizon from the most exclusive venue in the city. Romantic, serene, and unforgettable.",
     features: [
       "3 Hours Evening Cruise", 
+      "Max of 6 Guests Only",
       "Premium Champagne", 
       "Canapés", 
       "Atmospheric Lighting",
@@ -96,7 +98,6 @@ const packages = [
       "3 Hours (Starts after Midnight)",
       "Premium Bottle Service",
       "Hookah Service Available",
-      "Pre-order Food Menu",
       "Cleaning Fee: $150 | Gratuity: 20%",
       "Atmospheric Lighting & Sound"
     ],
@@ -115,6 +116,9 @@ export default function Charters() {
           transition={{ duration: 0.8 }}
         >
           <SectionHeading centered subtitle="Experiences" title="Curated Itineraries" />
+          <p className="text-muted-foreground text-lg font-light mt-4 max-w-2xl mx-auto">
+            Enhance any Experience with Chef B Meals (This is an upgrade option only)
+          </p>
         </motion.div>
       </div>
 

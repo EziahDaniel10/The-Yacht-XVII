@@ -49,7 +49,7 @@ export default function Contact() {
                 <MapPin className="w-6 h-6 text-primary mr-6 mt-1" />
                 <div>
                   <h4 className="font-serif text-xl mb-2">Location</h4>
-                  <p className="text-muted-foreground font-light">The Wharf<br/>Washington DC</p>
+                  <p className="text-muted-foreground font-light">Washington DC</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -64,7 +64,7 @@ export default function Contact() {
                 <Mail className="w-6 h-6 text-primary mr-6 mt-1" />
                 <div>
                   <h4 className="font-serif text-xl mb-2">Email</h4>
-                  <p className="text-muted-foreground font-light">concierge@yachtxvii.com</p>
+                  <p className="text-muted-foreground font-light">yachtxvii@gmail.com</p>
                 </div>
               </div>
             </div>
