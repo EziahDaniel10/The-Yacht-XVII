@@ -4,6 +4,16 @@
 
 Yacht XVII is a luxury yacht charter website for a Washington DC-based yacht charter company. The application provides an elegant, premium experience for users to explore charter packages, view the vessel, browse a photo gallery, and submit booking inquiries. Built as a full-stack TypeScript application with React frontend and Express backend, it features a sophisticated design with gold and white color palette, serif typography for headings, and smooth animations throughout.
 
+## Recent Changes (Jan 31, 2026)
+
+- **Simplified Booking Page**: Converted from multi-step flow to single-step reservation form
+- **New Menu Page**: Created dedicated `/menu` page for Chef B Meals catering options
+  - Brunch packages ($60-$100/person) with seafood upgrades and beverages
+  - Lunch/Dinner packages ($45-$110/person) with seafood upgrades
+  - Pre-order button shows prompt directing users to make a reservation first
+- **Gallery Updates**: Added 7 new lifestyle images and 2 featured videos
+- **Navigation**: Added "Menu" link between Gallery and Experiences
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
