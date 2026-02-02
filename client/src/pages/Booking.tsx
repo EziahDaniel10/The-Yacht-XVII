@@ -15,9 +15,13 @@ import { format } from "date-fns";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { Checkbox } from "@/components/ui/checkbox";
+import { useSearch } from "wouter";
 
 export default function Booking() {
   const { mutate, isPending } = useCreateBooking();
+  const searchString = useSearch();
+  const params = new URLSearchParams(searchString);
+  const packageType = params.get("package") || "Full-Day";
   
   const form = useForm<InsertBooking>({
     resolver: zodResolver(insertBookingSchema),
@@ -26,7 +30,7 @@ export default function Booking() {
       email: "",
       phoneNumber: "",
       guests: 2,
-      charterType: "Full-Day",
+      charterType: packageType,
       specialRequests: "",
       agreedToRules: "false",
       agreedToSafety: "false",

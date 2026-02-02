@@ -26,6 +26,7 @@ const packages: {
   features: Feature[];
   image: string;
   note: string;
+  charterType: string;
 }[] = [
   {
     title: "Just Cruising",
@@ -40,7 +41,8 @@ const packages: {
       "Gratuity: 20% of package"
     ],
     image: justCruisingImg,
-    note: "Weekday: $900 | Weekend: $1,150"
+    note: "Weekday: $900 | Weekend: $1,150",
+    charterType: "Just-Cruising"
   },
   {
     title: "The Yacht Party",
@@ -56,7 +58,8 @@ const packages: {
       "Gratuity: 20% of package"
     ],
     image: yachtPartyImg,
-    note: "Weekday: $1,250 | Weekend: $1,650"
+    note: "Weekday: $1,250 | Weekend: $1,650",
+    charterType: "Yacht-Party"
   },
   {
     title: "Half-Day Escape",
@@ -72,7 +75,8 @@ const packages: {
       "Gratuity: 20% of package"
     ],
     image: halfDayImg,
-    note: "Weekday: $1,750 | Weekend: $2,000"
+    note: "Weekday: $1,750 | Weekend: $2,000",
+    charterType: "Half-Day"
   },
   {
     title: "Full-Day Voyage",
@@ -88,7 +92,8 @@ const packages: {
       "Cleaning Fee: $150 | Gratuity: 20%"
     ],
     image: fullDayImg,
-    note: "Weekday: $3,500 | Weekend: $4,000"
+    note: "Weekday: $3,500 | Weekend: $4,000",
+    charterType: "Full-Day"
   },
   {
     title: "Date Night, Sunset & Champagne",
@@ -103,7 +108,8 @@ const packages: {
       "Cleaning Fee: $150 | Gratuity: 20%"
     ],
     image: sunsetImg,
-    note: "Weekday: $1,250 | Weekend: $1,650"
+    note: "Weekday: $1,250 | Weekend: $1,650",
+    charterType: "Sunset"
   },
   {
     title: "After Party",
@@ -117,7 +123,8 @@ const packages: {
       "Atmospheric Lighting & Sound"
     ],
     image: afterPartyImg,
-    note: "Flat Rate: $2,250"
+    note: "Flat Rate: $2,250",
+    charterType: "After-Party"
   }
 ];
 
@@ -177,7 +184,7 @@ export default function Charters() {
                   );
                 })}
               </ul>
-              <Link href="/booking">
+              <Link href={`/booking?package=${encodeURIComponent(pkg.charterType)}`}>
                 <Button className="bg-primary hover:bg-primary/90 text-white rounded-none px-10 py-6 text-lg font-serif italic">
                   Reserve This Package
                 </Button>
