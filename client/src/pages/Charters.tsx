@@ -86,7 +86,6 @@ const packages: {
       "8 Hours of Fun",
       "Upgrades: Water Sports, Jet Car, Jet Skies",
       "Swimming & Grilling",
-      "Gourmet Lunch & Full Bar Service",
       "Water Toys & Tender Included",
       "Perfect for Birthday Parties & Hookah",
       "Cleaning Fee: $150 | Gratuity: 20%"
