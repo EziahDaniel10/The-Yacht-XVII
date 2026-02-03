@@ -201,6 +201,44 @@ export default function Charters() {
         >
           <div className="text-center mb-16">
             <span className="text-sm font-bold uppercase tracking-[0.3em] text-primary mb-4 block">Add-On</span>
+            <h2 className="text-4xl font-serif">Pre-Order Meal Menu</h2>
+          </div>
+
+          <div className="bg-white border border-border p-8 md:p-12 text-center shadow-lg mb-32">
+            <h3 className="text-2xl font-serif mb-4">Chef B Meals Catering</h3>
+            <p className="text-muted-foreground text-lg font-light mb-8 max-w-2xl mx-auto">
+              Elevate your charter with gourmet catering from Chef B Meals. All packages include fresh, chef-prepared food and premium beverages delivered directly to the yacht.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
+              <div className="bg-primary/5 px-6 py-3 border border-primary/10">
+                <span className="text-sm text-muted-foreground">Brunch Packages</span>
+              </div>
+              <div className="bg-primary/5 px-6 py-3 border border-primary/10">
+                <span className="text-sm text-muted-foreground">Lunch & Dinner</span>
+              </div>
+              <div className="bg-primary/5 px-6 py-3 border border-primary/10">
+                <span className="text-sm text-muted-foreground">Beverages</span>
+              </div>
+              <div className="bg-primary/5 px-6 py-3 border border-primary/10">
+                <span className="text-sm text-muted-foreground">Elevated Treats</span>
+              </div>
+            </div>
+            <Link href="/menu">
+              <Button className="bg-primary hover:bg-primary/90 text-white rounded-none px-10 py-6 text-lg font-serif italic">
+                View Full Menu
+              </Button>
+            </Link>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="text-center mb-16">
+            <span className="text-sm font-bold uppercase tracking-[0.3em] text-primary mb-4 block">Add-On</span>
             <h2 className="text-4xl font-serif">Hookah Service</h2>
           </div>
 

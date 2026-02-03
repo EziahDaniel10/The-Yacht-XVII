@@ -79,6 +79,18 @@ const brunchMenu = {
   ],
 };
 
+const elevatedTreats = {
+  title: "Elevated Treats",
+  image: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&q=80",
+  items: [
+    { name: "Chocolate Chip Cookie", price: "$30 each" },
+    { name: "Fruity Pebble Rice Krispy Treat", price: "$30 each" },
+    { name: "Coco Krispy Treat", price: "$30 each" },
+    { name: "Double Chocolate Brownies", price: "$40 each" },
+    { name: "Gummies", price: "$30" },
+  ],
+};
+
 const dinnerMenu = {
   smallBites: {
     title: "Small Bites",
@@ -132,6 +144,33 @@ const dinnerMenu = {
     { name: "The Ultra-Luxe Yacht Experience", price: "$110/person", details: "3 Proteins, 3 Sides, 3 Small Bites, 2 Desserts" },
   ],
 };
+
+function TreatsCategory({ title, image, items }: { title: string; image: string; items: { name: string; price: string }[] }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="bg-white border border-border overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+    >
+      <div className="h-48 overflow-hidden">
+        <img src={image} alt={title} className="w-full h-full object-cover" />
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-serif text-foreground mb-4">{title}</h3>
+        <div className="space-y-3">
+          {items.map((item, index) => (
+            <div key={index} className="flex justify-between items-center">
+              <span className="text-sm text-muted-foreground">{item.name}</span>
+              <span className="text-sm font-medium text-primary">{item.price}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  );
+}
 
 function MenuCategory({ title, image, items, price }: { title: string; image: string; items: string[]; price?: string }) {
   return (
@@ -325,6 +364,19 @@ export default function Menu() {
               </div>
             </motion.div>
           )}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16"
+        >
+          <h2 className="text-2xl md:text-3xl font-serif text-center mb-8">Elevated Treats</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <TreatsCategory {...elevatedTreats} />
+          </div>
         </motion.div>
 
         <motion.div
