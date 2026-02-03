@@ -202,7 +202,7 @@ function MenuCategory({ title, image, items, price }: { title: string; image: st
 }
 
 export default function Menu() {
-  const [menuType, setMenuType] = useState<"brunch" | "dinner">("brunch");
+  const [menuType, setMenuType] = useState<"brunch" | "dinner" | "treats">("brunch");
   const [showReservationPrompt, setShowReservationPrompt] = useState(false);
 
   const handlePreOrder = () => {
@@ -261,7 +261,9 @@ export default function Menu() {
           <p className="text-muted-foreground">
             {menuType === "brunch" 
               ? "For the smoothest onboard service, we recommend selecting one brunch package and adding the Seafood Brunch Upgrade. All items are designed to hold well with minimal galley use."
-              : "For cocktail cruises and sunset sails, we recommend the Small Bites option. For longer charters, guests typically prefer the Coastal or Signature Buffet selections."}
+              : menuType === "dinner"
+              ? "For cocktail cruises and sunset sails, we recommend the Small Bites option. For longer charters, guests typically prefer the Coastal or Signature Buffet selections."
+              : "Our elevated treats are perfect for adding a sweet finish to your charter experience. Great for celebrations, birthdays, or as a special surprise for your guests."}
           </p>
         </motion.div>
 
@@ -289,6 +291,15 @@ export default function Menu() {
             <UtensilsCrossed className="w-5 h-5 mr-2" />
             Lunch / Dinner Menu
           </Button>
+          <Button
+            variant={menuType === "treats" ? "default" : "outline"}
+            onClick={() => setMenuType("treats")}
+            className="rounded-none px-8 py-6"
+            data-testid="button-treats-menu"
+          >
+            <UtensilsCrossed className="w-5 h-5 mr-2" />
+            Elevated Treats
+          </Button>
         </motion.div>
 
         <motion.div
@@ -306,16 +317,19 @@ export default function Menu() {
                 <MenuCategory {...brunchMenu.sweets} />
                 <MenuCategory {...brunchMenu.seafoodUpgrade} />
               </>
-            ) : (
+            ) : menuType === "dinner" ? (
               <>
                 <MenuCategory {...dinnerMenu.smallBites} />
                 <MenuCategory {...dinnerMenu.proteins} />
                 <MenuCategory {...dinnerMenu.sides} />
                 <MenuCategory {...dinnerMenu.seafoodUpgrade} />
               </>
+            ) : (
+              <TreatsCategory {...elevatedTreats} />
             )}
           </div>
 
+          {menuType !== "treats" && (
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -341,6 +355,7 @@ export default function Menu() {
               ))}
             </div>
           </motion.div>
+          )}
 
           {menuType === "brunch" && (
             <motion.div
@@ -364,19 +379,6 @@ export default function Menu() {
               </div>
             </motion.div>
           )}
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-16"
-        >
-          <h2 className="text-2xl md:text-3xl font-serif text-center mb-8">Elevated Treats</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <TreatsCategory {...elevatedTreats} />
-          </div>
         </motion.div>
 
         <motion.div
