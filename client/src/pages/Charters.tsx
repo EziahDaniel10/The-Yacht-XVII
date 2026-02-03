@@ -97,7 +97,7 @@ const packages: {
   {
     title: "Date Night, Sunset & Champagne",
     price: "$1,250 - $1,650",
-    description: "Watch the sun dip below the horizon from the most exclusive venue in the city. Romantic, serene, and unforgettable.",
+    description: "Watch the sun dip below the horizon from the most exclusive venue in the city. Romantic, serene, Summer concert series and jazz festival at the wharf",
     features: [
       "3 Hours Evening Cruise", 
       { text: "Max of 6 Guests Only", bold: true },

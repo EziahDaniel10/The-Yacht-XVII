@@ -13,6 +13,8 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import heroImg from "@assets/WhatsApp_Image_2026-01-31_at_5.38.05_PM_1769877506024.jpeg";
+import fruityPebbleImg from "@assets/image_1770148221724.png";
+import cocoKrispyImg from "@assets/image_1770148224372.png";
 
 const brunchMenu = {
   starters: {
@@ -88,12 +90,12 @@ const elevatedTreats = [
   { 
     name: "Fruity Pebble Rice Krispy Treat", 
     price: "$30 each",
-    image: "https://images.unsplash.com/photo-1587132137056-bfbf0166836e?w=600&q=80"
+    image: fruityPebbleImg
   },
   { 
     name: "Coco Krispy Treat", 
     price: "$30 each",
-    image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&q=80"
+    image: cocoKrispyImg
   },
   { 
     name: "Double Chocolate Brownies", 
@@ -266,13 +268,13 @@ export default function Menu() {
           transition={{ duration: 0.6 }}
           className="bg-secondary/30 p-6 mb-12 border-l-4 border-primary"
         >
-          <h3 className="font-serif text-lg text-primary mb-2">Captain's Recommendation</h3>
+          <h3 className="font-serif text-lg text-primary mb-2">{menuType === "treats" ? "Captain's Recommendation (DISCLAIMER)" : "Captain's Recommendation"}</h3>
           <p className="text-muted-foreground">
             {menuType === "brunch" 
               ? "For the smoothest onboard service, we recommend selecting one brunch package and adding the Seafood Brunch Upgrade. All items are designed to hold well with minimal galley use."
               : menuType === "dinner"
               ? "For cocktail cruises and sunset sails, we recommend the Small Bites option. For longer charters, guests typically prefer the Coastal or Signature Buffet selections."
-              : "Our elevated treats are perfect for adding a sweet finish to your charter experience. Great for celebrations, birthdays, or as a special surprise for your guests."}
+              : <><span className="font-bold">Our ELEVATED treats</span> are perfect for adding a sweet <span className="font-bold">VIBE</span> to your charter experience. Ideal for celebrations, birthdays, or as a special surprise for your guests, these are cannabis-infused desserts. <span className="font-bold">Must be 21 years of age or older to consume.</span></>}
           </p>
         </motion.div>
 
