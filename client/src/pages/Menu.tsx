@@ -79,17 +79,33 @@ const brunchMenu = {
   ],
 };
 
-const elevatedTreats = {
-  title: "Elevated Treats",
-  image: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&q=80",
-  items: [
-    { name: "Chocolate Chip Cookie", price: "$30 each" },
-    { name: "Fruity Pebble Rice Krispy Treat", price: "$30 each" },
-    { name: "Coco Krispy Treat", price: "$30 each" },
-    { name: "Double Chocolate Brownies", price: "$40 each" },
-    { name: "Gummies", price: "$30" },
-  ],
-};
+const elevatedTreats = [
+  { 
+    name: "Chocolate Chip Cookie", 
+    price: "$30 each",
+    image: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&q=80"
+  },
+  { 
+    name: "Fruity Pebble Rice Krispy Treat", 
+    price: "$30 each",
+    image: "https://images.unsplash.com/photo-1587132137056-bfbf0166836e?w=600&q=80"
+  },
+  { 
+    name: "Coco Krispy Treat", 
+    price: "$30 each",
+    image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&q=80"
+  },
+  { 
+    name: "Double Chocolate Brownies", 
+    price: "$40 each",
+    image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=600&q=80"
+  },
+  { 
+    name: "Gummies", 
+    price: "$30",
+    image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=600&q=80"
+  },
+];
 
 const dinnerMenu = {
   smallBites: {
@@ -145,7 +161,7 @@ const dinnerMenu = {
   ],
 };
 
-function TreatsCategory({ title, image, items }: { title: string; image: string; items: { name: string; price: string }[] }) {
+function TreatItem({ name, price, image }: { name: string; price: string; image: string }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -155,18 +171,11 @@ function TreatsCategory({ title, image, items }: { title: string; image: string;
       className="bg-white border border-border overflow-hidden shadow-sm hover:shadow-md transition-shadow"
     >
       <div className="h-48 overflow-hidden">
-        <img src={image} alt={title} className="w-full h-full object-cover" />
+        <img src={image} alt={name} className="w-full h-full object-cover" />
       </div>
       <div className="p-6">
-        <h3 className="text-xl font-serif text-foreground mb-4">{title}</h3>
-        <div className="space-y-3">
-          {items.map((item, index) => (
-            <div key={index} className="flex justify-between items-center">
-              <span className="text-sm text-muted-foreground">{item.name}</span>
-              <span className="text-sm font-medium text-primary">{item.price}</span>
-            </div>
-          ))}
-        </div>
+        <h3 className="text-xl font-serif text-foreground mb-2">{name}</h3>
+        <span className="text-lg font-medium text-primary">{price}</span>
       </div>
     </motion.div>
   );
@@ -325,7 +334,11 @@ export default function Menu() {
                 <MenuCategory {...dinnerMenu.seafoodUpgrade} />
               </>
             ) : (
-              <TreatsCategory {...elevatedTreats} />
+              <>
+                {elevatedTreats.map((treat, index) => (
+                  <TreatItem key={index} {...treat} />
+                ))}
+              </>
             )}
           </div>
 
