@@ -68,9 +68,11 @@ export default function PaymentSuccess() {
             </div>
           ) : verified ? (
             <div className="py-8">
-              <div className="relative mx-auto w-24 h-24 mb-8">
-                <div className="absolute inset-0 bg-primary/10 rounded-full animate-pulse" />
-                <CheckCircle className="w-24 h-24 text-primary relative z-10" />
+              <div className="flex justify-center mb-8">
+                <div className="relative w-24 h-24">
+                  <div className="absolute inset-0 bg-primary/10 rounded-full animate-pulse" />
+                  <CheckCircle className="w-24 h-24 text-primary relative z-10" />
+                </div>
               </div>
               
               <h1 className="text-3xl md:text-4xl font-serif text-foreground mb-4">
@@ -98,26 +100,41 @@ export default function PaymentSuccess() {
                   </li>
                 </ul>
               </div>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/">
-                  <Button 
-                    size="lg" 
-                    className="bg-primary hover:bg-primary/90"
-                    data-testid="button-return-home"
-                  >
-                    Return to Home
-                  </Button>
-                </Link>
-                <Link href="/menu">
-                  <Button 
-                    variant="outline" 
-                    size="lg"
-                    data-testid="button-view-menu"
-                  >
-                    View Catering Menu
-                  </Button>
-                </Link>
+
+              <div className="bg-white border border-border p-6 mb-8 text-center">
+                <div className="flex justify-center mb-4">
+                  <img 
+                    src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop" 
+                    alt="Gourmet dining" 
+                    className="w-48 h-36 object-cover rounded-md"
+                  />
+                </div>
+                <h3 className="font-serif text-xl text-foreground mb-2">
+                  Would you like to pre-order meals for your reservation?
+                </h3>
+                <p className="text-muted-foreground mb-6">
+                  Enhance your charter experience with gourmet catering from Chef B Meals
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link href="/">
+                    <Button 
+                      variant="outline" 
+                      size="lg"
+                      data-testid="button-no-meals"
+                    >
+                      No - Return to Home
+                    </Button>
+                  </Link>
+                  <Link href="/menu">
+                    <Button 
+                      size="lg" 
+                      className="bg-primary hover:bg-primary/90"
+                      data-testid="button-yes-menu"
+                    >
+                      Yes - Take Me to Menu
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
           ) : (
