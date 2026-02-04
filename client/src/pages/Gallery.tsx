@@ -59,6 +59,26 @@ import gallery52 from "@assets/WhatsApp_Image_2026-02-02_at_9.05.43_PM_177021736
 import gallery53 from "@assets/WhatsApp_Image_2026-02-03_at_8.53.54_PM_1770217360324.jpeg";
 import gallery54 from "@assets/WhatsApp_Image_2026-02-03_at_8.54.37_PM_1770217360331.jpeg";
 import gallery55 from "@assets/WhatsApp_Image_2026-02-02_at_9.03.50_PM_1770217414093.jpeg";
+import gallery56 from "@assets/WhatsApp_Image_2026-02-04_at_5.18.53_PM_1770243260562.jpeg";
+import gallery57 from "@assets/WhatsApp_Image_2026-02-04_at_5.20.27_PM_1770243260564.jpeg";
+import gallery58 from "@assets/WhatsApp_Image_2026-02-04_at_5.20.52_PM_1770243260565.jpeg";
+import gallery59 from "@assets/WhatsApp_Image_2026-02-04_at_5.21.02_PM_1770243260566.jpeg";
+import gallery60 from "@assets/WhatsApp_Image_2026-02-04_at_5.06.51_PM_1770243260568.jpeg";
+import gallery61 from "@assets/WhatsApp_Image_2026-02-04_at_5.07.15_PM_1770243260569.jpeg";
+import gallery62 from "@assets/WhatsApp_Image_2026-02-04_at_5.08.24_PM_1770243260570.jpeg";
+import gallery63 from "@assets/WhatsApp_Image_2026-02-04_at_5.09.03_PM_1770243260570.jpeg";
+import gallery64 from "@assets/WhatsApp_Image_2026-02-04_at_5.09.16_PM_1770243260574.jpeg";
+import gallery65 from "@assets/WhatsApp_Image_2026-02-04_at_5.10.27_PM_1770243260575.jpeg";
+import gallery66 from "@assets/WhatsApp_Image_2026-02-04_at_5.11.12_PM_1770243260576.jpeg";
+import gallery67 from "@assets/WhatsApp_Image_2026-02-04_at_5.11.27_PM_1770243260576.jpeg";
+import gallery68 from "@assets/WhatsApp_Image_2026-02-04_at_5.12.14_PM_1770243260577.jpeg";
+import gallery69 from "@assets/WhatsApp_Image_2026-02-04_at_5.12.49_PM_1770243260578.jpeg";
+import gallery70 from "@assets/WhatsApp_Image_2026-02-04_at_5.13.10_PM_1770243260578.jpeg";
+import gallery71 from "@assets/WhatsApp_Image_2026-02-04_at_5.13.25_PM_1770243260579.jpeg";
+import gallery72 from "@assets/WhatsApp_Image_2026-02-04_at_5.13.44_PM_1770243260580.jpeg";
+import gallery73 from "@assets/WhatsApp_Image_2026-02-04_at_5.14.58_PM_1770243260580.jpeg";
+import gallery74 from "@assets/WhatsApp_Image_2026-02-04_at_5.15.46_PM_1770243260581.jpeg";
+import gallery75 from "@assets/WhatsApp_Image_2026-02-04_at_5.31.14_PM_1770243303796.jpeg";
 
 const galleryVideos = [
   { id: "v1", src: "/assets/WhatsApp_Video_2026-01-31_at_3.40.40_PM_(1)_1769874033964.mp4", title: "Sunset Cruise", category: "Video" },
@@ -126,6 +146,26 @@ const galleryImages = [
   { id: 53, src: gallery53, category: "Lifestyle", title: "Purple Party" },
   { id: 54, src: gallery54, category: "Lifestyle", title: "Georgetown Views" },
   { id: 55, src: gallery55, category: "Lifestyle", title: "Girlfriends Getaway" },
+  { id: 56, src: gallery56, category: "Lifestyle", title: "Drinks on Deck" },
+  { id: 57, src: gallery57, category: "Lifestyle", title: "Relaxed Selfie" },
+  { id: 58, src: gallery58, category: "Lifestyle", title: "Elegant Guest" },
+  { id: 59, src: gallery59, category: "Lifestyle", title: "Family Moment" },
+  { id: 60, src: gallery60, category: "Interior", title: "White Party" },
+  { id: 61, src: gallery61, category: "Interior", title: "All White Affair" },
+  { id: 62, src: gallery62, category: "Interior", title: "Cabin Portrait" },
+  { id: 63, src: gallery63, category: "Lifestyle", title: "Summer Day" },
+  { id: 64, src: gallery64, category: "Lifestyle", title: "Deck Model" },
+  { id: 65, src: gallery65, category: "Interior", title: "Night Lounge" },
+  { id: 66, src: gallery66, category: "Exterior", title: "Night Party" },
+  { id: 67, src: gallery67, category: "Lifestyle", title: "Monument View" },
+  { id: 68, src: gallery68, category: "Exterior", title: "Bow Group Photo" },
+  { id: 69, src: gallery69, category: "Lifestyle", title: "Sunset Duo" },
+  { id: 70, src: gallery70, category: "Lifestyle", title: "Delicious Plate" },
+  { id: 71, src: gallery71, category: "Lifestyle", title: "Sunset Pose" },
+  { id: 72, src: gallery72, category: "Lifestyle", title: "Bridge Night" },
+  { id: 73, src: gallery73, category: "Lifestyle", title: "Orange Vibes" },
+  { id: 74, src: gallery74, category: "Lifestyle", title: "Night Selfie" },
+  { id: 75, src: gallery75, category: "Interior", title: "Birthday Setup" },
 ];
 
 export default function Gallery() {
