@@ -1,6 +1,10 @@
+import { Resend } from 'resend';
 import type { Booking } from '@shared/schema';
 
+const resend = new Resend(process.env.RESEND_API_KEY);
+
 const CAPTAIN_EMAIL = 'yachtxvii@gmail.com';
+const FROM_EMAIL = 'Yacht XVII <onboarding@resend.dev>';
 
 function formatDate(date: Date): string {
   return new Date(date).toLocaleDateString('en-US', {
@@ -99,13 +103,27 @@ export async function sendReservationConfirmationEmails(booking: Booking): Promi
     </div>
   `;
 
-  console.log('=== RESERVATION CONFIRMATION ===');
-  console.log('Guest Email would be sent to:', booking.email);
-  console.log('Captain Email would be sent to:', CAPTAIN_EMAIL);
-  console.log('Booking ID:', booking.id);
-  console.log('Deposit Amount:', formatCurrency(booking.depositAmount || 0));
-  console.log('================================');
+  try {
+    // Send confirmation email to guest
+    const guestEmailResult = await resend.emails.send({
+      from: FROM_EMAIL,
+      to: booking.email,
+      subject: 'Reservation Confirmed - Yacht XVII',
+      html: guestEmailHtml,
+    });
+    console.log('Guest confirmation email sent:', guestEmailResult);
 
-  // Note: To enable actual email sending, integrate with an email service like SendGrid, Resend, or Nodemailer
-  // For now, we log the emails that would be sent
+    // Send notification email to captain
+    const captainEmailResult = await resend.emails.send({
+      from: FROM_EMAIL,
+      to: CAPTAIN_EMAIL,
+      subject: `New Reservation: ${booking.fullName} - ${formatDate(booking.preferredDate)}`,
+      html: captainEmailHtml,
+    });
+    console.log('Captain notification email sent:', captainEmailResult);
+
+  } catch (error) {
+    console.error('Error sending emails:', error);
+    throw error;
+  }
 }
