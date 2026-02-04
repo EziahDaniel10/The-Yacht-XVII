@@ -49,7 +49,7 @@ export default function PaymentSuccess() {
 
   return (
     <div className="pt-24 pb-20 bg-secondary/20 min-h-screen">
-      <div className="container max-w-2xl">
+      <div className="container max-w-2xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
