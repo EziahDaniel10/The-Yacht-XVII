@@ -79,6 +79,32 @@ import gallery72 from "@assets/WhatsApp_Image_2026-02-04_at_5.13.44_PM_177024326
 import gallery73 from "@assets/WhatsApp_Image_2026-02-04_at_5.14.58_PM_1770243260580.jpeg";
 import gallery74 from "@assets/WhatsApp_Image_2026-02-04_at_5.15.46_PM_1770243260581.jpeg";
 import gallery75 from "@assets/WhatsApp_Image_2026-02-04_at_5.31.14_PM_1770243303796.jpeg";
+import gallery76 from "@assets/WhatsApp_Image_2026-02-04_at_5.21.51_PM_1770243516037.jpeg";
+import gallery77 from "@assets/WhatsApp_Image_2026-02-04_at_5.22.03_PM_1770243516038.jpeg";
+import gallery78 from "@assets/WhatsApp_Image_2026-02-04_at_5.22.19_PM_1770243516039.jpeg";
+import gallery79 from "@assets/WhatsApp_Image_2026-02-04_at_5.22.29_PM_1770243516040.jpeg";
+import gallery80 from "@assets/WhatsApp_Image_2026-02-04_at_5.23.04_PM_1770243516040.jpeg";
+import gallery81 from "@assets/WhatsApp_Image_2026-02-04_at_5.23.44_PM_1770243516041.jpeg";
+import gallery82 from "@assets/WhatsApp_Image_2026-02-04_at_5.24.37_PM_1770243516042.jpeg";
+import gallery83 from "@assets/WhatsApp_Image_2026-02-04_at_5.25.52_PM_1770243516043.jpeg";
+import gallery84 from "@assets/WhatsApp_Image_2026-02-04_at_5.27.24_PM_1770243516044.jpeg";
+import gallery85 from "@assets/WhatsApp_Image_2026-02-04_at_5.27.42_PM_1770243516045.jpeg";
+import gallery86 from "@assets/WhatsApp_Image_2026-02-04_at_5.28.03_PM_1770243516045.jpeg";
+import gallery87 from "@assets/WhatsApp_Image_2026-02-04_at_5.28.25_PM_1770243516046.jpeg";
+import gallery88 from "@assets/WhatsApp_Image_2026-02-04_at_5.29.18_PM_1770243516047.jpeg";
+import gallery89 from "@assets/WhatsApp_Image_2026-02-04_at_5.29.49_PM_1770243516048.jpeg";
+import gallery90 from "@assets/WhatsApp_Image_2026-02-04_at_5.30.12_PM_1770243516049.jpeg";
+import gallery91 from "@assets/WhatsApp_Image_2026-02-04_at_5.30.42_PM_1770243516032.jpeg";
+import gallery92 from "@assets/WhatsApp_Image_2026-02-04_at_5.32.39_PM_1770243516034.jpeg";
+import gallery93 from "@assets/WhatsApp_Image_2026-02-04_at_5.33.04_PM_1770243516035.jpeg";
+import gallery94 from "@assets/WhatsApp_Image_2026-02-04_at_5.33.27_PM_1770243516036.jpeg";
+import gallery95 from "@assets/WhatsApp_Image_2026-02-04_at_5.33.39_PM_1770243516037.jpeg";
+import gallery96 from "@assets/WhatsApp_Image_2026-02-04_at_5.37.57_PM_1770243583416.jpeg";
+import gallery97 from "@assets/WhatsApp_Image_2026-02-04_at_5.38.21_PM_1770243583417.jpeg";
+import gallery98 from "@assets/WhatsApp_Image_2026-02-04_at_5.38.51_PM_1770243583418.jpeg";
+import gallery99 from "@assets/WhatsApp_Image_2026-02-04_at_5.39.12_PM_1770243583420.jpeg";
+import gallery100 from "@assets/WhatsApp_Image_2026-02-04_at_5.40.32_PM_1770243583424.jpeg";
+import gallery101 from "@assets/WhatsApp_Image_2026-02-04_at_5.41.45_PM_1770243583428.jpeg";
 
 const galleryVideos = [
   { id: "v1", src: "/assets/WhatsApp_Video_2026-01-31_at_3.40.40_PM_(1)_1769874033964.mp4", title: "Sunset Cruise", category: "Video" },
@@ -88,6 +114,8 @@ const galleryVideos = [
   { id: "v5", src: "/assets/WhatsApp_Video_2026-02-03_at_8.54.25_PM_1770217360331.mp4", title: "Party Time", category: "Video" },
   { id: "v6", src: "/assets/WhatsApp_Video_2026-02-02_at_9.03.44_PM_1770217414095.mp4", title: "Friends Cruising", category: "Video" },
   { id: "v7", src: "/assets/WhatsApp_Video_2026-02-02_at_9.04.01_PM_1770217414099.mp4", title: "Deck Life", category: "Video" },
+  { id: "v8", src: "/assets/WhatsApp_Video_2026-02-04_at_5.16.37_PM_1770243583432.mp4", title: "Cruising the Potomac", category: "Video" },
+  { id: "v9", src: "/assets/WhatsApp_Video_2026-02-04_at_5.34.38_PM_1770243583434.mp4", title: "DC Waterways", category: "Video" },
 ];
 
 const galleryImages = [
@@ -166,6 +194,32 @@ const galleryImages = [
   { id: 73, src: gallery73, category: "Lifestyle", title: "Orange Vibes" },
   { id: 74, src: gallery74, category: "Lifestyle", title: "Night Selfie" },
   { id: 75, src: gallery75, category: "Interior", title: "Birthday Setup" },
+  { id: 76, src: gallery76, category: "Lifestyle", title: "Sunset Cheers" },
+  { id: 77, src: gallery77, category: "Lifestyle", title: "Evening Waves" },
+  { id: 78, src: gallery78, category: "Lifestyle", title: "Deck Dining" },
+  { id: 79, src: gallery79, category: "Lifestyle", title: "Champagne Toast" },
+  { id: 80, src: gallery80, category: "Lifestyle", title: "Scenic Cruise" },
+  { id: 81, src: gallery81, category: "Lifestyle", title: "Best Friends" },
+  { id: 82, src: gallery82, category: "Lifestyle", title: "River Views" },
+  { id: 83, src: gallery83, category: "Lifestyle", title: "Golden Afternoon" },
+  { id: 84, src: gallery84, category: "Exterior", title: "Yacht Underway" },
+  { id: 85, src: gallery85, category: "Lifestyle", title: "Celebration Time" },
+  { id: 86, src: gallery86, category: "Lifestyle", title: "Skyline Views" },
+  { id: 87, src: gallery87, category: "Lifestyle", title: "Group Hangout" },
+  { id: 88, src: gallery88, category: "Lifestyle", title: "Deck Party" },
+  { id: 89, src: gallery89, category: "Lifestyle", title: "Sunset Bliss" },
+  { id: 90, src: gallery90, category: "Lifestyle", title: "Perfect Day" },
+  { id: 91, src: gallery91, category: "Lifestyle", title: "Friends Cruise" },
+  { id: 92, src: gallery92, category: "Lifestyle", title: "Afternoon Fun" },
+  { id: 93, src: gallery93, category: "Lifestyle", title: "Charter Joy" },
+  { id: 94, src: gallery94, category: "Lifestyle", title: "Water Vibes" },
+  { id: 95, src: gallery95, category: "Lifestyle", title: "Good Times" },
+  { id: 96, src: gallery96, category: "Lifestyle", title: "Captain's Fun" },
+  { id: 97, src: gallery97, category: "Lifestyle", title: "Sunset Celebration" },
+  { id: 98, src: gallery98, category: "Lifestyle", title: "Couple Sunset" },
+  { id: 99, src: gallery99, category: "Lifestyle", title: "Sunset Silhouette" },
+  { id: 100, src: gallery100, category: "Exterior", title: "Bow Service" },
+  { id: 101, src: gallery101, category: "Lifestyle", title: "Dance Party" },
 ];
 
 export default function Gallery() {
