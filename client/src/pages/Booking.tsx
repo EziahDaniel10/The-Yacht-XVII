@@ -43,7 +43,7 @@ export default function Booking() {
 
   return (
     <div className="pt-24 pb-20 bg-secondary/20">
-      <div className="container max-w-4xl">
+      <div className="container max-w-4xl mx-auto">
         <SectionHeading
           title="Reserve Your Experience"
           subtitle="Begin your journey on the Potomac with Yacht XVII"
