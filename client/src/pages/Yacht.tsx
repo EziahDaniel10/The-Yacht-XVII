@@ -4,6 +4,7 @@ import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import interiorImg from "@/assets/images/yacht-interior-2.jpg";
 import cockpitImg from "@/assets/images/yacht-cockpit.jpg";
+import bridgeImg from "@assets/WhatsApp_Image_2026-02-04_at_6.26.06_PM_1770241798390.jpeg";
 
 const specs = [
   { label: "Length", value: "50 ft" },
@@ -15,6 +16,7 @@ const specs = [
 ];
 
 const gallery = [
+  bridgeImg,
   cockpitImg,
   interiorImg,
 ];
