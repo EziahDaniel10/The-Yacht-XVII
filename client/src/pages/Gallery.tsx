@@ -52,10 +52,22 @@ import gallery45 from "@assets/WhatsApp_Image_2026-02-03_at_9.31.33_PM_177021703
 import gallery46 from "@assets/WhatsApp_Image_2026-02-03_at_9.31.45_PM_1770217035020.jpeg";
 import gallery47 from "@assets/WhatsApp_Image_2026-02-03_at_9.31.56_PM_1770217035021.jpeg";
 import gallery48 from "@assets/WhatsApp_Image_2026-02-03_at_9.32.09_PM_1770217035022.jpeg";
+import gallery49 from "@assets/WhatsApp_Image_2026-02-03_at_9.33.08_PM_1770217272972.jpeg";
+import gallery50 from "@assets/WhatsApp_Image_2026-02-03_at_9.33.26_PM_1770217272976.jpeg";
+import gallery51 from "@assets/WhatsApp_Image_2026-02-02_at_9.04.17_PM_1770217360317.jpeg";
+import gallery52 from "@assets/WhatsApp_Image_2026-02-02_at_9.05.43_PM_1770217360323.jpeg";
+import gallery53 from "@assets/WhatsApp_Image_2026-02-03_at_8.53.54_PM_1770217360324.jpeg";
+import gallery54 from "@assets/WhatsApp_Image_2026-02-03_at_8.54.37_PM_1770217360331.jpeg";
+import gallery55 from "@assets/WhatsApp_Image_2026-02-02_at_9.03.50_PM_1770217414093.jpeg";
 
 const galleryVideos = [
   { id: "v1", src: "/assets/WhatsApp_Video_2026-01-31_at_3.40.40_PM_(1)_1769874033964.mp4", title: "Sunset Cruise", category: "Video" },
   { id: "v2", src: "/assets/WhatsApp_Video_2026-01-31_at_3.40.40_PM_1769874033965.mp4", title: "Charter Moments", category: "Video" },
+  { id: "v3", src: "/assets/WhatsApp_Video_2026-02-03_at_9.30.35_PM_1770217272977.mp4", title: "On the Water", category: "Video" },
+  { id: "v4", src: "/assets/WhatsApp_Video_2026-02-02_at_9.05.30_PM_1770217360321.mp4", title: "Golden Hour", category: "Video" },
+  { id: "v5", src: "/assets/WhatsApp_Video_2026-02-03_at_8.54.25_PM_1770217360331.mp4", title: "Party Time", category: "Video" },
+  { id: "v6", src: "/assets/WhatsApp_Video_2026-02-02_at_9.03.44_PM_1770217414095.mp4", title: "Friends Cruising", category: "Video" },
+  { id: "v7", src: "/assets/WhatsApp_Video_2026-02-02_at_9.04.01_PM_1770217414099.mp4", title: "Deck Life", category: "Video" },
 ];
 
 const galleryImages = [
@@ -107,6 +119,13 @@ const galleryImages = [
   { id: 46, src: gallery46, category: "Lifestyle", title: "Bridge Cruise" },
   { id: 47, src: gallery47, category: "Lifestyle", title: "Couple Chat" },
   { id: 48, src: gallery48, category: "Exterior", title: "Bow Sunbathing" },
+  { id: 49, src: gallery49, category: "Lifestyle", title: "Friends Enjoying" },
+  { id: 50, src: gallery50, category: "Lifestyle", title: "Selfie Time" },
+  { id: 51, src: gallery51, category: "Exterior", title: "Sunset Reflection" },
+  { id: 52, src: gallery52, category: "Exterior", title: "Deck at Sunset" },
+  { id: 53, src: gallery53, category: "Lifestyle", title: "Purple Party" },
+  { id: 54, src: gallery54, category: "Lifestyle", title: "Georgetown Views" },
+  { id: 55, src: gallery55, category: "Lifestyle", title: "Girlfriends Getaway" },
 ];
 
 export default function Gallery() {
@@ -144,6 +163,7 @@ export default function Gallery() {
                     src={video.src}
                     className="h-full w-full object-cover"
                     controls
+                    muted
                     preload="metadata"
                     playsInline
                   >
