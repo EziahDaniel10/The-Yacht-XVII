@@ -109,14 +109,27 @@ export async function registerRoutes(
         return res.status(400).json({ error: 'Missing sessionId or bookingId' });
       }
       
+      const stripe = await getUncachableStripeClient();
+      const session = await stripe.checkout.sessions.retrieve(sessionId);
+      
+      // Validate bookingId matches session metadata for security
+      if (session.metadata?.bookingId !== bookingId.toString()) {
+        return res.status(403).json({ error: 'Booking ID mismatch' });
+      }
+      
+      // Check payment status
+      if (session.payment_status !== 'paid') {
+        return res.status(400).json({ error: 'Payment not completed' });
+      }
+      
+      // Process the payment confirmation (idempotent - won't duplicate if already processed)
       await WebhookHandlers.handlePaymentSuccess(sessionId);
       
-      const booking = await storage.getBooking(parseInt(bookingId));
-      
+      // Return limited booking info (not full data for security)
       res.json({ 
         success: true, 
-        booking,
-        message: 'Payment verified and confirmation emails sent' 
+        message: 'Payment verified and confirmation emails sent',
+        charterType: session.metadata?.bookingId ? 'confirmed' : 'unknown',
       });
     } catch (err) {
       console.error('Payment verification error:', err);

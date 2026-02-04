@@ -12,7 +12,16 @@ export class WebhookHandlers {
     }
 
     const sync = await getStripeSync();
-    await sync.processWebhook(payload, signature);
+    const event = await sync.processWebhook(payload, signature);
+    
+    // Handle checkout.session.completed event
+    if (event && event.type === 'checkout.session.completed') {
+      const session = event.data.object as any;
+      if (session.id) {
+        console.log('Webhook: Processing checkout.session.completed for session:', session.id);
+        await WebhookHandlers.handlePaymentSuccess(session.id);
+      }
+    }
   }
 
   static async handlePaymentSuccess(sessionId: string): Promise<void> {
@@ -22,6 +31,13 @@ export class WebhookHandlers {
     if (session.payment_status === 'paid' && session.metadata?.bookingId) {
       const bookingId = parseInt(session.metadata.bookingId);
       
+      // Check if already processed (idempotency)
+      const existingBooking = await storage.getBooking(bookingId);
+      if (existingBooking?.paymentStatus === 'paid') {
+        console.log(`Payment already processed for booking ${bookingId}, skipping`);
+        return;
+      }
+      
       const booking = await storage.updateBookingPaymentStatus(bookingId, {
         paymentStatus: 'paid',
         stripeSessionId: sessionId,
@@ -30,6 +46,7 @@ export class WebhookHandlers {
       });
 
       if (booking) {
+        console.log(`Sending confirmation emails for booking ${bookingId}`);
         await sendReservationConfirmationEmails(booking);
       }
     }
