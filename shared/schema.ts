@@ -18,6 +18,11 @@ export const bookings = pgTable("bookings", {
   seafoodUpgrade: text("seafood_upgrade").default('false'),
   beverageSelections: text("beverage_selections"),
   mealTotal: integer("meal_total").default(0),
+  charterPrice: integer("charter_price").default(0),
+  depositAmount: integer("deposit_amount").default(0),
+  paymentStatus: text("payment_status").default('pending'),
+  stripeSessionId: text("stripe_session_id"),
+  stripePaymentIntentId: text("stripe_payment_intent_id"),
   createdAt: timestamp("created_at").defaultNow(),
 });
 
