@@ -1,4 +1,4 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import { api, type InsertBooking, type InsertContactInquiry } from "@shared/routes";
 import { useToast } from "@/hooks/use-toast";
 
@@ -6,7 +6,6 @@ export function useCreateBooking() {
   const { toast } = useToast();
   return useMutation({
     mutationFn: async (data: InsertBooking) => {
-      // Zod validation happens here implicitly via shared schema, but explicit parse is good practice
       const validated = api.bookings.create.input.parse(data);
       
       const res = await fetch(api.bookings.create.path, {
@@ -20,13 +19,24 @@ export function useCreateBooking() {
         throw new Error(error.message || "Failed to submit booking");
       }
 
-      return api.bookings.create.responses[201].parse(await res.json());
+      const response = await res.json();
+      return response as { booking: any; checkoutUrl: string | null; sessionId: string | null };
     },
-    onSuccess: () => {
-      toast({
-        title: "Request Received",
-        description: "Thank you for your request. Our concierge will contact you shortly.",
-      });
+    onSuccess: (response) => {
+      if (response.checkoutUrl) {
+        toast({
+          title: "Redirecting to Payment",
+          description: "You'll be redirected to complete your 50% deposit payment.",
+        });
+        setTimeout(() => {
+          window.location.href = response.checkoutUrl!;
+        }, 1500);
+      } else {
+        toast({
+          title: "Request Received",
+          description: "Thank you for your request. Our concierge will contact you shortly.",
+        });
+      }
     },
     onError: (error) => {
       toast({
