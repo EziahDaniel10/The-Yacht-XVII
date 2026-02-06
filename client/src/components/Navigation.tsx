@@ -68,7 +68,7 @@ export function Navigation() {
                 "text-sm font-medium tracking-wide uppercase transition-colors hover:text-primary",
                 isTransparent 
                   ? "text-white/90 hover:text-white" 
-                  : location === link.href ? "text-primary" : "text-muted-foreground"
+                  : location === link.href ? "text-primary" : "text-foreground"
               )}
             >
               {link.label}
@@ -131,7 +131,7 @@ export function Navigation() {
                   </Button>
                 </Link>
               </nav>
-              <div className="mt-auto p-8 text-center text-muted-foreground text-sm font-light">
+              <div className="mt-auto p-8 text-center text-foreground text-sm font-light">
                 <p>yachtxvii@gmail.com</p>
                 <p className="mt-2">202-451-8809</p>
               </div>

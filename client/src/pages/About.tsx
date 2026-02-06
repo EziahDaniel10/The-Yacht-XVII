@@ -24,7 +24,7 @@ export default function About() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="prose prose-lg prose-headings:font-serif text-muted-foreground font-light"
+          className="prose prose-lg prose-headings:font-serif text-foreground font-light"
         >
           <p className="text-xl text-foreground font-normal">
             Yacht XVII was born from vision, intention, and a lifelong appreciation for excellence.
@@ -106,7 +106,7 @@ export default function About() {
                 transition={{ duration: 0.8, delay: i * 0.2 }}
               >
                 <h3 className="text-2xl font-serif mb-4 text-foreground">{value.title}</h3>
-                <p className="text-muted-foreground font-light">{value.desc}</p>
+                <p className="text-foreground font-light">{value.desc}</p>
               </motion.div>
             ))}
           </div>

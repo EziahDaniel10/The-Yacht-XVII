@@ -73,10 +73,10 @@ export default function Yacht() {
             transition={{ duration: 0.8 }}
           >
             <SectionHeading subtitle="Specifications" title="Designed for Performance" light />
-            <p className="text-white/60 font-light text-lg mb-8 leading-relaxed">
+            <p className="text-white font-light text-lg mb-8 leading-relaxed">
               Yacht XVII combines sleek Italian design with robust engineering. Capable of reaching remote coves quickly while maintaining stability, she is the perfect vessel for exploring the coastline.
             </p>
-            <p className="text-white/60 font-light text-lg leading-relaxed">
+            <p className="text-white font-light text-lg leading-relaxed">
               The interior is finished in bleached oak and Italian marble, creating a bright, airy atmosphere that connects you with the surrounding sea.
             </p>
           </motion.div>
@@ -92,7 +92,7 @@ export default function Yacht() {
                  {specs.map((spec) => (
                    <TableRow key={spec.label} className="border-white/10 hover:bg-white/5">
                      <TableCell className="font-serif text-primary text-lg">{spec.label}</TableCell>
-                     <TableCell className="text-right text-white/80 font-light">{spec.value}</TableCell>
+                     <TableCell className="text-right text-white font-light">{spec.value}</TableCell>
                    </TableRow>
                  ))}
                </TableBody>

@@ -137,7 +137,7 @@ export default function Charters() {
           transition={{ duration: 0.8 }}
         >
           <SectionHeading centered subtitle="Experiences" title="Curated Itineraries" />
-          <p className="text-muted-foreground text-lg font-light mt-2 max-w-2xl mx-auto">
+          <p className="text-foreground text-lg font-light mt-2 max-w-2xl mx-auto">
             Enhance any Experience with Chef B Meals (This is an upgrade option only)
           </p>
         </motion.div>
@@ -165,7 +165,7 @@ export default function Charters() {
             
             <div className={`order-1 lg:order-${index % 2 === 1 ? '2' : '1'}`}>
               <h3 className="text-3xl font-serif mb-6">{pkg.title}</h3>
-              <p className="text-muted-foreground text-lg font-light mb-8 leading-relaxed">
+              <p className="text-foreground text-lg font-light mb-8 leading-relaxed">
                 {pkg.description}
               </p>
               <ul className="space-y-4 mb-10">
@@ -174,7 +174,7 @@ export default function Charters() {
                   const text = isObject ? (feat as { text: string; bold: boolean }).text : (feat as string);
                   const isBold = isObject && (feat as { text: string; bold: boolean }).bold;
                   return (
-                    <li key={i} className="flex items-center text-sm font-medium tracking-wide text-foreground/80">
+                    <li key={i} className="flex items-center text-sm font-medium tracking-wide text-foreground">
                       <span className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mr-4 text-primary">
                         <Check className="w-3 h-3" />
                       </span>
@@ -206,21 +206,21 @@ export default function Charters() {
 
           <div className="bg-white border border-border p-8 md:p-12 text-center shadow-lg mb-32">
             <h3 className="text-2xl font-serif mb-4">Chef B Meals Catering</h3>
-            <p className="text-muted-foreground text-lg font-light mb-8 max-w-2xl mx-auto">
+            <p className="text-foreground text-lg font-light mb-8 max-w-2xl mx-auto">
               Elevate your charter with gourmet catering from Chef B Meals. All packages include fresh, chef-prepared food and premium beverages delivered directly to the yacht.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mb-8">
               <div className="bg-primary/5 px-6 py-3 border border-primary/10">
-                <span className="text-sm text-muted-foreground">Brunch Packages</span>
+                <span className="text-sm text-foreground">Brunch Packages</span>
               </div>
               <div className="bg-primary/5 px-6 py-3 border border-primary/10">
-                <span className="text-sm text-muted-foreground">Lunch & Dinner</span>
+                <span className="text-sm text-foreground">Lunch & Dinner</span>
               </div>
               <div className="bg-primary/5 px-6 py-3 border border-primary/10">
-                <span className="text-sm text-muted-foreground">Beverages</span>
+                <span className="text-sm text-foreground">Beverages</span>
               </div>
               <div className="bg-primary/5 px-6 py-3 border border-primary/10">
-                <span className="text-sm text-muted-foreground">Elevated Treats</span>
+                <span className="text-sm text-foreground">Elevated Treats</span>
               </div>
             </div>
             <Link href="/menu">
@@ -249,18 +249,18 @@ export default function Charters() {
             
             <div>
               <h3 className="text-3xl font-serif mb-6">Premium Hookah Experience</h3>
-              <p className="text-muted-foreground text-lg font-light mb-8 leading-relaxed">
+              <p className="text-foreground text-lg font-light mb-8 leading-relaxed">
                 Elevate your charter with our premium hookah service. Choose from over 20 exotic flavors while enjoying the open water and stunning views.
               </p>
               
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <div className="bg-primary/5 p-6 border border-primary/10">
                   <div className="text-3xl font-serif text-primary mb-1">$100</div>
-                  <div className="text-sm text-muted-foreground uppercase tracking-wide">Per Hookah</div>
+                  <div className="text-sm text-foreground uppercase tracking-wide">Per Hookah</div>
                 </div>
                 <div className="bg-primary/5 p-6 border border-primary/10">
                   <div className="text-3xl font-serif text-primary mb-1">$30</div>
-                  <div className="text-sm text-muted-foreground uppercase tracking-wide">Per Refill</div>
+                  <div className="text-sm text-foreground uppercase tracking-wide">Per Refill</div>
                 </div>
               </div>
 
@@ -268,7 +268,7 @@ export default function Charters() {
                 <h4 className="text-lg font-serif mb-4">Over 20+ Flavors Available</h4>
                 <div className="flex flex-wrap gap-2">
                   {hookahFlavors.map((flavor, i) => (
-                    <span key={i} className="bg-secondary/50 text-foreground/80 px-3 py-1 text-sm">
+                    <span key={i} className="bg-secondary/50 text-foreground px-3 py-1 text-sm">
                       {flavor}
                     </span>
                   ))}

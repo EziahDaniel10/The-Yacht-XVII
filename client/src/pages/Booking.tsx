@@ -64,7 +64,7 @@ export default function Booking() {
                   name="fullName"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="uppercase text-xs tracking-widest text-muted-foreground">Full Name</FormLabel>
+                      <FormLabel className="uppercase text-xs tracking-widest text-foreground">Full Name</FormLabel>
                       <FormControl>
                         <Input 
                           placeholder="John Doe" 
@@ -83,7 +83,7 @@ export default function Booking() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="uppercase text-xs tracking-widest text-muted-foreground">Email Address</FormLabel>
+                      <FormLabel className="uppercase text-xs tracking-widest text-foreground">Email Address</FormLabel>
                       <FormControl>
                         <Input 
                           placeholder="john@example.com" 
@@ -102,7 +102,7 @@ export default function Booking() {
                   name="phoneNumber"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="uppercase text-xs tracking-widest text-muted-foreground">Phone Number</FormLabel>
+                      <FormLabel className="uppercase text-xs tracking-widest text-foreground">Phone Number</FormLabel>
                       <FormControl>
                         <Input 
                           placeholder="202-451-8809" 
@@ -121,7 +121,7 @@ export default function Booking() {
                   name="preferredDate"
                   render={({ field }) => (
                     <FormItem className="flex flex-col">
-                      <FormLabel className="uppercase text-xs tracking-widest text-muted-foreground">Preferred Date</FormLabel>
+                      <FormLabel className="uppercase text-xs tracking-widest text-foreground">Preferred Date</FormLabel>
                       <Popover>
                         <PopoverTrigger asChild>
                           <FormControl>
@@ -130,7 +130,7 @@ export default function Booking() {
                               data-testid="button-date-picker"
                               className={cn(
                                 "pl-3 text-left font-normal border-0 border-b border-border rounded-none px-0 hover:bg-transparent shadow-none",
-                                !field.value && "text-muted-foreground"
+                                !field.value && "text-foreground"
                               )}
                             >
                               {field.value ? format(field.value, "PPP") : <span>Pick a date</span>}
@@ -158,7 +158,7 @@ export default function Booking() {
                   name="guests"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="uppercase text-xs tracking-widest text-muted-foreground">Number of Guests</FormLabel>
+                      <FormLabel className="uppercase text-xs tracking-widest text-foreground">Number of Guests</FormLabel>
                       <FormControl>
                         <Input 
                           type="number" 
@@ -179,7 +179,7 @@ export default function Booking() {
                   name="charterType"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="uppercase text-xs tracking-widest text-muted-foreground">Experience Type</FormLabel>
+                      <FormLabel className="uppercase text-xs tracking-widest text-foreground">Experience Type</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
                           <SelectTrigger className="border-0 border-b border-border rounded-none px-0 shadow-none focus:ring-0" data-testid="select-charter-type">
@@ -206,7 +206,7 @@ export default function Booking() {
                 name="specialRequests"
                 render={({ field }) => (
                   <FormItem className="mt-8">
-                    <FormLabel className="uppercase text-xs tracking-widest text-muted-foreground">Special Requests</FormLabel>
+                    <FormLabel className="uppercase text-xs tracking-widest text-foreground">Special Requests</FormLabel>
                     <FormControl>
                       <Textarea 
                         placeholder="Dietary requirements, special occasions, specific routes..." 
@@ -238,7 +238,7 @@ export default function Booking() {
                         <FormLabel className="text-sm font-medium text-foreground cursor-pointer">
                           I acknowledge and agree to The Yacht XVII Charter Rules, Waiver, and Policies.
                         </FormLabel>
-                        <p className="text-xs text-muted-foreground font-light leading-relaxed">
+                        <p className="text-xs text-foreground font-light leading-relaxed">
                           I understand that this charter operates under federal maritime law.
                         </p>
                       </div>
@@ -262,7 +262,7 @@ export default function Booking() {
                         <FormLabel className="text-sm font-medium text-foreground cursor-pointer">
                           Safety & Conduct Acknowledgement
                         </FormLabel>
-                        <p className="text-xs text-muted-foreground font-light leading-relaxed">
+                        <p className="text-xs text-foreground font-light leading-relaxed">
                           I understand prohibited items and behaviors onboard.
                         </p>
                       </div>
@@ -289,7 +289,7 @@ export default function Booking() {
                 </Button>
               </div>
 
-              <p className="text-center text-sm text-muted-foreground mt-6 font-light">
+              <p className="text-center text-sm text-foreground mt-6 font-light">
                 Our concierge will contact you within 24 hours to confirm availability and finalize details.
               </p>
             </form>

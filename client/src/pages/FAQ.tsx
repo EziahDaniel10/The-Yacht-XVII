@@ -83,7 +83,7 @@ export default function FAQ() {
                 <AccordionTrigger className="text-left font-serif text-lg hover:no-underline hover:text-primary transition-colors py-6">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground font-light text-base leading-relaxed pb-6">
+                <AccordionContent className="text-foreground font-light text-base leading-relaxed pb-6">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -99,7 +99,7 @@ export default function FAQ() {
           className="mt-20 p-10 bg-[#0A192F] text-white text-center"
         >
           <h3 className="text-2xl font-serif mb-4 text-primary">Still have questions?</h3>
-          <p className="text-white/60 mb-8 font-light max-w-xl mx-auto">
+          <p className="text-white mb-8 font-light max-w-xl mx-auto">
             Our concierge team is available 24/7 to assist with any specific requirements or inquiries you may have regarding your voyage.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -62,7 +62,7 @@ export default function PaymentSuccess() {
               <h2 className="text-2xl font-serif text-foreground mb-4">
                 Verifying Your Payment
               </h2>
-              <p className="text-muted-foreground">
+              <p className="text-foreground">
                 Please wait while we confirm your reservation...
               </p>
             </div>
@@ -79,13 +79,13 @@ export default function PaymentSuccess() {
                 Reservation Confirmed!
               </h1>
               
-              <p className="text-lg text-muted-foreground mb-8">
+              <p className="text-lg text-foreground mb-8">
                 Thank you for your deposit. Your Yacht XVII charter experience is now secured.
               </p>
               
               <div className="bg-secondary/30 p-6 mb-8 border-l-4 border-primary text-left">
                 <h3 className="font-serif text-lg text-primary mb-3">What's Next?</h3>
-                <ul className="space-y-2 text-muted-foreground">
+                <ul className="space-y-2 text-foreground">
                   <li className="flex items-start gap-2">
                     <Ship className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                     <span>Confirmation emails have been sent to you and Captain Mike</span>
@@ -112,7 +112,7 @@ export default function PaymentSuccess() {
                 <h3 className="font-serif text-xl text-foreground mb-2">
                   Would you like to pre-order meals for your reservation?
                 </h3>
-                <p className="text-muted-foreground mb-6">
+                <p className="text-foreground mb-6">
                   Enhance your charter experience with gourmet catering from Chef B Meals
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -145,7 +145,7 @@ export default function PaymentSuccess() {
               <h2 className="text-2xl font-serif text-foreground mb-4">
                 Verification Issue
               </h2>
-              <p className="text-muted-foreground mb-8">
+              <p className="text-foreground mb-8">
                 {error || "We couldn't verify your payment. Please contact us for assistance."}
               </p>
               <Link href="/booking">

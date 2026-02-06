@@ -10,7 +10,7 @@ export function Footer() {
               XVII
             </span>
           </Link>
-          <p className="text-white/60 font-light leading-relaxed max-w-sm">
+          <p className="text-white font-light leading-relaxed max-w-sm">
             Experience the pinnacle of maritime luxury. Yacht XVII offers bespoke charters tailored to your desires.
           </p>
         </div>
@@ -18,17 +18,17 @@ export function Footer() {
         <div className="sm:col-span-1">
           <h4 className="font-serif text-lg mb-6 text-primary">Navigation</h4>
           <ul className="space-y-4">
-            <li><Link href="/about" className="text-white/60 hover:text-white transition-colors">Our Story</Link></li>
-            <li><Link href="/yacht" className="text-white/60 hover:text-white transition-colors">The Vessel</Link></li>
-            <li><Link href="/charters" className="text-white/60 hover:text-white transition-colors">Experiences</Link></li>
-            <li><Link href="/faq" className="text-white/60 hover:text-white transition-colors">FAQ</Link></li>
-            <li><Link href="/booking" className="text-white/60 hover:text-white transition-colors">Book Now</Link></li>
+            <li><Link href="/about" className="text-white hover:text-white transition-colors">Our Story</Link></li>
+            <li><Link href="/yacht" className="text-white hover:text-white transition-colors">The Vessel</Link></li>
+            <li><Link href="/charters" className="text-white hover:text-white transition-colors">Experiences</Link></li>
+            <li><Link href="/faq" className="text-white hover:text-white transition-colors">FAQ</Link></li>
+            <li><Link href="/booking" className="text-white hover:text-white transition-colors">Book Now</Link></li>
           </ul>
         </div>
 
         <div className="sm:col-span-1">
           <h4 className="font-serif text-lg mb-6 text-primary">Contact</h4>
-          <ul className="space-y-4 text-white/60">
+          <ul className="space-y-4 text-white">
             <li><a href="mailto:yachtxvii@gmail.com" className="hover:text-white transition-colors text-sm break-all">yachtxvii@gmail.com</a></li>
             <li><a href="tel:+12024518809" className="hover:text-white transition-colors">202-451-8809</a></li>
             <li>Washington DC</li>
@@ -37,7 +37,7 @@ export function Footer() {
 
         <div className="col-span-1 sm:col-span-2 md:col-span-1">
           <h4 className="font-serif text-lg mb-6 text-primary">Newsletter</h4>
-          <p className="text-white/60 mb-4 font-light text-sm">Subscribe for exclusive offers and seasonal updates.</p>
+          <p className="text-white mb-4 font-light text-sm">Subscribe for exclusive offers and seasonal updates.</p>
           <div className="flex border-b border-white/20 pb-2">
             <input 
               type="email" 
@@ -49,7 +49,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="container-wide border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-white/40 uppercase tracking-wider text-center gap-4">
+      <div className="container-wide border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-white uppercase tracking-wider text-center gap-4">
         <p>&copy; {new Date().getFullYear()} Yacht XVII. All rights reserved.</p>
         <div className="flex gap-6">
           <a href="#" className="hover:text-white transition-colors">Instagram</a>

@@ -202,7 +202,7 @@ function MenuCategory({ title, image, items, price }: { title: string; image: st
         </div>
         <div className="space-y-2">
           {items.map((item, index) => (
-            <p key={index} className="text-sm text-muted-foreground leading-relaxed">
+            <p key={index} className="text-sm text-foreground leading-relaxed">
               {item}
             </p>
           ))}
@@ -254,7 +254,7 @@ export default function Menu() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-lg md:text-xl font-light text-white/80 max-w-2xl mx-auto"
+            className="text-lg md:text-xl font-light text-white max-w-2xl mx-auto"
           >
             Elevated Comfort • Coastal Influence • Effortless Yacht Service
           </motion.p>
@@ -269,7 +269,7 @@ export default function Menu() {
           className="bg-secondary/30 p-6 mb-12 border-l-4 border-primary"
         >
           <h3 className="font-serif text-lg text-primary mb-2">{menuType === "treats" ? "Captain's Recommendation (DISCLAIMER)" : "Captain's Recommendation"}</h3>
-          <p className="text-muted-foreground">
+          <p className="text-foreground">
             {menuType === "brunch" 
               ? "For the smoothest onboard service, we recommend selecting one brunch package and adding the Seafood Brunch Upgrade. All items are designed to hold well with minimal galley use."
               : menuType === "dinner"
@@ -355,7 +355,7 @@ export default function Menu() {
             <h2 className="text-2xl md:text-3xl font-serif text-center mb-2">
               {menuType === "brunch" ? "Brunch Package Pricing" : "Yacht Buffet Packages & Pricing"}
             </h2>
-            <p className="text-white/60 text-center mb-12">Select your package and customize your selections</p>
+            <p className="text-white text-center mb-12">Select your package and customize your selections</p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {currentMenu.packages.map((pkg, index) => (
@@ -365,7 +365,7 @@ export default function Menu() {
                 >
                   <h3 className="font-serif text-lg text-primary mb-2">{pkg.name}</h3>
                   <div className="text-2xl font-serif mb-3">{pkg.price}</div>
-                  <p className="text-white/60 text-sm">{pkg.details}</p>
+                  <p className="text-white text-sm">{pkg.details}</p>
                 </div>
               ))}
             </div>
@@ -404,7 +404,7 @@ export default function Menu() {
           className="text-center bg-white p-12 border-t-4 border-primary shadow-lg"
         >
           <h3 className="text-2xl font-serif mb-4">Ready to Pre-Order?</h3>
-          <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
+          <p className="text-foreground mb-8 max-w-xl mx-auto">
             Catering can be added to your reservation. Our team will coordinate with Chef B Meals to ensure your selections are prepared fresh and delivered onboard.
           </p>
           <Button

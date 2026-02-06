@@ -127,7 +127,7 @@ export default function Home() {
               subtitle="Welcome Aboard" 
               title="A Sanctuary of Elegance on the Open Waterways" 
             />
-            <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-light mb-8">
+            <p className="text-foreground text-base md:text-lg leading-relaxed font-light mb-8">
               Yacht XVII is not just a vessel; it is a destination. Meticulously designed for the discerning traveler, we offer an unparalleled blend of comfort, style, and adventure. Whether you seek a serene sunset escape or a city night light watch in Washington DC, our crew is dedicated to crafting unforgettable moments.
             </p>
             <Link href="/about">
@@ -197,7 +197,7 @@ export default function Home() {
               >
                 <div className="mb-6">{item.icon}</div>
                 <h3 className="text-2xl font-serif mb-4">{item.title}</h3>
-                <p className="text-white/60 font-light leading-relaxed">{item.desc}</p>
+                <p className="text-white font-light leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -242,7 +242,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                     <h3 className="text-xl font-serif mb-2">{item.title}</h3>
-                    <p className="text-white/70 text-sm mb-4">{item.description}</p>
+                    <p className="text-white text-sm mb-4">{item.description}</p>
                     <Link href="/charters">
                       <Button className="bg-primary hover:bg-primary/90 text-white rounded-none px-6 py-4 text-sm font-serif italic w-full">
                         {item.cta}
@@ -281,7 +281,7 @@ export default function Home() {
               className="md:col-span-5 md:-ml-12 z-10 bg-white p-8 md:p-12 shadow-xl border-l-4 border-primary"
             >
               <SectionHeading subtitle="The Vessel" title="Uncompromising Comfort" className="mb-6 md:mb-8" />
-              <p className="text-muted-foreground mb-6 md:mb-8 font-light text-sm md:text-base">
+              <p className="text-foreground mb-6 md:mb-8 font-light text-sm md:text-base">
                 Featuring masterfully crafted interiors, state-of-the-art entertainment systems, and spacious sun decks, Yacht XVII redefines modern luxury. Every detail has been considered to ensure your absolute comfort.
               </p>
               <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-4 mb-8">
@@ -293,7 +293,7 @@ export default function Home() {
                   "Gourmet dining facilities",
                   "Water sports equipment included"
                 ].map((feat, i) => (
-                  <li key={i} className="flex items-center text-[10px] md:text-sm uppercase tracking-wider font-medium text-foreground/80">
+                  <li key={i} className="flex items-center text-[10px] md:text-sm uppercase tracking-wider font-medium text-foreground">
                     <Star className="h-4 w-4 text-primary mr-3 shrink-0" /> {feat}
                   </li>
                 ))}
@@ -325,7 +325,7 @@ export default function Home() {
           className="relative z-10 container-wide max-w-4xl mx-auto"
         >
           <SectionHeading centered title="Ready for Your Voyage?" />
-          <p className="text-xl text-muted-foreground font-light mb-12">
+          <p className="text-xl text-foreground font-light mb-12">
             Availability is limited. Contact our concierge to secure your preferred dates for the coming season.
           </p>
           <Link href="/booking">

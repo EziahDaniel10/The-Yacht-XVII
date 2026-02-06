@@ -40,7 +40,7 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
           >
             <SectionHeading subtitle="Get in Touch" title="Contact Us" />
-            <p className="text-muted-foreground text-lg font-light mb-12">
+            <p className="text-foreground text-lg font-light mb-12">
               For general inquiries, partnership opportunities, or press requests, please use the form below or contact us directly.
             </p>
 
@@ -49,22 +49,22 @@ export default function Contact() {
                 <MapPin className="w-6 h-6 text-primary mr-6 mt-1" />
                 <div>
                   <h4 className="font-serif text-xl mb-2">Location</h4>
-                  <p className="text-muted-foreground font-light">Washington DC</p>
+                  <p className="text-foreground font-light">Washington DC</p>
                 </div>
               </div>
               <div className="flex items-start">
                 <Phone className="w-6 h-6 text-primary mr-6 mt-1" />
                 <div>
                   <h4 className="font-serif text-xl mb-2">Phone</h4>
-                  <p className="text-muted-foreground font-light">202-451-8809</p>
-                  <p className="text-xs text-muted-foreground mt-1">Available 24/7 for members</p>
+                  <p className="text-foreground font-light">202-451-8809</p>
+                  <p className="text-xs text-foreground mt-1">Available 24/7 for members</p>
                 </div>
               </div>
               <div className="flex items-start">
                 <Mail className="w-6 h-6 text-primary mr-6 mt-1" />
                 <div>
                   <h4 className="font-serif text-xl mb-2">Email</h4>
-                  <p className="text-muted-foreground font-light">yachtxvii@gmail.com</p>
+                  <p className="text-foreground font-light">yachtxvii@gmail.com</p>
                 </div>
               </div>
             </div>
@@ -85,7 +85,7 @@ export default function Contact() {
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="uppercase text-xs tracking-widest text-muted-foreground">Name</FormLabel>
+                      <FormLabel className="uppercase text-xs tracking-widest text-foreground">Name</FormLabel>
                       <FormControl>
                         <Input placeholder="Your Name" className="bg-white border-0 shadow-sm p-6" {...field} />
                       </FormControl>
@@ -99,7 +99,7 @@ export default function Contact() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="uppercase text-xs tracking-widest text-muted-foreground">Email</FormLabel>
+                      <FormLabel className="uppercase text-xs tracking-widest text-foreground">Email</FormLabel>
                       <FormControl>
                         <Input placeholder="email@domain.com" className="bg-white border-0 shadow-sm p-6" {...field} />
                       </FormControl>
@@ -113,7 +113,7 @@ export default function Contact() {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="uppercase text-xs tracking-widest text-muted-foreground">Message</FormLabel>
+                      <FormLabel className="uppercase text-xs tracking-widest text-foreground">Message</FormLabel>
                       <FormControl>
                         <Textarea placeholder="How can we assist you?" className="bg-white border-0 shadow-sm p-6 min-h-[150px] resize-none" {...field} />
                       </FormControl>
