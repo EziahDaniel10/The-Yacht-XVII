@@ -67,7 +67,6 @@ import gallery60 from "@assets/WhatsApp_Image_2026-02-04_at_5.06.51_PM_177024326
 import gallery61 from "@assets/WhatsApp_Image_2026-02-04_at_5.07.15_PM_1770243260569.jpeg";
 import gallery62 from "@assets/WhatsApp_Image_2026-02-04_at_5.08.24_PM_1770243260570.jpeg";
 import gallery63 from "@assets/WhatsApp_Image_2026-02-04_at_5.09.03_PM_1770243260570.jpeg";
-import gallery64 from "@assets/WhatsApp_Image_2026-02-04_at_5.09.16_PM_1770243260574.jpeg";
 import gallery65 from "@assets/WhatsApp_Image_2026-02-04_at_5.10.27_PM_1770243260575.jpeg";
 import gallery66 from "@assets/WhatsApp_Image_2026-02-04_at_5.11.12_PM_1770243260576.jpeg";
 import gallery67 from "@assets/WhatsApp_Image_2026-02-04_at_5.11.27_PM_1770243260576.jpeg";
@@ -93,7 +92,6 @@ import gallery86 from "@assets/WhatsApp_Image_2026-02-04_at_5.28.03_PM_177024351
 import gallery87 from "@assets/WhatsApp_Image_2026-02-04_at_5.28.25_PM_1770243516046.jpeg";
 import gallery88 from "@assets/WhatsApp_Image_2026-02-04_at_5.29.18_PM_1770243516047.jpeg";
 import gallery89 from "@assets/WhatsApp_Image_2026-02-04_at_5.29.49_PM_1770243516048.jpeg";
-import gallery90 from "@assets/WhatsApp_Image_2026-02-04_at_5.30.12_PM_1770243516049.jpeg";
 import gallery91 from "@assets/WhatsApp_Image_2026-02-04_at_5.30.42_PM_1770243516032.jpeg";
 import gallery92 from "@assets/WhatsApp_Image_2026-02-04_at_5.32.39_PM_1770243516034.jpeg";
 import gallery93 from "@assets/WhatsApp_Image_2026-02-04_at_5.33.04_PM_1770243516035.jpeg";
@@ -182,7 +180,6 @@ const galleryImages = [
   { id: 61, src: gallery61, category: "Interior", title: "All White Affair" },
   { id: 62, src: gallery62, category: "Interior", title: "Cabin Portrait" },
   { id: 63, src: gallery63, category: "Lifestyle", title: "Summer Day" },
-  { id: 64, src: gallery64, category: "Lifestyle", title: "Deck Model" },
   { id: 65, src: gallery65, category: "Interior", title: "Night Lounge" },
   { id: 66, src: gallery66, category: "Exterior", title: "Night Party" },
   { id: 67, src: gallery67, category: "Lifestyle", title: "Monument View" },
@@ -208,7 +205,6 @@ const galleryImages = [
   { id: 87, src: gallery87, category: "Lifestyle", title: "Group Hangout" },
   { id: 88, src: gallery88, category: "Lifestyle", title: "Deck Party" },
   { id: 89, src: gallery89, category: "Lifestyle", title: "Sunset Bliss" },
-  { id: 90, src: gallery90, category: "Lifestyle", title: "Perfect Day" },
   { id: 91, src: gallery91, category: "Lifestyle", title: "Friends Cruise" },
   { id: 92, src: gallery92, category: "Lifestyle", title: "Afternoon Fun" },
   { id: 93, src: gallery93, category: "Lifestyle", title: "Charter Joy" },
