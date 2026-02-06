@@ -103,6 +103,8 @@ import gallery98 from "@assets/WhatsApp_Image_2026-02-04_at_5.38.51_PM_177024358
 import gallery99 from "@assets/WhatsApp_Image_2026-02-04_at_5.39.12_PM_1770243583420.jpeg";
 import gallery100 from "@assets/WhatsApp_Image_2026-02-04_at_5.40.32_PM_1770243583424.jpeg";
 import gallery101 from "@assets/WhatsApp_Image_2026-02-04_at_5.41.45_PM_1770243583428.jpeg";
+import gallery102 from "@assets/WhatsApp_Image_2026-02-06_at_11.26.21_PM_1770417246230.jpeg";
+import gallery103 from "@assets/WhatsApp_Image_2026-02-06_at_11.26.02_PM_1770417246236.jpeg";
 
 const galleryVideos = [
   { id: "v1", src: "/assets/WhatsApp_Video_2026-01-31_at_3.40.40_PM_(1)_1769874033964.mp4", title: "Sunset Cruise", category: "Video" },
@@ -216,6 +218,8 @@ const galleryImages = [
   { id: 99, src: gallery99, category: "Lifestyle", title: "Sunset Silhouette" },
   { id: 100, src: gallery100, category: "Exterior", title: "Bow Service" },
   { id: 101, src: gallery101, category: "Lifestyle", title: "Dance Party" },
+  { id: 102, src: gallery102, category: "Lifestyle", title: "Blue Light Vibes" },
+  { id: 103, src: gallery103, category: "Lifestyle", title: "Fireworks on the Potomac" },
 ];
 
 export default function Gallery() {
