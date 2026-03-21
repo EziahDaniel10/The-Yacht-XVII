@@ -29,7 +29,8 @@ export function Footer() {
         <div className="sm:col-span-1">
           <h4 className="font-serif text-lg mb-6 text-primary">Contact</h4>
           <ul className="space-y-4 text-white">
-            <li><a href="mailto:yachtxvii@gmail.com" className="hover:text-white transition-colors text-sm break-all">yachtxvii@gmail.com</a></li>
+            <li><a href="mailto:captainmike@theyachtxvii.com" className="hover:text-primary transition-colors text-sm break-all">captainmike@theyachtxvii.com</a></li>
+            <li><a href="mailto:bookings@theyachtxvii.com" className="hover:text-primary transition-colors text-sm break-all">bookings@theyachtxvii.com</a></li>
             <li><a href="tel:+12024518809" className="hover:text-white transition-colors">202-451-8809</a></li>
             <li>Washington DC</li>
           </ul>

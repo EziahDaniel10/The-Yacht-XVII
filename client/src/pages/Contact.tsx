@@ -64,7 +64,12 @@ export default function Contact() {
                 <Mail className="w-6 h-6 text-primary mr-6 mt-1" />
                 <div>
                   <h4 className="font-serif text-xl mb-2">Email</h4>
-                  <p className="text-foreground font-light">yachtxvii@gmail.com</p>
+                  <p className="text-foreground font-light">
+                    <a href="mailto:captainmike@theyachtxvii.com" className="hover:text-primary transition-colors">captainmike@theyachtxvii.com</a>
+                  </p>
+                  <p className="text-foreground font-light mt-1">
+                    <a href="mailto:bookings@theyachtxvii.com" className="hover:text-primary transition-colors">bookings@theyachtxvii.com</a>
+                  </p>
                 </div>
               </div>
             </div>

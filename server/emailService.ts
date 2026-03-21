@@ -4,7 +4,8 @@ import type { Booking } from '@shared/schema';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const CAPTAIN_EMAIL = 'yachtxvii@gmail.com';
-const FROM_EMAIL = 'Yacht XVII <onboarding@resend.dev>';
+const BOOKINGS_EMAIL = 'bookings@theyachtxvii.com';
+const FROM_EMAIL = `Yacht XVII <${BOOKINGS_EMAIL}>`;
 
 function formatDate(date: Date): string {
   return new Date(date).toLocaleDateString('en-US', {
@@ -60,11 +61,11 @@ export async function sendReservationConfirmationEmails(booking: Booking): Promi
       
       <p style="color: #333; line-height: 1.6;">Captain Mike will reach out to you shortly to confirm the final details of your charter experience.</p>
       
-      <p style="color: #333; line-height: 1.6;">If you have any questions, please don't hesitate to contact us at <a href="mailto:${CAPTAIN_EMAIL}" style="color: #C4A052;">${CAPTAIN_EMAIL}</a></p>
+      <p style="color: #333; line-height: 1.6;">If you have any questions, please don't hesitate to contact us at <a href="mailto:${BOOKINGS_EMAIL}" style="color: #C4A052;">${BOOKINGS_EMAIL}</a></p>
       
       <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
         <p style="color: #666; font-size: 12px;">Yacht XVII | Washington DC</p>
-        <p style="color: #666; font-size: 12px;">${CAPTAIN_EMAIL}</p>
+        <p style="color: #666; font-size: 12px;">${BOOKINGS_EMAIL}</p>
       </div>
     </div>
   `;
