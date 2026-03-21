@@ -125,7 +125,7 @@ export default function PaymentSuccess() {
                       No - Return to Home
                     </Button>
                   </Link>
-                  <a href="https://theyachtxvii.com/menu" target="_blank" rel="noopener noreferrer">
+                  <a href="https://chefbmeals.theyachtxvii.com" target="_blank" rel="noopener noreferrer">
                     <Button 
                       size="lg" 
                       className="bg-primary hover:bg-primary/90"
