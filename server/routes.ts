@@ -54,7 +54,8 @@ export async function registerRoutes(
       const baseUrl = `https://${process.env.REPLIT_DOMAINS?.split(',')[0]}`;
       
       const session = await stripe.checkout.sessions.create({
-        payment_method_types: ['card'],
+        payment_method_types: ['card', 'afterpay_clearpay'],
+        billing_address_collection: 'required',
         line_items: [
           {
             price_data: {
