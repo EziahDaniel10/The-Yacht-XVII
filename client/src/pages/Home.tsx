@@ -336,6 +336,56 @@ export default function Home() {
         </motion.div>
       </section>
 
+      {/* Chef B Meals Section */}
+      <section className="py-24 bg-[#0A192F] text-white overflow-hidden">
+        <div className="container-wide">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <span className="text-xs font-bold uppercase tracking-[0.3em] text-primary block mb-4">Gourmet Catering</span>
+              <h2 className="text-4xl md:text-5xl font-serif mb-6 leading-tight">Elevate Your Charter with Chef B Meals</h2>
+              <p className="text-white font-light leading-relaxed mb-6 text-lg">
+                Transform your time on the water into a full culinary journey. Chef B Meals offers expertly curated brunch, lunch, and dinner packages — from elevated seafood spreads to intimate date-night menus — all prepared fresh for your charter.
+              </p>
+              <ul className="space-y-3 mb-10">
+                {["Brunch, Lunch & Dinner packages", "Fresh seafood upgrades available", "Custom beverage selections", "Served aboard Yacht XVII"].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-white font-light">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a href="https://chefbmeals.theyachtxvii.com" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-none px-10 py-6 text-lg font-serif italic tracking-wide">
+                  Pre-Order Your Meals
+                </Button>
+              </a>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative h-[400px] md:h-[550px] overflow-hidden"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&h=600&fit=crop"
+                alt="Chef B Meals - Gourmet Catering"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6 bg-black/60 backdrop-blur-sm p-4 border-l-4 border-primary">
+                <p className="text-white font-serif italic text-lg">"A dining experience unlike any other — on the water."</p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Gallery Preview Section */}
       <section className="py-24 bg-white">
         <div className="container-wide">
