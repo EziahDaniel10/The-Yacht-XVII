@@ -104,13 +104,61 @@ export async function sendReservationConfirmationEmails(booking: Booking): Promi
     </div>
   `;
 
+  const guestTextPlain = `
+Yacht XVII - Reservation Confirmed
+
+Dear ${booking.fullName},
+
+Thank you for your reservation with Yacht XVII. Your deposit has been received and your charter is now confirmed!
+
+RESERVATION DETAILS
+-------------------
+Date: ${formatDate(booking.preferredDate)}
+Experience: ${getCharterTypeName(booking.charterType)}
+Guests: ${booking.guests}
+Deposit Paid: ${formatCurrency(booking.depositAmount || 0)}
+${booking.mealPackage ? `Meal Package: ${booking.mealPackage}` : ''}
+${booking.specialRequests ? `Special Requests: ${booking.specialRequests}` : ''}
+
+Captain Mike will reach out to you shortly to confirm the final details of your charter experience.
+
+Questions? Contact us at ${BOOKINGS_EMAIL}
+
+Yacht XVII | Washington DC
+`.trim();
+
+  const captainTextPlain = `
+New Reservation Alert - Yacht XVII
+
+GUEST INFORMATION
+-----------------
+Name: ${booking.fullName}
+Email: ${booking.email}
+Phone: ${booking.phoneNumber}
+
+RESERVATION DETAILS
+-------------------
+Date: ${formatDate(booking.preferredDate)}
+Experience: ${getCharterTypeName(booking.charterType)}
+Guests: ${booking.guests}
+Deposit Paid: ${formatCurrency(booking.depositAmount || 0)}
+${booking.mealPackage ? `Meal Package: ${booking.mealPackage}` : ''}
+${booking.seafoodUpgrade === 'true' ? 'Seafood Upgrade: Yes' : ''}
+${booking.beverageSelections ? `Beverages: ${booking.beverageSelections}` : ''}
+${booking.specialRequests ? `Special Requests: ${booking.specialRequests}` : ''}
+
+This is an automated notification from Yacht XVII booking system.
+`.trim();
+
   try {
     // Send confirmation email to guest
     const guestEmailResult = await resend.emails.send({
       from: FROM_EMAIL,
       to: booking.email,
-      subject: 'Reservation Confirmed - Yacht XVII',
+      reply_to: BOOKINGS_EMAIL,
+      subject: `Your Yacht XVII Charter is Confirmed – ${formatDate(booking.preferredDate)}`,
       html: guestEmailHtml,
+      text: guestTextPlain,
     });
     console.log('Guest confirmation email sent:', guestEmailResult);
 
@@ -118,8 +166,10 @@ export async function sendReservationConfirmationEmails(booking: Booking): Promi
     const captainEmailResult = await resend.emails.send({
       from: FROM_EMAIL,
       to: CAPTAIN_EMAIL,
-      subject: `New Reservation: ${booking.fullName} - ${formatDate(booking.preferredDate)}`,
+      reply_to: booking.email,
+      subject: `New Booking: ${booking.fullName} – ${formatDate(booking.preferredDate)}`,
       html: captainEmailHtml,
+      text: captainTextPlain,
     });
     console.log('Captain notification email sent:', captainEmailResult);
 
