@@ -269,6 +269,17 @@ export default function Menu() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          className="bg-primary/10 border-2 border-primary p-6 mb-8 text-center"
+        >
+          <p className="font-bold text-foreground text-base leading-relaxed">
+            All food packages are served family style. All guests must order the same items for their charter. Allergy and dietary restrictions will be accommodated upon request and may incur additional fees.
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
           className="bg-secondary/30 p-6 mb-12 border-l-4 border-primary"
         >
           <h3 className="font-serif text-lg text-primary mb-2">{menuType === "treats" ? "Captain's Recommendation (DISCLAIMER)" : "Captain's Recommendation"}</h3>
