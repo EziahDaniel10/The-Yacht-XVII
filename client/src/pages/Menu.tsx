@@ -272,7 +272,7 @@ export default function Menu() {
           className="bg-primary/10 border-2 border-primary p-6 mb-8 text-center"
         >
           <p className="font-bold text-foreground text-base leading-relaxed">
-            All food packages are served family style. All guests must order the same items for their charter. Allergy and dietary restrictions will be accommodated upon request and may incur additional fees.
+            All food packages are served family-style. All guests must order the same items for their charter. Allergy and dietary restrictions can be accommodated upon request and may incur additional fees.
           </p>
         </motion.div>
 
