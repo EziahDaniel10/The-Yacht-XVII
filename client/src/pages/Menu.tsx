@@ -15,8 +15,6 @@ import {
 import heroImg from "@assets/WhatsApp_Image_2026-01-31_at_5.38.05_PM_1769877506024.jpeg";
 import fruityPebbleImg from "@assets/image_1770148221724.png";
 import cocoKrispyImg from "@assets/image_1770148224372.png";
-import brunchProteinsImg from "@assets/image_1776114903292.png";
-import dinnerProteinsImg from "@assets/image_1776114918352.png";
 
 const brunchMenu = {
   starters: {
@@ -31,7 +29,7 @@ const brunchMenu = {
   },
   proteins: {
     title: "Brunch Proteins",
-    image: brunchProteinsImg,
+    image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=600&q=80",
     items: [
       "Lemon Herb-Grilled Chicken – Citrus-marinated, tender and juicy",
       "Blackened Salmon – Mild spice, Creole remoulade",
@@ -127,7 +125,7 @@ const dinnerMenu = {
   },
   proteins: {
     title: "Chef-Curated Proteins",
-    image: dinnerProteinsImg,
+    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80",
     items: [
       "Jerk Chicken Wings – Roasted pineapple salsa",
       "Lemon Herb-Grilled Chicken – Tzatziki",
