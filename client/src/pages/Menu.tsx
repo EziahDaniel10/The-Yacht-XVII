@@ -15,6 +15,8 @@ import {
 import heroImg from "@assets/WhatsApp_Image_2026-01-31_at_5.38.05_PM_1769877506024.jpeg";
 import fruityPebbleImg from "@assets/image_1770148221724.png";
 import cocoKrispyImg from "@assets/image_1770148224372.png";
+import brunchProteinsImg from "@assets/image_1776114903292.png";
+import dinnerProteinsImg from "@assets/image_1776114918352.png";
 
 const brunchMenu = {
   starters: {
@@ -29,12 +31,13 @@ const brunchMenu = {
   },
   proteins: {
     title: "Brunch Proteins",
-    image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=600&q=80",
+    image: brunchProteinsImg,
     items: [
       "Lemon Herb-Grilled Chicken – Citrus-marinated, tender and juicy",
       "Blackened Salmon – Mild spice, Creole remoulade",
       "Brown Sugar Glazed Bacon – Thick-cut, lightly crisped",
       "Chicken Sausage Links – Herb-forward, lightly grilled",
+      "Captain Mike's Shrimp and Grits – Chicken Andouille Cream Sauce, Tillamook Cheddar Grits",
     ],
   },
   sides: {
@@ -124,13 +127,14 @@ const dinnerMenu = {
   },
   proteins: {
     title: "Chef-Curated Proteins",
-    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80",
+    image: dinnerProteinsImg,
     items: [
       "Jerk Chicken Wings – Roasted pineapple salsa",
       "Lemon Herb-Grilled Chicken – Tzatziki",
       "Coconut Curry Shrimp – Dairy-free coconut curry",
       "Chimichurri Wagyu Meatballs – Herb-forward finish",
       "Blackened Salmon – Creole remoulade",
+      "Captain Mike's Shrimp and Grits – Chicken Andouille Cream Sauce, Tillamook Cheddar Grits",
     ],
   },
   sides: {
@@ -200,13 +204,14 @@ function MenuCategory({ title, image, items, price }: { title: string; image: st
           <h3 className="text-xl font-serif text-foreground">{title}</h3>
           {price && <span className="text-primary font-semibold text-sm">{price}</span>}
         </div>
-        <div className="space-y-2">
+        <ul className="space-y-2 list-none">
           {items.map((item, index) => (
-            <p key={index} className="text-sm text-foreground leading-relaxed">
-              {item}
-            </p>
+            <li key={index} className="text-sm text-foreground leading-relaxed flex items-start gap-2">
+              <span className="text-primary mt-1 flex-shrink-0">•</span>
+              <span>{item}</span>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </motion.div>
   );
