@@ -336,7 +336,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Chef B Meals Section */}
+      {/* Chef B Meals Section — commented out
       <section className="py-24 bg-[#0A192F] text-white overflow-hidden">
         <div className="container-wide">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
@@ -359,9 +359,11 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              {/* <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-none px-10 py-6 text-lg font-serif italic tracking-wide cursor-default">
-                Pre-Order Your Meals
-              </Button> */}
+              <a href="https://chefbmeals.theyachtxvii.com" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-none px-10 py-6 text-lg font-serif italic tracking-wide">
+                  Pre-Order Your Meals
+                </Button>
+              </a>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 50 }}
@@ -383,6 +385,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      */}
 
       {/* Gallery Preview Section */}
       <section className="py-24 bg-white">
