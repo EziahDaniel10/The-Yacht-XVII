@@ -359,9 +359,9 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-none px-10 py-6 text-lg font-serif italic tracking-wide cursor-default">
+              {/* <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-none px-10 py-6 text-lg font-serif italic tracking-wide cursor-default">
                 Pre-Order Your Meals
-              </Button>
+              </Button> */}
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 50 }}
