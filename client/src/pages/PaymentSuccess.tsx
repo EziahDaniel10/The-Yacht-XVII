@@ -101,40 +101,16 @@ export default function PaymentSuccess() {
                 </ul>
               </div>
 
-              <div className="bg-white border border-border p-6 mb-8 text-center">
-                <div className="flex justify-center mb-4">
-                  <img 
-                    src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop" 
-                    alt="Gourmet dining" 
-                    className="w-48 h-36 object-cover rounded-md"
-                  />
-                </div>
-                <h3 className="font-serif text-xl text-foreground mb-2">
-                  Would you like to pre-order meals for your reservation?
-                </h3>
-                <p className="text-foreground mb-6">
-                  Enhance your charter experience with gourmet catering from Chef B Meals
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link href="/">
-                    <Button 
-                      variant="outline" 
-                      size="lg"
-                      data-testid="button-no-meals"
-                    >
-                      No - Return to Home
-                    </Button>
-                  </Link>
-                  <a href="https://chefbmeals.theyachtxvii.com" target="_blank" rel="noopener noreferrer">
-                    <Button 
-                      size="lg" 
-                      className="bg-primary hover:bg-primary/90"
-                      data-testid="button-yes-menu"
-                    >
-                      Yes - Take Me to Menu
-                    </Button>
-                  </a>
-                </div>
+              <div className="flex justify-center">
+                <Link href="/">
+                  <Button 
+                    size="lg" 
+                    className="bg-primary hover:bg-primary/90"
+                    data-testid="button-return-home"
+                  >
+                    Return to Home
+                  </Button>
+                </Link>
               </div>
             </div>
           ) : (

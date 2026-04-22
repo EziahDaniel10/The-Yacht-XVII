@@ -61,15 +61,6 @@ export async function sendReservationConfirmationEmails(booking: Booking): Promi
       
       <p style="color: #333; line-height: 1.6;">Captain Mike will reach out to you shortly to confirm the final details of your charter experience.</p>
 
-      <div style="background-color: #fffbf0; padding: 24px; border: 1px solid #C4A052; margin: 24px 0; text-align: center;">
-        <h3 style="color: #1a1a1a; margin: 0 0 8px 0; font-size: 20px;">🍽️ Elevate Your Experience with Chef B Meals</h3>
-        <p style="color: #555; margin: 0 0 16px 0; line-height: 1.6;">
-          Would you like to pre-order gourmet meals for your charter? Chef B Meals offers curated brunch, lunch, and dinner packages crafted to complement your time on the water.
-        </p>
-        <a href="https://chefbmeals.theyachtxvii.com" style="display: inline-block; background-color: #C4A052; color: #ffffff; padding: 12px 28px; text-decoration: none; font-family: Georgia, serif; font-style: italic; font-size: 16px; letter-spacing: 1px;">
-          Pre-Order Your Meals
-        </a>
-      </div>
       
       <p style="color: #333; line-height: 1.6;">If you have any questions, please don't hesitate to contact us at <a href="mailto:${BOOKINGS_EMAIL}" style="color: #C4A052;">${BOOKINGS_EMAIL}</a></p>
       
